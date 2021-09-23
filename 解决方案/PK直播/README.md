@@ -28,10 +28,10 @@ demo安装包
 
 ### 效果展示
 1. 主播开播  
-<img src="image/start_live.jpg" alt="image-20210923195218894" style="zoom:15%;" />  
+<img src="image/start_live.jpg" alt="image-20210923195218894" width="108" heigth="234" />  
 2. 单主播直播  
-<img src="image/single_live.jpg" alt="image-20210923195218894" style="zoom:15%;" />
+<img src="image/single_live.jpg" alt="image-20210923195218894" width="108" heigth="234" />
 3. Pk直播  
-<img src="image/pk_live.jpg" alt="image-20210923195218894" style="zoom:15%;" />
+<img src="image/pk_live.jpg" alt="image-20210923195218894" width="108" heigth="234" />
 4. 连麦直播  
-<img src="image/seat_live.jpg" alt="image-20210923195218894" style="zoom:15%;" />
+<img src="image/seat_live.jpg" alt="image-20210923195218894" width="108" heigth="234" />
