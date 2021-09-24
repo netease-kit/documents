@@ -27,7 +27,8 @@
 |  平台   | 下载  |
 |  ----  | ----  |
 | Android  | [下载地址](https://www.pgyer.com/kBQ2) |
-| iOS  | [下载地址](https://www.pgyer.com/2mBa) |
+| iOS  | 联系商务 |
+
 
 ### 效果展示
 1. 主播开播  
