@@ -38,6 +38,7 @@
 1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
 2. 导入Android Studio
 3. 找到config/test.properties 文件替换自己的appkey
+* test.properties 是debug包的配置环境，online.properties 是release包的配置环境
 * 此处的appkey请联系技术支持获取配置互动直播服务器使用权限
 4. 如果需要使用美颜功能请使用自己的相芯证书替换lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java 证书文件
 5. 运行在自己的Android设备上
