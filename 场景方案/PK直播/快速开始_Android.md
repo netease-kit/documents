@@ -33,7 +33,7 @@
 | lib-live-pk-service | Pk相关功能服务 |
 
 ## 运行示例源码
-1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/master/OnlinePK-Android)
+1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
 2. 导入Android Studio
 3. 找到config/test.properties 文件替换自己的appkey
 * 此处的appkey请联系技术支持同学确认后台开通相关功能
