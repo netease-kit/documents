@@ -2,7 +2,7 @@
 
 ## 功能实现流程
 ### 直播基础功能
-1. 主播开播流程
+1. 主播开播流程   
 ![主播开播](../image/anchor_create_live_room.png)
 * 客户端请求应用服务器创建房间   
 ```kotlin
@@ -74,7 +74,7 @@
             return ret
         }
 ```
-2. 观众加入直播房间
+2. 观众加入直播房间   
 * 观众通过调用应用服务器提供的joinRoom接口获取房间信息
 ```kotlin
 //lib_live_room_service/repository/LiveRoomApi.kt
@@ -125,7 +125,7 @@
         doPreparePlayAction()
     }
 ```
-3. 观众打赏流程
+3. 观众打赏流程   
 ![观众打赏流程图](../image/reward.png)
 * 观众调用应用服务器提供的打赏接口打赏
 ```kotlin
