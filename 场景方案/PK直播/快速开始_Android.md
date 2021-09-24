@@ -2,13 +2,15 @@
 互动直播示例代码提供普通的单主播直播已经Pk直播和连麦直播
 
 ## 前提条件
-在开始运行示例项目之前，请确保您已完成以下操作：
+在开始运行示例项目之前，请确保您已完成以下操作：  
+联系云信商务获取开通以下权限，并联系技术支持配置产品服务和功能
 * 在云信控制台创建应用，并获取对应的 AppKey。
 * 为此应用开通以下相关服务与抄送：
 * 产品服务：  
-音视频通话 2.0、IM 专业版、聊天室、信令、互动白板、云端录制、点播。
+音视频通话 2.0、IM 专业版、聊天室、透传协议、互动白板、云端录制、点播。
 * 产品功能：   
 音视频通话 2.0 的云端录制和抄送功能。
+
 * 如需使用美颜功能请联系相芯获取美颜证书 [相芯](https://www.faceunity.com/)
 
 ## 开发环境 
@@ -36,6 +38,6 @@
 1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
 2. 导入Android Studio
 3. 找到config/test.properties 文件替换自己的appkey
-* 此处的appkey请联系技术支持同学确认后台开通相关功能
+* 此处的appkey请联系技术支持获取配置互动直播服务器使用权限
 4. 如果需要使用美颜功能请使用自己的相芯证书替换lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java 证书文件
 5. 运行在自己的Android设备上
