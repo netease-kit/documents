@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <SwitchPreferenceCompat
+        app:key="enable_show_meeting_time"
+        app:title="显示会议持续时间"
+        style="@style/MySwitchPreference"
+        />
+
+    <SwitchPreferenceCompat
+        app:key="enable_video"
+        app:title="入会时开启视频"
+        style="@style/MySwitchPreference"
+        />
+
+    <SwitchPreferenceCompat
+        app:key="enable_audio"
+        app:title="入会时开启音频"
+        style="@style/MySwitchPreference"
+        />
+
+    <EditTextPreference
+            app:key="join_timeout_millis"
+            app:title="入会超时时间(毫秒)"
+            app:allowDividerAbove="true"
+            app:allowDividerBelow="true"
+            app:defaultValue="45000"
+            style="@style/MyEditTextPreference" />
+
+
+</PreferenceScreen>
