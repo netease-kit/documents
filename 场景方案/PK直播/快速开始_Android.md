@@ -4,7 +4,7 @@
 ## 前提条件
 在开始运行示例项目之前，请确保您已完成以下操作：  
 联系云信商务获取开通以下权限，并联系技术支持配置产品服务和功能
-* 在云信控制台创建应用，并获取对应的 AppKey。
+* 在云信控制台创建应用，并获取对应的 AppKey。[云信控制平台](../../云信控制平台/应用创建和服务开通.md)
 * 为此应用开通以下相关服务与抄送：
 * 产品服务：  
 音视频通话 2.0、IM 专业版、聊天室、透传协议
@@ -37,8 +37,8 @@
 ## 运行示例源码
 1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
 2. 导入Android Studio
-3. 找到config/test.properties 文件替换自己的appkey
-* test.properties 是debug包的配置环境，online.properties 是release包的配置环境
-* 此处的appkey请联系技术支持获取配置互动直播服务器使用权限
+3. 找到config/test.properties 文件替换自己的appkey   
+    *  test.properties 是debug包的配置环境，online.properties 是release包的配置环境   
+    *  此处的appkey请联系技术支持获取配置互动直播服务器使用权限
 4. 如果需要使用美颜功能请使用自己的相芯证书替换lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java 证书文件
 5. 运行在自己的Android设备上
