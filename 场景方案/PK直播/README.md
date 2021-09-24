@@ -26,8 +26,8 @@
 ### 下载
 |  平台   | 下载  |
 |  ----  | ----  |
-| Android  | [下载地址]() |
-| iOS  | [下载地址]() |
+| Android  | [下载地址](https://www.pgyer.com/kBQ2) |
+| iOS  | [下载地址](https://www.pgyer.com/2mBa) |
 
 ### 效果展示
 1. 主播开播  
