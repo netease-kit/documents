@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_login_with_token.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_login_with_token.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_meeting_list.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/item_meeting_list.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_menu_item_titles.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/custom_menu_item_titles.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/action_sheet_title.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/action_sheet_title.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_loading.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/dialog_loading.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_setting.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_setting.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_test.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/activity_test.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_schedule_meeting.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/item_schedule_meeting.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/action_sheet.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/action_sheet.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/menu_item_selected.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/menu_item_selected.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_im_login.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/activity_im_login.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_login_with_ne_meeting.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_login_with_ne_meeting.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_login_with_sso.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_login_with_sso.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/layout_image_text.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/layout_image_text.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_edit_layout.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/dialog_edit_layout.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_schedule.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_schedule.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_meeting_base.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_meeting_base.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/action_sheet_item.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/action_sheet_item.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_menu_arrangement.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/activity_menu_arrangement.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_schedule_meeting_datail.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/item_schedule_meeting_datail.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_schedule_datail.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_schedule_datail.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/action_sheet_cancel.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/action_sheet_cancel.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_entrance.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/fragment_entrance.xml"
+    },
+    {
+        "merged": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/menu_item_candidate.xml",
+        "source": "/Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/res/layout/menu_item_candidate.xml"
+    }
+]
