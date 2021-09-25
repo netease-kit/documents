@@ -1,0 +1,623 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+MERGED from [androidx.databinding:viewbinding:4.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/26cc28ba91789c4103b1b3fee9b95637/jetified-viewbinding-4.1.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/317e5273e98830b899c3cbfcc83f1a9e/navigation-fragment-ktx-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/820415cf20111ee75dabbc475093963d/navigation-ui-ktx-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/911303cab4035ddd79a591de2ab4f424/navigation-runtime-ktx-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/977bb3e864de9696abf2bc5807fce476/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b88646ad1a9a300c67ea01234114cf7c/jetified-activity-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/e04a9471c984932452e71b96025dd827/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b0d69eda3ab3bb5dc85737a18596f38b/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:2:1-88:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a66505b43c874c088b82e79da7fe0f1c/navigation-common-ktx-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/aafe181d5dda245e9cbfea39fd164d89/jetified-core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/afb6ec536361d85f6c6b260bc00bd8ea/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.permissionx.guolindev:permissionx:1.2.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8847be0fe4ae2f0f0e340fe570fe3f21/jetified-permissionx-1.2.2/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.preference:preference:1.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/28a4f97eb409db9db2b404883ec0bfdf/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.manu:MDatePicker:1.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/7031e38e9bcd2ed9f701f37749a164ed/jetified-MDatePicker-1.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.navigation:navigation-ui:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/954be61b35937262d875cea3126a51ea/navigation-ui-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/950edd1aff8bed6c7749718b1db6e560/material-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0992b9edc115d9d4b543571e53ed3c3/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/764f6d6db7847756e3f0e6c718abc82d/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/23024ec6cd8aa841847daa0b9b67619f/lifecycle-extensions-2.1.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.navigation:navigation-fragment:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/73aa76b80f4bfec96e5ae296c570a6a4/navigation-fragment-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.0-beta02] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/0423c6880ca51ae898d03d38035acb2a/fragment-1.3.0-beta02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/98ff4efe1ea84c9e45cad90db6f70a2c/navigation-runtime-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.0-beta02] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/33e1373d4a907f62da21d82007e2fc73/jetified-activity-1.2.0-beta02/AndroidManifest.xml:17:1-24:12
+MERGED from [com.kyleduo.switchbutton:library:2.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/64003d046d53a662494ca389fb63c45b/jetified-library-2.0.2/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android:flexbox:2.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/4d8b1a9777b2be6103e01c1f6ca67c43/jetified-flexbox-2.0.1/AndroidManifest.xml:17:1-26:12
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:2:1-70:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9327a3c01fca6e9e73956602ed674f3f/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/5a95778466a2d96b9ca0658f4f4eff97/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/ac54077f98dbbc1aeb937559129a6078/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a4f871f11133ae8376b3d803e5135325/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a19d44928cbe77c50ddd2d8cb790d269/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70d55202901e8d6a098cad16b93aad32/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/deea47c52020a8a39e34859068fbcb8f/lifecycle-livedata-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/5090639fec9813caf587d3391a944568/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/d0b1bd1ad6079c8c5cf296f753dc594e/transition-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1bd47ece525ec631b5994af63b2ca6f8/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.webkit:webkit:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/6e03f190249ac7ba5a843afddec7683d/webkit-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/336a22de4bf54f9cd0210a82f873adb5/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/ec41f093154fd7c5e1a019996e4d331b/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3b59bde5e89dc0294b71c1f3c604af49/drawerlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/7684258f8344f9a8657bdf3059b7faa3/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9ef525cf381302b3baf8f67f2224c480/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/dd8d05e2a803b5931e24f55adeca2524/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/2ffe9efb20f6abd35de496319f736f92/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/d4d9903c397cb2944bc7cb0bbbedeae5/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/84f10d59e0ba532686a76dd2895e7751/navigation-common-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70791bf4c243d8a4b3c73c2e14108d28/core-1.3.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c785dbe649a3d081869f99f38766fb42/lifecycle-runtime-2.3.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/dd7c8e3a80f522b2f993b82a740eca95/jetified-lifecycle-viewmodel-savedstate-2.3.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a2947f25f0419be239fa0c76aedd0afd/lifecycle-livedata-core-2.3.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/76a448e010e09d381ab9c7be60345711/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a815b476670a7452fba1a5d4348869d8/jetified-savedstate-1.1.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99274eae5fcca24f05f3456655127678/lifecycle-viewmodel-2.3.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8cd0bb24a202042690724c0c75a23a78/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/09cd6f27a521900ff599a2c757ba8ab5/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/29d36f2eb6e5fbe1985c2404024f9ced/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3b1451c52932a85b588bba0315590cc8/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c1b3cb161aa22b30cf89e2b8f8d1f6b1/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1437832a6e549362718fa1702b53f993/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/26435ccdbd56f35f586470036147a5cd/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.netease.nimlib:avsignalling:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/fd85384eab833c27f0a1a45dab45e466/jetified-avsignalling-8.4.6/AndroidManifest.xml:2:1-11:12
+MERGED from [com.netease.nimlib:chatroom:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/007ee91de99de15a2eb238e4e74d55f3/jetified-chatroom-8.4.6/AndroidManifest.xml:2:1-11:12
+MERGED from [com.netease.yunxin:yxbase:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/87d2fc33cace3ceef91095039ac9760a/jetified-yxbase-1.0.0/AndroidManifest.xml:6:1-15:12
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:2:1-27:12
+MERGED from [com.netease.yunxin.kit:alog:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3da36709223eb9847bfb96bd05401687/jetified-alog-1.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.netease.yunxin:report:2.0.5] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/820f1acd7c25d260964413d3a62ec9fa/jetified-report-2.0.5/AndroidManifest.xml:2:1-11:12
+MERGED from [com.netease.yunxin:catcher:1.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/83ab3e14342c3f03407bd2268c6d08e1/jetified-catcher-1.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:2:1-16:12
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+	package
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:1-71:12
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:4:5-54:19
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:29:5-86:19
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:29:5-86:19
+MERGED from [com.google.android.material:material:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/950edd1aff8bed6c7749718b1db6e560/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/950edd1aff8bed6c7749718b1db6e560/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/764f6d6db7847756e3f0e6c718abc82d/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/764f6d6db7847756e3f0e6c718abc82d/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/23024ec6cd8aa841847daa0b9b67619f/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/23024ec6cd8aa841847daa0b9b67619f/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:27:5-68:19
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:27:5-68:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.core:core:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70791bf4c243d8a4b3c73c2e14108d28/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70791bf4c243d8a4b3c73c2e14108d28/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8cd0bb24a202042690724c0c75a23a78/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8cd0bb24a202042690724c0c75a23a78/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70791bf4c243d8a4b3c73c2e14108d28/core-1.3.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:12:9-40
+	android:networkSecurityConfig
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:10:9-69
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:5:9-43
+activity#com.netease.meetinglib.demo.MainActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:13:9-23:20
+	android:screenOrientation
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:15:13-49
+	android:resizeableActivity
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:16:13-47
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:14:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:20:27-74
+activity#com.netease.meetinglib.demo.EntryActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:25:9-40:20
+	android:launchMode
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:26:13-44
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:25:19-48
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:meeting.netease.im+data:scheme:nemeetingdemo
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:29:13-38:29
+action#android.intent.action.VIEW
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:30:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:32:17-76
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:32:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:33:17-78
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:33:27-75
+data
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:35:17-37:54
+	android:host
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:36:21-54
+	android:scheme
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:37:21-51
+activity#com.netease.meetinglib.demo.MeetingSettingsActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:42:9-44:36
+	android:label
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:44:13-33
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:43:13-52
+activity#com.netease.meetinglib.demo.AppSettingsActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:45:9-47:36
+	android:label
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:47:13-33
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:46:13-48
+activity#com.netease.meetinglib.demo.nim.NIMLoginActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:48:9-50:36
+	android:label
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:50:13-33
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:49:13-49
+activity#com.netease.meetinglib.demo.menu.InjectMenuArrangeActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:52:9-68
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:52:19-65
+activity#com.netease.meetinglib.demo.menu.ControllerInjectMenuArrangeActivity
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:53:9-78
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:53:19-75
+uses-permission#android.permission.READ_CALENDAR
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:56:5-72
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:56:22-69
+uses-permission#android.permission.WRITE_CALENDAR
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:57:5-73
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:57:22-70
+uses-permission#android.permission.INTERNET
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:59:5-67
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:12:5-67
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:12:5-67
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:14:5-67
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:14:5-67
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:12:5-67
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:12:5-67
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:11:5-67
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:59:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:60:5-79
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:13:5-79
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:13:5-79
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:15:5-79
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:15:5-79
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:13:5-79
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:13:5-79
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:12:5-79
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:60:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:61:5-76
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:14:5-76
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:14:5-76
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:16:5-76
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:16:5-76
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:14:5-76
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:14:5-76
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:61:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:62:5-76
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:15:5-76
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:15:5-76
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:17:5-76
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:17:5-76
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:15:5-76
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:15:5-76
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:62:22-73
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:63:5-80
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:16:5-80
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:16:5-80
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:24:5-80
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:24:5-80
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:13:5-80
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:63:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:64:5-81
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:17:5-81
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:17:5-81
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:25:5-81
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:25:5-81
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:23:5-81
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:23:5-81
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:14:5-81
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:64:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:65:5-75
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:18:5-75
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:65:22-72
+uses-permission#android.permission.CAMERA
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:66:5-65
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:19:5-65
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:19:5-65
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:18:5-65
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:18:5-65
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:66:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:67:5-71
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:20:5-71
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:20:5-71
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:20:5-71
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:20:5-71
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:67:22-68
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:69:5-77
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:21:5-77
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:21:5-77
+	android:name
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml:69:22-74
+uses-sdk
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:4.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/26cc28ba91789c4103b1b3fee9b95637/jetified-viewbinding-4.1.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/26cc28ba91789c4103b1b3fee9b95637/jetified-viewbinding-4.1.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/317e5273e98830b899c3cbfcc83f1a9e/navigation-fragment-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/317e5273e98830b899c3cbfcc83f1a9e/navigation-fragment-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/820415cf20111ee75dabbc475093963d/navigation-ui-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/820415cf20111ee75dabbc475093963d/navigation-ui-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/911303cab4035ddd79a591de2ab4f424/navigation-runtime-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/911303cab4035ddd79a591de2ab4f424/navigation-runtime-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/977bb3e864de9696abf2bc5807fce476/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/977bb3e864de9696abf2bc5807fce476/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b88646ad1a9a300c67ea01234114cf7c/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b88646ad1a9a300c67ea01234114cf7c/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/e04a9471c984932452e71b96025dd827/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/e04a9471c984932452e71b96025dd827/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b0d69eda3ab3bb5dc85737a18596f38b/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b0d69eda3ab3bb5dc85737a18596f38b/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a66505b43c874c088b82e79da7fe0f1c/navigation-common-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a66505b43c874c088b82e79da7fe0f1c/navigation-common-ktx-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/aafe181d5dda245e9cbfea39fd164d89/jetified-core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/aafe181d5dda245e9cbfea39fd164d89/jetified-core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/afb6ec536361d85f6c6b260bc00bd8ea/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/afb6ec536361d85f6c6b260bc00bd8ea/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.permissionx.guolindev:permissionx:1.2.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8847be0fe4ae2f0f0e340fe570fe3f21/jetified-permissionx-1.2.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.permissionx.guolindev:permissionx:1.2.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8847be0fe4ae2f0f0e340fe570fe3f21/jetified-permissionx-1.2.2/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.preference:preference:1.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/28a4f97eb409db9db2b404883ec0bfdf/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/28a4f97eb409db9db2b404883ec0bfdf/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.manu:MDatePicker:1.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/7031e38e9bcd2ed9f701f37749a164ed/jetified-MDatePicker-1.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.manu:MDatePicker:1.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/7031e38e9bcd2ed9f701f37749a164ed/jetified-MDatePicker-1.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.navigation:navigation-ui:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/954be61b35937262d875cea3126a51ea/navigation-ui-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/954be61b35937262d875cea3126a51ea/navigation-ui-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/950edd1aff8bed6c7749718b1db6e560/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/950edd1aff8bed6c7749718b1db6e560/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0992b9edc115d9d4b543571e53ed3c3/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0992b9edc115d9d4b543571e53ed3c3/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/764f6d6db7847756e3f0e6c718abc82d/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/764f6d6db7847756e3f0e6c718abc82d/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/23024ec6cd8aa841847daa0b9b67619f/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/23024ec6cd8aa841847daa0b9b67619f/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/73aa76b80f4bfec96e5ae296c570a6a4/navigation-fragment-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/73aa76b80f4bfec96e5ae296c570a6a4/navigation-fragment-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.0-beta02] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/0423c6880ca51ae898d03d38035acb2a/fragment-1.3.0-beta02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.0-beta02] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/0423c6880ca51ae898d03d38035acb2a/fragment-1.3.0-beta02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/98ff4efe1ea84c9e45cad90db6f70a2c/navigation-runtime-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/98ff4efe1ea84c9e45cad90db6f70a2c/navigation-runtime-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.0-beta02] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/33e1373d4a907f62da21d82007e2fc73/jetified-activity-1.2.0-beta02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.0-beta02] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/33e1373d4a907f62da21d82007e2fc73/jetified-activity-1.2.0-beta02/AndroidManifest.xml:20:5-22:41
+MERGED from [com.kyleduo.switchbutton:library:2.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/64003d046d53a662494ca389fb63c45b/jetified-library-2.0.2/AndroidManifest.xml:8:5-10:41
+MERGED from [com.kyleduo.switchbutton:library:2.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/64003d046d53a662494ca389fb63c45b/jetified-library-2.0.2/AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android:flexbox:2.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/4d8b1a9777b2be6103e01c1f6ca67c43/jetified-flexbox-2.0.1/AndroidManifest.xml:22:5-24:41
+MERGED from [com.google.android:flexbox:2.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/4d8b1a9777b2be6103e01c1f6ca67c43/jetified-flexbox-2.0.1/AndroidManifest.xml:22:5-24:41
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:8:5-11:91
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:8:5-11:91
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9327a3c01fca6e9e73956602ed674f3f/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9327a3c01fca6e9e73956602ed674f3f/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/5a95778466a2d96b9ca0658f4f4eff97/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/5a95778466a2d96b9ca0658f4f4eff97/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/ac54077f98dbbc1aeb937559129a6078/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/ac54077f98dbbc1aeb937559129a6078/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a4f871f11133ae8376b3d803e5135325/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a4f871f11133ae8376b3d803e5135325/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a19d44928cbe77c50ddd2d8cb790d269/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a19d44928cbe77c50ddd2d8cb790d269/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70d55202901e8d6a098cad16b93aad32/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70d55202901e8d6a098cad16b93aad32/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/deea47c52020a8a39e34859068fbcb8f/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/deea47c52020a8a39e34859068fbcb8f/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/5090639fec9813caf587d3391a944568/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/5090639fec9813caf587d3391a944568/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/d0b1bd1ad6079c8c5cf296f753dc594e/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/d0b1bd1ad6079c8c5cf296f753dc594e/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1bd47ece525ec631b5994af63b2ca6f8/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1bd47ece525ec631b5994af63b2ca6f8/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/6e03f190249ac7ba5a843afddec7683d/webkit-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/6e03f190249ac7ba5a843afddec7683d/webkit-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/336a22de4bf54f9cd0210a82f873adb5/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/336a22de4bf54f9cd0210a82f873adb5/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/ec41f093154fd7c5e1a019996e4d331b/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/ec41f093154fd7c5e1a019996e4d331b/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3b59bde5e89dc0294b71c1f3c604af49/drawerlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3b59bde5e89dc0294b71c1f3c604af49/drawerlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/7684258f8344f9a8657bdf3059b7faa3/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/7684258f8344f9a8657bdf3059b7faa3/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9ef525cf381302b3baf8f67f2224c480/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9ef525cf381302b3baf8f67f2224c480/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/dd8d05e2a803b5931e24f55adeca2524/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/dd8d05e2a803b5931e24f55adeca2524/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/2ffe9efb20f6abd35de496319f736f92/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/2ffe9efb20f6abd35de496319f736f92/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/d4d9903c397cb2944bc7cb0bbbedeae5/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/d4d9903c397cb2944bc7cb0bbbedeae5/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/84f10d59e0ba532686a76dd2895e7751/navigation-common-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/84f10d59e0ba532686a76dd2895e7751/navigation-common-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70791bf4c243d8a4b3c73c2e14108d28/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/70791bf4c243d8a4b3c73c2e14108d28/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c785dbe649a3d081869f99f38766fb42/lifecycle-runtime-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c785dbe649a3d081869f99f38766fb42/lifecycle-runtime-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/dd7c8e3a80f522b2f993b82a740eca95/jetified-lifecycle-viewmodel-savedstate-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/dd7c8e3a80f522b2f993b82a740eca95/jetified-lifecycle-viewmodel-savedstate-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a2947f25f0419be239fa0c76aedd0afd/lifecycle-livedata-core-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a2947f25f0419be239fa0c76aedd0afd/lifecycle-livedata-core-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/76a448e010e09d381ab9c7be60345711/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/76a448e010e09d381ab9c7be60345711/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a815b476670a7452fba1a5d4348869d8/jetified-savedstate-1.1.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/a815b476670a7452fba1a5d4348869d8/jetified-savedstate-1.1.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99274eae5fcca24f05f3456655127678/lifecycle-viewmodel-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0-beta01] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99274eae5fcca24f05f3456655127678/lifecycle-viewmodel-2.3.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8cd0bb24a202042690724c0c75a23a78/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/8cd0bb24a202042690724c0c75a23a78/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/09cd6f27a521900ff599a2c757ba8ab5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/09cd6f27a521900ff599a2c757ba8ab5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/29d36f2eb6e5fbe1985c2404024f9ced/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/29d36f2eb6e5fbe1985c2404024f9ced/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3b1451c52932a85b588bba0315590cc8/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3b1451c52932a85b588bba0315590cc8/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c1b3cb161aa22b30cf89e2b8f8d1f6b1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c1b3cb161aa22b30cf89e2b8f8d1f6b1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1437832a6e549362718fa1702b53f993/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1437832a6e549362718fa1702b53f993/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/26435ccdbd56f35f586470036147a5cd/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/26435ccdbd56f35f586470036147a5cd/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.netease.nimlib:avsignalling:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/fd85384eab833c27f0a1a45dab45e466/jetified-avsignalling-8.4.6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.nimlib:avsignalling:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/fd85384eab833c27f0a1a45dab45e466/jetified-avsignalling-8.4.6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.nimlib:chatroom:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/007ee91de99de15a2eb238e4e74d55f3/jetified-chatroom-8.4.6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.nimlib:chatroom:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/007ee91de99de15a2eb238e4e74d55f3/jetified-chatroom-8.4.6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:yxbase:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/87d2fc33cace3ceef91095039ac9760a/jetified-yxbase-1.0.0/AndroidManifest.xml:11:5-13:41
+MERGED from [com.netease.yunxin:yxbase:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/87d2fc33cace3ceef91095039ac9760a/jetified-yxbase-1.0.0/AndroidManifest.xml:11:5-13:41
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin.kit:alog:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3da36709223eb9847bfb96bd05401687/jetified-alog-1.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.netease.yunxin.kit:alog:1.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/3da36709223eb9847bfb96bd05401687/jetified-alog-1.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.netease.yunxin:report:2.0.5] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/820f1acd7c25d260964413d3a62ec9fa/jetified-report-2.0.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:report:2.0.5] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/820f1acd7c25d260964413d3a62ec9fa/jetified-report-2.0.5/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:catcher:1.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/83ab3e14342c3f03407bd2268c6d08e1/jetified-catcher-1.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:catcher:1.0.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/83ab3e14342c3f03407bd2268c6d08e1/jetified-catcher-1.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.netease.yunxin:nos:1.0.2] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/b6d142a1755b095ef63206b7f900a58e/jetified-nos-1.0.2/AndroidManifest.xml:7:5-9:41
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:11:9-88
+	android:targetSdkVersion
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/hzlichengda/workspace/code/NEMeeting/SampleCode/Android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERACT_ACROSS_USERS
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:22:5-80
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:18:5-80
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:18:5-80
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:22:22-77
+uses-permission#android.permission.GET_TASKS
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:23:5-68
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:21:5-68
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:21:5-68
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:23:22-65
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:24:5-68
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:16:5-68
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:16:5-68
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:24:22-65
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:25:5-80
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:21:5-80
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:21:5-80
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:25:22-77
+uses-permission#android.permission.BLUETOOTH
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:26:5-68
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:22:5-68
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:26:22-65
+uses-permission#android.permission.BROADCAST_STICKY
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:27:5-75
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:25:5-75
+MERGED from [com.netease.yunxin:nertc:4.1.1] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/9785e460bc5347ea1bd61fe08549957f/jetified-nertc-4.1.1/AndroidManifest.xml:25:5-75
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:27:22-72
+activity#com.netease.meetinglib.ui.NEMeetingActivity
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:30:9-37:58
+	android:launchMode
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:34:13-44
+	android:hardwareAccelerated
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:33:13-47
+	android:windowSoftInputMode
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:37:13-55
+	android:resizeableActivity
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:35:13-47
+	android:configChanges
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:32:13-144
+	android:theme
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:36:13-60
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:31:13-71
+meta-data#flutterProjectType
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:39:9-41:38
+	android:value
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:41:13-35
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:40:13-46
+meta-data#flutterEmbedding
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:46:9-48:33
+	android:value
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:48:13-30
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:47:13-44
+service#com.netease.meeting.plugin.foregroundservice.NEForegroundService
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:50:9-58:19
+	android:enabled
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:52:13-35
+	android:exported
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:53:13-37
+	android:foregroundServiceType
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:54:13-60
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:51:13-92
+intent-filter#action:name:com.netease.Yunxin.ScreenShare
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:55:13-57:29
+action#com.netease.Yunxin.ScreenShare
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:56:17-73
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:56:25-70
+service#com.netease.nimlib.service.NimService
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:59:9-61:39
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:30:9-32:39
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:30:9-32:39
+	android:process
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:61:13-36
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:60:13-65
+service#com.netease.nimlib.service.NimService$Aux
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:62:9-64:39
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:35:9-37:39
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:35:9-37:39
+	android:process
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:64:13-36
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:63:13-69
+service#com.netease.nimlib.job.NIMJobService
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:65:9-69:39
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:40:9-44:39
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:40:9-44:39
+	android:process
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:69:13-36
+	android:exported
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:67:13-36
+	android:permission
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:68:13-69
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:66:13-64
+receiver#com.netease.nimlib.service.NimReceiver
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:70:9-78:20
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:47:9-55:20
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:47:9-55:20
+	android:process
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:73:13-36
+	android:exported
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:72:13-37
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:71:13-66
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:74:13-77:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:75:17-79
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:75:25-76
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:76:17-79
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:76:25-76
+receiver#com.netease.nimlib.service.ResponseReceiver
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:79:9-80
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:58:9-80
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:58:9-80
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:79:19-77
+service#com.netease.nimlib.service.ResponseService
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:80:9-78
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:61:9-78
+MERGED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:61:9-78
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:80:18-75
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:82:9-85:74
+	android:exported
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:84:13-37
+	android:theme
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:85:13-71
+	android:name
+		ADDED from [com.netease.yunxin:meetinglib:2.0.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/1fd2f71d4ee514eae81868e0068cbbb4/jetified-meetinglib-2.0.0/AndroidManifest.xml:83:13-74
+provider#com.netease.nimlib.ipc.cp.provider.PreferenceContentProvider
+ADDED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:64:9-67:40
+	android:authorities
+		ADDED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:66:13-75
+	android:exported
+		ADDED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:67:13-37
+	android:name
+		ADDED from [com.netease.nimlib:basesdk:8.4.6] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/c0ee7d61b44dd6351a9901d8a63dc07b/jetified-basesdk-8.4.6/AndroidManifest.xml:65:13-88
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /Users/hzlichengda/.gradle/caches/transforms-2/files-2.1/99e0ea7d9a65c52ed329fd7ac2cbbda5/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
