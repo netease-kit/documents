@@ -4,7 +4,7 @@
 
 **NEEduLogic组件的 API 接口列表如下：**
 
-- `**NEEduUiKit**`**单例类，提供SDK配置，SDK初始化等基础能力，同时获取NEEduManager。**
+- **NEEduUiKit** **单例类，提供SDK配置，SDK初始化等基础能力，同时获取NEEduManager。**
 
 | 接口                                                   | 备注              |
 | ------------------------------------------------------ | ----------------- |
@@ -12,7 +12,7 @@
 | init()                                                 | 初始化组件        |
 | enterClass(neEduClassOptions: NEEduClassOptions)       | 加入课堂          |
 
-- `**NEEduManager**`**单例类，使用SDK提供的各种业务服务。**
+- **NEEduManager** **单例类，使用SDK提供的各种业务服务。**
 
 | 接口                  | 备注             |
 | --------------------- | ---------------- |
@@ -25,7 +25,7 @@
 | getHandsUpService     | 获得举手上台服务 |
 | destroy()             | 销毁对象         |
 
-- `**NEEduRoomService：课堂管理类。**`
+- **NEEduRoomService** **课堂管理类。**
 
 | 接口                    | 备注                   |
 | ----------------------- | ---------------------- |
@@ -37,7 +37,7 @@
 | onRoomStatesChange:     | 房间状态通知           |
 | onNetworkQualityChange: | 网络变更通知           |
 
-- `**NEEduMemberService：**``***课堂成员***``**管理类。**`
+- **NEEduMemberService** ***课堂成员*** **管理类。**
 
 | 接口                     | 备注                     |
 | ------------------------ | ------------------------ |
@@ -49,7 +49,7 @@
 | onMemberLeave            | 成员离开房间通知         |
 | onMemberPropertiesChange | 成员属性变化通知         |
 
-- `**NEEduRtcService**`**：音视频管理类。**
+- **NEEduRtcService** **音视频管理类。**
 
 | 接口                   | 备注                                   |
 | ---------------------- | -------------------------------------- |
@@ -68,7 +68,7 @@
 | onMuteAllAudio:        | 全体静音通知                           |
 | onStreamChange:        | 流状态（音频、视频、辅流视频）变化通知 |
 
-- `**NEEduIMService**`**：聊天管理类。**
+- **NEEduIMService** **聊天管理类。**
 
 | 接口                        | 备注                        |
 | --------------------------- | --------------------------- |
@@ -82,7 +82,7 @@
 | onMessageStatusChange:      | 图片消息状态变化通知。      |
 | onAttachmentProgressChange: | 消息附件上传/下载进度通知。 |
 
-- `**NEEduShareScreenService**`**：屏幕共享管理类。**
+- **NEEduShareScreenService** **屏幕共享管理类。**
 
 | 接口                | 备注                             |
 | ------------------- | -------------------------------- |
@@ -96,7 +96,7 @@
 | onPermissionGranted | 屏幕共享权限发生变化             |
 | onScreenShareChange | 屏幕共享状态变更                 |
 
-- `**NEEduBoardService**`**：白板管理类。**
+- **NEEduBoardService** **白板管理类。**
 
 | 接口                 | 备注                         |
 | -------------------- | ---------------------------- |
@@ -107,7 +107,7 @@
 | 回调方法             | 备注                         |
 | onPermissionGranted: | 白板权限变化通知             |
 
-- `**NEEduHandsUpService**`**：举手上台（适用于大班课场景）管理类。**
+- **NEEduHandsUpService** **举手上台（适用于大班课场景）管理类。**
 
 | 接口                  | 备注                     |
 | --------------------- | ------------------------ |
