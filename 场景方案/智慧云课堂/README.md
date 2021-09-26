@@ -105,17 +105,21 @@
 
 - 进入课堂
 
-  ![img](https://yx-web-nosdn.netease.im/quickhtml%2Fassets%2Fyunxin%2Fdoc%2FSolutions-WisdomEducation-Demo4.png)
+<img src="./Images/enterroom.png" alt="enterroom" style="zoom:70%;" />
 
 - 课堂开始
 
-  ![img](https://yx-web-nosdn.netease.im/quickhtml%2Fassets%2Fyunxin%2Fdefault%2FSolutions-WisdomEducation-Demo1.png)
+<img src="./Images/classstart.png" alt="classstart" style="zoom:70%;" />
 
 - 课堂聊天室
 
-  ![img](https://yx-web-nosdn.netease.im/quickhtml%2Fassets%2Fyunxin%2Fdefault%2FSolutions-WisdomEducation-Demo2.png)
+<img src="./Images/chatroom.png" alt="chatroom" style="zoom:70%;" />
+
+- 课堂成员管理页面：
+
+<img src="./Images/members.png" alt="members" style="zoom:38%;" />
 
 - 录制回放
 
-<img src="./Images/screenshot.png" alt="screenshot" style="zoom:80%;" />
+<img src="./Images/screenshot.png" alt="screenshot" style="zoom:27%;" />
 

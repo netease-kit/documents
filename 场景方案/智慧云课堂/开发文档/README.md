@@ -169,3 +169,4 @@ eduManager.enterClass(neEduClassOptions).map {
 }
 ```
 
+教学双方加入教室后，开启课程。智慧云课堂提供了丰富的[课堂互动](进阶功能/课堂互动_Android.md)能力。
