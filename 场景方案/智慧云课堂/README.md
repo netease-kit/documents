@@ -87,39 +87,31 @@
 > 说明：
 > - 智慧云课堂macOS 和 Windows 客户端基于 Electron 框架开发。
 
-## Demo体验
+## 体验应用
 
-网易云信智慧云课堂（PaaS方案）的 Demo 及源码如下，您可以在 Android 、iOS 和 Web 平台中下载安装或直接打开对应 App，快速体验网易云信智慧云课堂方案的产品能力。
+网易云信智慧云课堂（PaaS方案）的 [示例代码及演示APP](https://netease.im/edu#page4)，您可以在 Android 、iOS 和 Web 平台中下载安装或直接打开对应 App，快速体验网易云信智慧云课堂方案的产品能力。
 
-您也可以参考 Demo 源码，在您的本地项目中快速实现 1 对 1 互动教学、1 对 N 互动小班课、互动直播大班课等教育场景。
-
-### 体验应用
-您可以在 [Demo 下载页面](https://netease.im/edu#page4)，下载各个平台的 Demo App，并获取对应源码。
+您也可以参考 示例代码 源码，在您的本地项目中快速实现 1 对 1 互动教学、1 对 N 互动小班课、互动直播大班课等教育场景。
 
 > 说明：
 > - 智慧云课堂（PaaS方案）的示例源码仅供开发者接入参考，实际应用开发场景中，请结合具体业务需求修改使用。
 > - 若您计划将源码用于生产环境，请确保应用正式上线前已经过全面测试，以免因兼容性等问题造成损失。
 
 ### 效果展示
-智慧云课堂 Demo 的界面效果图如下所示：
+智慧云课堂 示例代码 的界面效果图如下所示：
 
 - 进入课堂
-
-<img src="./Images/enterroom.png" alt="enterroom" style="zoom:70%;" />
+<image width="70%" src="Images/enterroom.png">
 
 - 课堂开始
-
-<img src="./Images/classstart.png" alt="classstart" style="zoom:70%;" />
+<image width="70%" src="Images/classstart.png">
 
 - 课堂聊天室
-
-<img src="./Images/chatroom.png" alt="chatroom" style="zoom:70%;" />
+<image width="70%" src="Images/chatroom.png">
 
 - 课堂成员管理页面：
-
-<img src="./Images/members.png" alt="members" style="zoom:38%;" />
+<image width="38%" src="Images/members.png">
 
 - 录制回放
-
-<img src="./Images/screenshot.png" alt="screenshot" style="zoom:27%;" />
+<image width="27%" src="Images/screenshot.png">
 
