@@ -101,7 +101,7 @@
 智慧云课堂 示例代码 的界面效果图如下所示：
 
 - 进入课堂
-<image width="70%" src="Images/enterroom.png">
+<image width="30%" src="Images/enterroom.png">
 
 - 课堂开始
 <image width="70%" src="Images/classstart.png">
@@ -110,8 +110,8 @@
 <image width="70%" src="Images/chatroom.png">
 
 - 课堂成员管理页面：
-<image width="38%" src="Images/members.png">
+<image width="70%" src="Images/members.png">
 
 - 录制回放
-<image width="27%" src="Images/screenshot.png">
+<image width="70%" src="Images/screenshot.png">
 
