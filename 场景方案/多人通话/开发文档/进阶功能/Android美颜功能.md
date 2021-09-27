@@ -4,6 +4,15 @@
 ### 准备工作
 1. 联系[相芯](https://www.faceunity.com)获取美颜证书
 2. 替换lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java 证书文件
+```
+package com.faceunity;
+
+import java.security.MessageDigest;
+
+public class authpack {
+
+}
+```
 ### 初始化美颜功能
 ```
  mFuRender = new FURenderer
@@ -64,5 +73,23 @@
 1. 从setting.gradle文件中删除lib-beauty-faceunity
 2. 删除lib-beauty-faceunity 目录
 3. 删除biz-video-group、lib-modularity两个module的build.gradle文件中对lib-beauty-faceunity的依赖
+```
+    //全局搜索并删除以下代码
+    implementation project(":biz-video-group")
+```
 4. 删除lib-modularity/src/main/java/com/netease/yunxin/nertc/module/base/sdk/NESdkBase.java中的initFaceunity方法
+```
+    //删除以下代码
+      public NESdkBase initFaceunity() {
+        FURenderer.initFURenderer(context);
+        ThreadHelper.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                // 异步拷贝 assets 资源
+                FileUtils.copyAssetsChangeFaceTemplate(context);
+            }
+        });
+        return this;
+    }
+```
 5. 删除美颜和滤镜相关的UI
