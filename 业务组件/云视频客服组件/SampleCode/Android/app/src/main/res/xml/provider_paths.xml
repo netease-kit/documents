@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<paths>
+    <root-path name="name1" path="" />
+    <cache-path name="name2" path="." />
+    <external-cache-path name="name3" path="."/>
+</paths>
