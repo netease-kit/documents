@@ -18,7 +18,7 @@
 
 ## 产品架构
 
-<img src="./images/quickhtml%2Fassets%2Fyunxin%2Fdefault%2FG2IMComponent.png" width="50%" />
+<img src="./images/image-202109271924112.png" width="50%" />
 
 呼叫组件是基于云信信令、音视频2.0、IM 通信能力封装的融合性场景sdk ，用户可以直接使用呼叫组件完成呼叫业务。
 
@@ -29,7 +29,7 @@
 ### 下载 Demo
 |                        Android 安装包                        |                          IOS安装包                           |                           web 体验                           |                          小程序体验                          |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="/Users/wangqiang04/WorkStation/github_document/业务组件/呼叫组件/images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> | <img src="/Users/wangqiang04/WorkStation/github_document/业务组件/呼叫组件/images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> | <img src="/Users/wangqiang04/WorkStation/github_document/业务组件/呼叫组件/images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> | <img src="/Users/wangqiang04/WorkStation/github_document/业务组件/呼叫组件/images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> |
+| <img src="./images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> | <img src="./images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> | <img src="./images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> | <img src="./images/image-20210927184948113.png" alt="image-20210927184948113" width="50%;" /> |
 
 ### 效果展示
 
