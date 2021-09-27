@@ -1,270 +1,265 @@
-# 客户端方案(Android)
+# 客户端方案(iOS)
 
 ## 功能实现流程
 ### 直播基础功能
 1. 主播开播流程   
 ![主播开播](../image/anchor_create_live_room.png)
 * 客户端请求应用服务器创建房间   
-```kotlin
-//lib_live_room_service/repository/LiveRoomApi.kt
-@POST("/live/v1/create")
-    suspend fun createRoom(
-        @Body params: Map<String, @JvmSuppressWildcards Any?>
-    ): Response<LiveInfo>
+```
+/// 主播-创建房间
+/// @param params 创建房间所需参数
+/// @param successBlock 成功回调
+/// @param failedBlock 失败回调
+- (void)createRoomWithParams:(NEPkCreateRoomParams *)params
+               successBlock:(nullable NETSRequestCompletion)successBlock
+                 failedBlock:(nullable NETSRequestError)failedBlock;
 ```
 * 应用服务器通过请求IM服务器和rtc服务器分别创建IM聊天室和rtc 房间   
-* 客户端判断返回值，如果失败退出，成功则分别加入rtc房间和聊天室，以上如果有任何一处失败都直接回调onError，然后退出   
-```kotlin
-//lib_live_room_service/impl/LiveRoomServiceImpl.kt
-    /**
-     * 主播加入房间（聊天室和rtc）
-     */
-    private fun anchorJoinRoom(liveInfo: LiveInfo, callback: NetRequestCallback<LiveInfo>) {
-        this.liveInfo = liveInfo
-        val rtcResult = engine.joinChannel(
-            liveInfo.anchor.roomCheckSum,
-            liveInfo.live.roomCname,
-            liveInfo.anchor.roomUid!!
-        )
-        if (rtcResult == NERtcConstants.ErrorCode.OK) {
-            joinChatRoom(liveInfo, callback)
-        } else {
-            callback.error(rtcResult, "join rtc channel failed")
-        }
-    }
+* 客户端判断返回值，如果失败退出，成功则分别加入rtc房间和聊天室，以上如果有任何一处失败都直接回调error，然后退出   
 ```
-* 创建房间成功后开始添加推流任务
-```kotlin
-//lib_live_room_service/impl/LiveStream.kt
- /**
-         * 添加推流任务
-         *
-         * @param liveRecoder
-         * @return
-         */
-        fun addLiveStreamTask(liveRecoder: LiveStreamTaskRecorder): Int {
-            //初始化task
-            val liveTask = getStreamTask(liveRecoder)
-            liveTask.layout = getSignalAnchorStreamLayout(liveRecoder)
-            ALog.d(
-                LOG_TAG,
-                "addLiveStreamTask recoder = $liveRecoder"
-            )
-            val ret: Int = NERtcEx.getInstance().addLiveStreamTask(
-                liveTask
-            ) { s: String?, code: Int ->
-                if (code == RtcCode.LiveCode.OK) {
-                    ALog.d(
-                        LOG_TAG,
-                        "addLiveStream success : taskId " + liveRecoder.taskId
-                    )
-                } else {
-                    ALog.d(
-                        LOG_TAG,
-                        "addLiveStream failed : taskId " + liveRecoder.taskId + " , code : " + code
-                    )
-                }
-            }
-            if (ret != 0) {
-                ALog.d(
-                    LOG_TAG,
-                    "addLiveStream failed : taskId " + liveRecoder.taskId + " , ret : " + ret
-                )
-            }
-            return ret
+    [self.roomApiService createRoomWithParams:params successBlock:^(NSDictionary * _Nonnull response) {
+        NECreateRoomResponseModel *result = response[@"/data"];
+        [NETSChatroomService enterWithRoomId:result.live.chatRoomId userMode:NETSUserModeAnchor success:^(NIMChatroom * _Nullable chatroom, NIMChatroomMember * _Nullable me) {
+            joinChannelAndPushStreamBlock(result);
+        } failed:^(NSError * _Nullable error) {
+            if (failedBlock) { failedBlock(error); }
+        }];
+                
+    } failedBlock:^(NSError * _Nonnull error, NSDictionary * _Nullable response) {
+        YXAlogError(@"create room failed,Error:%@",error);
+        if (failedBlock) {
+            failedBlock(error);
         }
+    }];
+```
+* 加入RTC房间后，开启推流任务。
+```
+    int res = [NERtcEngine.sharedEngine joinChannelWithToken:token channelName:channelName myUid:uid completion:^(NSError * _Nullable error, uint64_t channelId, uint64_t elapesd,uint64_t uid) {
+        if (error) {
+            if (failedBlock) { failedBlock(error, nil); }
+        } else {
+            NERtcLiveStreamTaskInfo *task = [NETSPushStreamService streamTaskWithUrl:streamUrl uids:@[@(uid)]];
+            [NETSPushStreamService addStreamTask:task successBlock:^{
+                if (successBlcok) { successBlcok(task); }
+            } failedBlock:failedBlock];
+        }
+    }];
+
 ```
 2. 观众加入直播房间   
-* 观众通过调用应用服务器提供的joinRoom接口获取房间信息
-```kotlin
-//lib_live_room_service/repository/LiveRoomApi.kt
-    /**
-     * enter room
-     */
-    @POST("/live/v1/join")
-    suspend fun enterRoom(
-        @Body params: Map<String, @JvmSuppressWildcards Any>
-    ): Response<LiveInfo>
+* 观众通过调用应用服务器提供的/live/v1/join接口获取房间信息
+```
+/// 观众-进入房间（Pk连麦需要）
+/// @param params 创建房间所需参数
+/// @param successBlock 成功回调
+/// @param failedBlock 失败回调
+- (void)enterRoomWithParams:(NEPkEnterRoomParams *)params
+               successBlock:(nullable NETSRequestCompletion)successBlock
+                 failedBlock:(nullable NETSRequestError)failedBlock;
 ```
 * 加入聊天室
-```kotlin
-//lib_live_room_service/impl/LiveRoomServiceImpl.kt
-/**
-     * 加入聊天室
-     */
-    private fun joinChatRoom(liveInfo: LiveInfo, callback: NetRequestCallback<LiveInfo>) {
-        ChatRoomControl.joinChatRoom(
-            liveInfo.live.chatRoomId,
-            if (isAnchor) liveInfo.anchor else liveInfo.joinUserInfo!!,
-            isAnchor,
-            object : NetRequestCallback<Unit> {
-                override fun error(code: Int, msg: String) {
-                    callback.error(code, msg)
-                }
-
-                override fun success(info: Unit?) {
-                    callback.success(liveInfo)
-                }
-
-            })
-    }
 ```
-* 通过播放器拉流
-```kotlin
-//biz_live/yunxin/live/audience/utils/PlayerControl.kt
- /**
-     * 进行播放准备，设置 拉流地址，视频渲染区域
-     *
-     * @param url        拉流地址
-     * @param renderView 视频渲染区域
-     */
-    fun prepareToPlay(url: String?, renderView: TextureView?) {
-        currentUrl = url
-        this.renderView = renderView
-        renderView?.visibility = View.VISIBLE
-        doPreparePlayAction()
+- (void)_joinChatRoom:(NSString *)roomId successBlock:(void(^)(void))successBlock failedBlock:(void(^)(NSError *))failedBlock
+{
+    if (isEmptyString(roomId)) {
+        if (failedBlock) {
+            NSError *error = [NSError errorWithDomain:@"NETSAudience" code:NETSRequestErrorMapping userInfo:@{NSLocalizedDescriptionKey: @"观众端聊天室ID为空"}];
+            failedBlock(error);
+        }
+        return;
     }
+    
+   // 检查主播是否在线
+    void(^checkAuthodOnline)(NSString *) = ^(NSString *roomId) {
+        [NETSChatroomService isOnlineWithRoomId:roomId completion:^(BOOL isOnline) {
+            if (isOnline) {
+                if (successBlock) { successBlock(); }
+            } else {
+                if (failedBlock) {
+                    NSError *error = [NSError errorWithDomain:@"NETSAudience" code:NETSRequestErrorMapping userInfo:@{NSLocalizedDescriptionKey: @"主播已下线"}];
+                    failedBlock(error);
+                }
+            }
+        }];
+    };
+    
+    // 加入聊天室
+    [NETSChatroomService enterWithRoomId:roomId userMode:NETSUserModeAudience success:^(NIMChatroom * _Nullable chatroom, NIMChatroomMember * _Nullable me) {
+        checkAuthodOnline(roomId);
+    } failed:^(NSError * _Nullable error) {
+        if (failedBlock) { failedBlock(error); }
+    }];
+}
+```
+* 布局播放器
+```
+- (void)_layoutPlayerWithY:(CGFloat)y
+{
+    [self.contentView addSubview:self.player.view];
+    [self.contentView sendSubviewToBack:self.player.view];
+    
+    self.player.view.top = y;
+    
+    if (y == 0) {
+        self.player.view.frame = [self _fillPlayerRect];
+    }
+}
+```
+*设置拉流地址
+```
+/// 播放指定url源
+- (void)_playWithUrl:(NSString *)urlStr
+{
+    NSURL *url = [NSURL URLWithString:urlStr];
+    [self.player setPlayUrl:url];
+    [self.player prepareToPlay];
+}
 ```
 3. 观众打赏流程   
 ![观众打赏流程图](../image/reward.png)
 * 观众调用应用服务器提供的打赏接口打赏
-```kotlin
-//lib_live_room_service/repository/LiveRoomApi.kt
-    /**
-     * audience reward to anchor
-     */
-    @POST("/live/v1/reward")
-    suspend fun reward(
-        @Body params: Map<String, @JvmSuppressWildcards Any>
-    ): Response<Unit>
+```
+/// 直播间打赏
+/// @param params 请求参数
+/// @param successBlock 成功回调
+/// @param failedBlock 失败回调
+- (void)requestRewardLiveRoomWithParams:(NEPkRewardParams *)params
+                   successBlock:(nullable NETSRequestCompletion)successBlock
+                    failedBlock:(nullable NETSRequestError)failedBlock;
 ```
 * 应用服务器通过聊天室消息将打赏信息同步给房间里的所有人
-```kotlin
-//lib_live_room_service/chatroom/control/ChatRoomControl.kt
-  /**
-     * 聊天室服务回调监听（IM SDK）
-     */
-    private val chatRoomMsgObserver: Observer<MutableList<ChatRoomMessage>> =
-        Observer { chatRoomMessages ->
-            if (chatRoomMessages.isEmpty()) {
-                return@Observer
-            }
-            if (liveUser == null) {
-                return@Observer
-            }
-            for (message in chatRoomMessages) {
-                //...
-                // 打赏
-                val attachStr = message.attachStr
-                val jsonObject: JsonObject = GsonUtils.fromJson<JsonObject>(
-                    attachStr,
-                    JsonObject::class.java
-                )
-                val type = jsonObject["type"].asInt
-                if (type == Constants.MsgType.MSG_TYPE_REWARD) {
-                    val rewardInfo: RewardInfo =
-                        GsonUtils.fromJson(attachStr, RewardInfo::class.java)
-                    delegate?.onUserReward(rewardInfo)
-                }
-
-            }
+```
+-(void)onRecvMessages:(NSArray<NIMMessage *> *)messages {
+    for (NIMMessage *message in messages) {
+        if (![message.session.sessionId isEqualToString:self.chatroomId]
+            && message.session.sessionType == NIMSessionTypeChatroom) {
+            //不属于这个聊天室的消息
+            return;
         }
+        switch (message.messageType) {
+            case NIMMessageTypeText://文本类型消息
+                
+                break;
+            case NIMMessageTypeCustom: {
+                
+                NIMCustomObject *object = message.messageObject;
+                
+                if ([object.attachment isKindOfClass:[NEPkLiveStartAttachment class]]) {
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(receivePkStartAttachment:)]) {
+                        NEPkLiveStartAttachment *data = (NEPkLiveStartAttachment *)object.attachment;
+                        [self.delegate receivePkStartAttachment:data];
+                    }
+                }else if ([object.attachment isKindOfClass:[NEStartPunishAttachment class]]) {
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(receivePunishStartAttachment:)]) {
+                        NEStartPunishAttachment *data = (NEStartPunishAttachment *)object.attachment;
+                        [self.delegate receivePunishStartAttachment:data];
+                    }
+                }else if ([object.attachment isKindOfClass:[NEPkEndAttachment class]]) {
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(receivePkEndAttachment:)]) {
+                        NEPkEndAttachment *data = (NEPkEndAttachment *)object.attachment;
+                        [self.delegate receivePkEndAttachment:data];
+                    }
+                }else if ([object.attachment isKindOfClass:[NEPkRewardAttachment class]]){
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(receivePkRewardAttachment:)]) {
+                        NEPkRewardAttachment *data = (NEPkRewardAttachment *)object.attachment;
+                        [self.delegate receivePkRewardAttachment:data];
+                    }
+                }else if ([object.attachment isKindOfClass:[NELiveTextAttachment class]]){
+                    if (_delegate && [_delegate respondsToSelector:@selector(onRecvRoomTextMsg:)]) {
+                        [_delegate onRecvRoomTextMsg:@[message]];
+                    }
+                }
+            }
+                 
+                break;
+            case NIMMessageTypeNotification:{
+                [self dealWithNotificationMessage:message];
+            }
+                break;
+            default:
+                break;
+        }
+    }
+}
 ```
 ### PK直播
 1. 开始PK   
 ![](../image/startPk.png)
 * 主播A通过调用应用服务器接口发起Pk请求
-```kotlin
-//lib_live_pk_service/impl/PkServiceImpl.kt
-/**
-     * request Pk for other anchor
-     * accountId:the anchor you want pk
-     */
-    override fun requestPk(accountId: String, callback: NetRequestCallback<Unit>) {
-        targetAccId = accountId
-        pkScope?.launch {
-            Request.request(
-                { PkRepository.pkAction(Constants.PkAction.PK_INVITE, accountId) },
-                success = {
-                    callback.success()
-                },
-                error = { code: Int, msg: String ->
-                    callback.error(code, msg)
-                }
-            )
+```
+      [[NEPkService sharedPkService] requestPkWithOperation:NEPkOperationInvite targetAccountId:room.anchor.accountId successBlock:^(NSDictionary * _Nonnull response) {
+        successBlock(room.anchor.nickname);
+    } failedBlock:^(NSError * _Nonnull error, NSDictionary * _Nullable response) {
+        if (error) {
+            YXAlogError(@"requestPk failed,error = %@",error);
+            failedBlock(error);
         }
-//ib_live_pk_service/repository/PkApi.kt
-     /**
-     * Pk action
-     */
-    @POST("/pk/v1/inviteControl")
-    suspend fun pkAction(
-        @Body params: Map<String, @JvmSuppressWildcards Any?>
-    ): Response<Unit>   
+        [NETSToast hideLoading];
+    }];
 ```
 * 主播B通过解析应用服务器发送的透传消息接收PK请求并响应   
 * 同意后双发开始跨频道转发
-```kotlin
-//lib_live_room_service/impl/LiveRoomServiceImpl.kt
-override fun startChannelMediaRelay(token: String, channelName: String, uid: Long): Int {
-        //初始化目标房间结构体
-        val addRelayConfig = NERtcMediaRelayParam().ChannelMediaRelayConfiguration()
-        //设置目标房间1
-        val dstInfoA = NERtcMediaRelayParam().ChannelMediaRelayInfo(token, channelName, uid)
-        addRelayConfig.setDestChannelInfo(channelName, dstInfoA)
-        //开启转发
-        return NERtcEx.getInstance().startChannelMediaRelay(addRelayConfig)
+```
+- (void)startRtcChannelRelayWithChannelName:(NSString *)channelName token:(NSString *)checkSum rooomUid:(int64_t)uid {
+    ///实例化config
+    NERtcChannelMediaRelayConfiguration *config = [[NERtcChannelMediaRelayConfiguration alloc]init];
+    //添加目标房间1信息
+    NERtcChannelMediaRelayInfo *info = [[NERtcChannelMediaRelayInfo alloc]init];
+    info.channelName = channelName;
+    info.token = checkSum;
+    info.uid = uid;
+    [config setDestinationInfo:info forChannelName:info.channelName];
+
+    //开始转发
+    int ret = [[NERtcEngine sharedEngine] startChannelMediaRelay:config];
+    if(ret == 0) {
+        YXAlogError(@"startRtcChannelRelay success");
+    }else {
+        //失败处理
+        YXAlogError(@"startRtcChannelRelay failed,error = %d",ret);
     }
+}
 ```
 * 应用服务器通过抄送接收双发跨频道转发的消息判断PK开始
 * 应用服务器通过发送聊天室消息告诉双发PK开始
 * 双发主播更新推流信息
-```kotlin
-//lib_live_room_service/impl/LiveRoomServiceImpl.kt
-/**
-     * update push stream task
-     */
-    override fun updateLiveStream(liveRecoder: LiveStreamTaskRecorder): Int {
-        val task = LiveStream.getStreamTask(liveRecoder)
-        task.layout = when (liveRecoder.type) {
-            Constants.LiveType.LIVE_TYPE_DEFAULT -> {
-                LiveStream.getSignalAnchorStreamLayout(liveRecoder)
-            }
-            Constants.LiveType.LIVE_TYPE_PK -> {
-                LiveStream.getPkLiveStreamLayout(liveRecoder)
-            }
-            Constants.LiveType.LIVE_TYPE_SEAT -> {
-                LiveStream.getSeatLiveStreamLayout(liveRecoder)
-            }
-            else -> null
+```
+//更新推流任务
+- (void)_updateLiveStreamTask:(NSArray *)uids {
+    
+    NERtcLiveStreamTaskInfo* taskInfo = [NETSPushStreamService streamTaskWithUrl:self.createRoomModel.live.liveConfig.pushUrl uids:uids];
+    
+    [NETSPushStreamService updateLiveStreamTask:taskInfo successBlock:^{
+        YXAlogInfo(@"updateLiveStreamTask success");
+    } failedBlock:^(NSError * _Nonnull error) {
+        YXAlogError(@"updateLiveStream failed,error = %@",error);
+    }];
+}
+
+
+
+//更新推流任务
++ (void)updateLiveStreamTask:(NERtcLiveStreamTaskInfo *)taskInfo
+               successBlock:(void(^)(void))successBlock
+                failedBlock:(void(^)(NSError *))failedBlock {
+    int ret = [NERtcEngine.sharedEngine updateLiveStreamTask:taskInfo
+                                               compeltion:^(NSString * _Nonnull taskId, kNERtcLiveStreamError errorCode) {
+    if (errorCode == 0) {
+        
+        successBlock();
+          //推流任务添加成功
+        }else {
+          //推流任务添加失败
+            NSError *error = [NSError errorWithDomain:@"NETSRtcErrorDomain" code:errorCode userInfo:@{NSLocalizedDescriptionKey: @"updateLiveStream failed"}];
+            failedBlock(error);
         }
-        return LiveStream.updateStreamTask(task)
+    }];
+    if (ret != 0) {
+      //更新失败
+        NSError *error = [NSError errorWithDomain:@"NETSRtcErrorDomain" code:ret userInfo:@{NSLocalizedDescriptionKey: @"updateLiveStream failed"}];
+        failedBlock(error);
     }
-//lib_live_room_service/impl/LiveStream.kt
-fun updateStreamTask(task: NERtcLiveStreamTaskInfo): Int {
-            val ret: Int = NERtcEx.getInstance().updateLiveStreamTask(
-                task
-            ) { s: String?, code: Int ->
-                if (code == RtcCode.LiveCode.OK) {
-                    ALog.d(
-                        LOG_TAG,
-                        "updateStreamTask success : taskId " + task.taskId
-                    )
-                } else {
-                    ALog.d(
-                        LOG_TAG,
-                        "updateStreamTask failed : taskId " + task.taskId + " , code : " + code
-                    )
-                }
-            }
-            if (ret != 0) {
-                ALog.d(
-                    LOG_TAG,
-                    "updateStreamTask failed : taskId " + task.taskId + " , ret : " + ret
-                )
-            }
-            return ret
-        }
+}
 ```
 2. 结束PK
 ![](../image/endPk.png)
