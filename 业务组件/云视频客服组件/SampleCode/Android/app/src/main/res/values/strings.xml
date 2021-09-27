@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">智慧云营业厅</string>
+    <string name="correspondent_picked_up">对方接听</string>
+    <string name="correspondent_reject_pick_up">对方拒绝接听</string>
+    <string name="your_called_agent_offline">您所呼叫的客服当前不在线</string>
+    <string name="you_canceled_call">您已经取消呼叫</string>
+    <string name="cancel_call_failed">取消呼叫失败</string>
+    <string name="cancel_call_exception">取消呼叫异常</string>
+    <string name="your_queue_up_position">当前坐席忙，排队中您当前排在第%1$s位</string>
+    <string name="net_recovery">网络已经恢复</string>
+    <string name="net_error">网络异常，请检查网络</string>
+    <string name="permission_is_necessity">即将申请的权限是程序必须依赖的权限</string>
+    <string name="you_need_open_permissions">您需要去应用程序设置当中手动开启权限</string>
+    <string name="app_not_have_permissions">应用未被授予以下权限：</string>
+    <string name="i_know">我已明白</string>
+    <string name="input_username">请输入客户姓名</string>
+    <string name="username_incorrect">客户姓名格式不正确，最多支持20个字符，支持汉子、字母、数字、空格</string>
+    <string name="select_business_type">请选择业务类型</string>
+    <string name="please_select">请选择</string>
+    <string name="business_type_not_get">业务类型列表没有获取到</string>
+    <string name="background_notification_call_page_content">客服已经将您转接，请点击启动呼叫页面</string>
+    <string name="background_notification_content">客服已经接听，请点击打开通话页面</string>
+    <string name="doing_business">客服已经接听，请点击通知栏打开通话页面</string>
+    <string name="calling">正在呼叫</string>
+
+    <string name="loading_progress">玩命加载中</string>
+    <string name="login">玩命登录中...</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+    <string name="inputSubscribeId">请输入你需要订阅人的id</string>
+    <string name="inputSubscribeIds">请输入你需要订阅人的id,用英文逗号分割</string>
+    <string name="audioSubscribeManager">音频订阅管理</string>
+    <string name="audioSubscribeAll">订阅所有音频</string>
+    <string name="audioUnSubscribeAll">取消订阅所有音频</string>
+    <string name="audioSubscribe">订阅成员音频</string>
+    <string name="audioUnSubscribe">取消订阅成员音频</string>
+    <string name="audioSubscribes">批量订阅成员音频</string>
+    <string name="audioUnSubscribes">批量取消订阅成员音频</string>
+</resources>
