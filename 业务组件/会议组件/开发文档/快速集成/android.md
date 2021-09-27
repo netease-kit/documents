@@ -17,11 +17,11 @@
 
     a. 运行Android Sudio，顶部菜单依次选择“File -> New -> New Project...”新建工程，选择'Phone and Tablet' -> 'Empty Activity' 单击Next。
 
-    ![new android project](images/android_create_project.png)
+    ![new android project](../../images/android_create_project.png)
 
     b. 配置工程相关信息，请注意Minimum API Level为API 21。
 
-    ![configure project](images/android_create_project_set.png)
+    ![configure project](../../images/android_create_project_set.png)
 
     c. 单击'Finish'完成工程创建。
 
@@ -93,10 +93,10 @@
     ```java
     //Token登录
     NEMeetingSDK.getInstance().login(String account, String token, NECallback<Void> callback);
-
+    
     //SSOToken登录
     NEMeetingSDK.getInstance().loginWithSSOToken(String ssoToken, NECallback<Void> callback);
-
+    
     //自动登录
     NEMeetingSDK.getInstance().tryAutoLogin(NECallback<Void> callback);
     ```
@@ -670,7 +670,7 @@ private void configMoreMenus(NEMeetingOptions options) {
     }
 ```
 2. 设置回调接口开始监听，并在回调方法中处理自定义按钮的事件
-  
+
 ```java
 // 监听"菜单点击"，只需设置一次即可，不用每次入会都进行设置
     private void setupMenuClickListener() {

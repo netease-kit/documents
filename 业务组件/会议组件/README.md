@@ -54,11 +54,11 @@
 ### 下载体验包
 | Android 安装包 | IOS安装包 |
 | :---: | :---: |
-| <image width="50%" src="images/meeting-android.png"> </image>  | <image width="50%" src="images/meeting-ios.png"> </image> |
+| <image width="50%" src="images/meeting-android.png"> </image>  | <image width="50%" src="images/meeting-iOS.png"> </image> |
 
 | mac 体验包 | windows体验包 | TV体验包 |
-| :---: | :---: |
-|[ 下载 ](https://yx-web.nos-hz.163yun.com/package/meeting_macos_online.dmg)| [ 下载 ](https://yx-web.nos-hz.163yun.com/package/meeting_win_online.exe) | [ 下载 ](https://yx-web.nos-hz.163yun.com/package/1610715275/meeting_tv_20210115160553_758967a_common.apk ) |
+| ---------- | ------------- | -------- |
+| [ 下载 ](https://yx-web.nos-hz.163yun.com/package/meeting_macos_online.dmg) | [ 下载 ](https://yx-web.nos-hz.163yun.com/package/meeting_win_online.exe) | [ 下载 ](https://yx-web.nos-hz.163yun.com/package/1610715275/meeting_tv_20210115160553_758967a_common.apk ) |
 
 ### 效果展示
 ** 视频会议页面 **
