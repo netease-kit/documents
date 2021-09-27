@@ -1,6 +1,7 @@
-### NEMeeting iOS SDK Tutorial
+# 跑通ios示例项目
 
-此示例项目演示了如何快速集成 NEMeeting SDK 实现在线会议功能，示例代码中包含了详细的API调用场景、参数封装以及回调处理。
+
+网易智慧企业 在 GitHub 上提供一个开源的网易会议组件示例项目 [NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/iOS)。本文介绍如何快速跑通该示例项目，体验 在线会议功能。示例代码中包含了详细的API调用场景、参数封装以及回调处理。 你也可以直接体验我们的线上[网易会议](https://meeting.163.com/)产品。
 
 示例项目包含的功能如下：
 
@@ -17,27 +18,40 @@
 | 加入会议 |      需要      |    不需要    |
 | 创建会议 |      需要      |     需要     |
 
-## 解压工程
-
-进入NEMeetingDemoSampleCode/NEMeetingDemo路径，执行
-
-```
-pod install
-```
 
 
+## 前提条件
 
-#### 声明AppKey
+ - XCode11.6 +
+ - iOS 8.0 或以上版本的设备
+ - 网易会议账户，以及网易会议AppKey[参考文档](../../../云信控制平台/应用创建和服务开通.md)
+ - 有效的开发者签名、设备权限设置
+ - 真实 iOS 设备(部分模拟器会存在功能缺失或者性能问题，推荐使用真机)
 
-Appkey是应用接入会议SDK的凭证，开发者首先需要在网易会议开发者平台完成申请，并将其填写至`"NEMeetingDemo/Config.m"`资源文件中的对应资源项上。
+## 操作步骤
+1. 创建云信项目和获取 APPKEY
 
-```xml
-NSString *const kAppKey = 请填入您的AppKey;
-```
+   - 参考文档 [应用创建和服务开通](../../../云信控制平台/应用创建和服务开通.md)
 
-完成AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
+2. 配置示例项目
+   考以下步骤配置示例项目：
 
-#### 对接会议账号
+     - 克隆[NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/iOS) 仓库至本地.
+     - 进入NEMeetingDemoSampleCode/NEMeetingDemo路径，执行
+       ```
+       pod install
+       ```
+    - Appkey是应用接入会议SDK的凭证，开发者首先需要在网易会议开发者平台完成申请，并将其填写至`"NEMeetingDemo/Config.m"`资源文件中的对应资源项上。
+      ```xml
+         NSString *const kAppKey = 请填入您的AppKey;
+      ```
+    - AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
+
+  4. 编译并运行示例项目
+     连接上 iOS 设备后，用 Xcode 打开示例项目，然后编译并运行项目。
+
+
+## 示例项目会议账号
 
 为了体验示例项目中的创建会议功能，在以上完善应用Appkey的基础上，还需要使用会议账号完成SDK的登录鉴权。
 
@@ -53,34 +67,6 @@ NSString *const kAppKey = 请填入您的AppKey;
 }
 ```
 
-
-
-
-
 返回当前对应AppKey下一个真实有效的会议账号的ID和TOKEN，然后调用completion回调出去，它们会被用来作为参数完成会议SDK中 login 接口的调用。
 
 完成会议账号的登录实现后，运行示例项目，可体验完整的会议功能。
-
-### 运行环境
-
-- XCode11.6 +
-- 真实 iOS 设备(部分模拟器会存在功能缺失或者性能问题，推荐使用真机)
-
-|      |      |      |
-| :--- | :--- | :--- |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
