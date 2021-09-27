@@ -11,19 +11,24 @@
   - 有效的 网易云信 开发者账号。
 
 ## 操作步骤
-  1. 创建云信项目
-  2. 获取 APPKEY
-  3. 配置示例项目
-		参考以下步骤配置示例项目：
-		- 克隆  [NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/Android) 仓库至本地。
-		- 找到 NEMeeting/SampleCode/Android 示例项目文件夹，在 app/src/main/res/values/strings.xml 文件中填写你从声网控制台获取到的 AppKey。
+  1. 创建云信项目和获取 APPKEY
+       - 参考文档 [应用创建和服务开通](../../../云信控制平台/应用创建和服务开通.md)
+  2. 配置示例项目
+    考以下步骤配置示例项目：
+   - 克隆[NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/Android) 仓库至本地。
+  ```
+  <?xml version="1.0" encoding="utf-8"?>
+       <resources>
+         <!--TODO-->
+         <!--Replace With Your AppKey Here-->
+         <string name="appkey">Your AppKey</string>
+       </resources>
+  ```
+   - 找到NEMeeting/SampleCode/Android 示例项目文件夹，在 app/src/main/res/values/strings.xml 文件中填写你从云信控制台获取的AppKey
+  AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
 
-      <?xml version="1.0" encoding="utf-8"?>
-      <resources>
-        <!--TODO-->
-        <!--Replace With Your AppKey Here-->
-        <string name="appkey">Your AppKey</string>
-      </resources>
-    完成AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
-  4. 集成SDK
-  5. 编译并运行示例项目
+  3. 集成SDK说明
+	
+
+	
+  4. 编译并运行示例项目
