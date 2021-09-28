@@ -48,9 +48,13 @@
 2. 配置示例项目
    考以下步骤配置示例项目：
    1. 从GitHub中下载源码。[源码地址](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/Windows_macOS)
+
    2. 在NEMeeting/SampleCode/Windows_macOS/目录下，使用 Qt creator 打开 NEMeeting-SDK-Sample.pro文件。
+
    3. 点击 Projects，在 Build&Run 下选择构建工具。例如 x86-windows-msvc0217-pe-64bit 或 x86-windows-msvc0217-pe-32bit。
+
    4. 选择 Release 作为构建选项，点击构建按钮进行构建。
+
    5. 构建完成后，点击运行按钮运行项目。 在界面上输入AppKey、账号ID和密码，点击 LOGIN 即可进入会议主页。
    	<img src="../images/macos_windows_demo.png"/>
 

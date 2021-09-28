@@ -105,16 +105,16 @@
 
 1. 配置初始化相关参数
 
-```java
-NEMeetingSDKConfig config = new NEMeetingSDKConfig();
-config.appKey = Constants.APPKEY; //应用AppKey
-```
+    ```java
+    NEMeetingSDKConfig config = new NEMeetingSDKConfig();
+    config.appKey = Constants.APPKEY; //应用AppKey
+    ```
 
 2. 调用接口并进行回调处理，该接口无额外回调结果数据
 
-```java
-NEMeetingSDK.getInstance().initialize(getApplication(), config);
-```
+    ```java
+    NEMeetingSDK.getInstance().initialize(getApplication(), config);
+    ```
 
 #### 注意事项
 
@@ -132,16 +132,16 @@ NEMeetingSDK.getInstance().initialize(getApplication(), config);
 
 1. 获取登录用账号ID和Token。Token由网易会议应用服务器下发，但SDK不提供对应接口获取该信息，需要开发者自己实现。
 
-```java
-String accountId = "accountId";
-String accountToken = "accountToken";
-```
+    ```java
+    String accountId = "accountId";
+    String accountToken = "accountToken";
+    ```
 
 2. 登录并进行回调处理，该接口无额外回调结果数据
 
-```java
-NEMeetingSDK.getInstance().login(accountId, accountToken);
-```
+    ```java
+    NEMeetingSDK.getInstance().login(accountId, accountToken);
+    ```
 
 #### 注意事项
 
@@ -159,56 +159,56 @@ NEMeetingSDK.getInstance().login(accountId, accountToken);
 
 1. 注册回调接口开始监听，并在回调方法中处理感兴趣的事件
 
-```java
-NEMeetingStatusListener listener = new NEMeetingSDK.NEMeetingListener() {
-        @Override
-        public void onPairCodeChange(String pairCode) {
-            //配对码变更
-        }
+    ```java
+    NEMeetingStatusListener listener = new NEMeetingSDK.NEMeetingListener() {
+            @Override
+            public void onPairCodeChange(String pairCode) {
+                //配对码变更
+            }
 
-        @Override
-        public void onBind(String account) {
-            //遥控器绑定
-        }
+            @Override
+            public void onBind(String account) {
+                //遥控器绑定
+            }
 
-        @Override
-        public void onUnbind() {
-            //遥控器解绑
-        }
+            @Override
+            public void onUnbind() {
+                //遥控器解绑
+            }
 
-        @Override
-        public void onEnteringMeeting() {
-            //正在进入会议
-        }
+            @Override
+            public void onEnteringMeeting() {
+                //正在进入会议
+            }
 
-        @Override
-        public void onEnterMeetingSuccess() {
-            //进入会议成功
-        }
+            @Override
+            public void onEnterMeetingSuccess() {
+                //进入会议成功
+            }
 
-        @Override
-        public void onEnterMeetingCancel() {
-            //进入会议取消
-        }
+            @Override
+            public void onEnterMeetingCancel() {
+                //进入会议取消
+            }
 
-        @Override
-        public void onEnterMeetingFailed(int code, String msg) {
-            //进入会议失败
-        }
+            @Override
+            public void onEnterMeetingFailed(int code, String msg) {
+                //进入会议失败
+            }
 
-        @Override
-        public void onFailed(int errorCode) {
-            //错误信息返回
-        }
-    };
-NEMeetingSDK.getInstance().addMeetingListener(listener);
-```
+            @Override
+            public void onFailed(int errorCode) {
+                //错误信息返回
+            }
+        };
+    NEMeetingSDK.getInstance().addMeetingListener(listener);
+    ```
 
 2. 反注册回调接口停止监听
 
-```java
-NEMeetingSDK.getInstance().removeMeetingListener(listener);
-```
+    ```java
+    NEMeetingSDK.getInstance().removeMeetingListener(listener);
+    ```
 
 #### 注意事项
 
@@ -218,7 +218,7 @@ NEMeetingSDK.getInstance().removeMeetingListener(listener);
 
 ### 错误码
 
-```
+```java
 public class NEMeetingErrorCode {
         /**
          * 获取配对码异常
@@ -241,7 +241,6 @@ public class NEMeetingErrorCode {
          */
         public final static int FAILED = -1;
     }
-
 ```
 --------------------
 
