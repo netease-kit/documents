@@ -21,7 +21,7 @@
 1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-iOS)
 2. cd到已下载的项目路径下，执行podinstall。
 3. 找到AppKey.h 文件替换自己的appkey,配置对应的后台地址。
-* 此处的appkey请联系技术支持同学确认后台开通相关功能
+  * 此处的appkey请联系技术支持同学确认后台开通相关功能
 4. 如果需要使用美颜功能请使用自己的相芯证书替换authpack.h的内容
 5. 在xcode中执行run操作。
 
