@@ -1,5 +1,5 @@
 # 跑通互动直播
-互动直播示例代码提供普通的单主播直播已经Pk直播和连麦直播
+互动直播示例代码提供普通的单主播直播已经PK直播和连麦直播
 
 ## 前提条件
 在开始运行示例项目之前，请确保您已完成以下操作：  
@@ -17,7 +17,7 @@
 在开始运行示例项目之前，请确保开发环境满足以下要求：
 * Android SDK API 等级 19 或以上。
 * Android Studio 4.0 或以上版本。  
-  如果低于此版本，需要调整 build.gradle 和 gradle\wrapper\gradle-wrapper.properties 中匹配的版本。
+  如果低于此版本，需要调整 `build.gradle` 和 `gradle\wrapper\gradle-wrapper.properties` 中匹配的版本。
 * Android 系统 4.3 或以上版本的移动设备。
 
 ## 示例项目结构
@@ -37,8 +37,8 @@
 ## 运行示例源码
 1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
 2. 导入Android Studio
-3. 找到config/test.properties 文件替换自己的appkey   
-    *  test.properties 是debug包的配置环境，online.properties 是release包的配置环境   
+3. 找到 `config/test.properties` 文件替换自己的 appkey   
+    *  `test.properties` 是debug包的配置环境，`online.properties` 是 release 包的配置环境   
     *  此处的appkey请联系技术支持获取配置互动直播服务器使用权限
-4. 如果需要使用美颜功能请使用自己的相芯证书替换lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java 证书文件
+4. 如果需要使用美颜功能请使用自己的相芯证书替换 `lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java` 证书文件
 5. 运行在自己的Android设备上
