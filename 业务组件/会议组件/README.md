@@ -85,16 +85,26 @@
 
 ### 效果展示
 - 视频会议页面
-   <image width="30%" src="images/demo_meeting_camera.jpeg">
-- 视频会议共享屏幕 
-   <image width="30%" src="images/demo_meeting_share_screen.jpeg">
-  
+
+    <image width="30%" src="images/demo_meeting_camera.jpeg">
+
+- 视频会议共享屏幕
+
+    <image width="30%" src="images/demo_meeting_share_screen.jpeg">
+
 - 视频会议白板
-   <image width="30%" src="images/demo_meeting_whiteborad.jpeg">
+
+    <image width="30%" src="images/demo_meeting_whiteborad.jpeg">
+
 - 视频会议聊天
-   <image width="30%" src="images/demo_meeting_white_chat.jpeg">
-- 视频会议成员管理 
-   <image width="30%" src="images/demo_meeting_user_list.jpeg">
+
+    <image width="30%" src="images/demo_meeting_white_chat.jpeg">
+
+- 视频会议成员管理
+
+    <image width="30%" src="images/demo_meeting_user_list.jpeg">
+
 - 视频会议其他功能
-   <image width="30%" src="images/demo_meeting_other.jpeg">
+
+    <image width="30%" src="images/demo_meeting_other.jpeg">
 
