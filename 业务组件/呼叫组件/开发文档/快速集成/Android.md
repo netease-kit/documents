@@ -70,7 +70,7 @@ android{
 }
 
 dependencies {
-    implementation 'com.netease.yunxin.kit:call-ui:1.3.3'
+    implementation 'com.netease.yunxin.kit:call-ui:1.4.0'
 }
 ```
 

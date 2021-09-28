@@ -4,6 +4,7 @@
 
 | 版本号 | 适配 IM 版本 | 适配 RTC版本 | 更新内容                                                     | 发布日期   |
 | :----- | :----------- | :----------- | :----------------------------------------------------------- | :--------- |
+| 1.4.0  | 8.5.5        | 4.2.105      | 1. 支持呼叫通话前支持切换通话类型；<br />2. 添加音频转视频功能；<br />3. 增加通话中根据 accId获取 rtcUid 或根据rtcUid 获取 accId；<br />4. 修改组件展示demo，从即时通讯demo 更换为 1对1demo； | 2021-09-28 |
 | 1.3.3  | 8.5.5        | 4.0.9        | 1. 支持自定义呼叫推送配置；<br />2. 支持UI组件，用户可通过引入呼叫UI组件实现接入；<br />3. 支持设置失败话单发送开关;<br />4. 支持自定义 CallService 允许用户自己实现呼叫⻚面启动；<br />5. 支持 CallExtension 用于 rtc 相关扩展(如修改 rtc 初始化流程)；<br />6. RTC版本升级为4.0.9，IM 升级为 8.5.5。 | 2021-08-26 |
 | 1.3.1  | 8.4.6        | 4.0.7        | 1. 修复外部设置视频参数无效bug；                             | 2021-07-16 |
 | 1.3.0  | 8.4.6        | 4.0.         | 1. 添加 channelName，channelId，uid，accid 映射关系回调 onJoinChannel；<br />2. 移动端 添加 muteLocalVideo 接口以及 onVideoMute 回调；<br />3. 移动端 添加 onAudioMute 回调；<br />4. 添加点对点通话类型埋点事件上报；<br />5. call、groupCall、groupInvite接口支持自定义扩展参数，被叫方在 onInvited 回调中解析对应参数。 | 2021-06-24 |
@@ -16,6 +17,29 @@
 ---
 
 ## Changelog
+
+## 1.4.0
+
+### 新增特性
+
+1. 添加音频转视频功能；
+2. 增加通话中根据 accId获取 rtcUid 或根据rtcUid 获取 accId；
+
+### 功能更新
+
+1. 支持呼叫通话前支持切换通话类型；
+2. 修改组件展示demo，从即时通讯demo 更换为 1对1demo；
+
+### API变更
+
+#### 新增API
+
+1. `NERTCVideoCall#getAccIdByRtcUid` 根据 RtcUid 获取对应的 AccId；
+2. `NERTCVideoCall#getRtcUidByAccId` 根据 AccId 获取对应的 RtcUid；
+
+#### 更新API
+
+1. `NERTCVideoCall#switchCallType` 支持 `ChannelType#VIDEO` 参数 从音频切换为视频通话；
 
 ## 1.3.3
 
