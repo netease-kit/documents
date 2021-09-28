@@ -6,7 +6,7 @@
 
 - 通过账号、密码完成会议SDK登录鉴权；注销登录
 - 创建会议、加入会议
-- 会议内提供的其他功能(如会议控制、屏幕共享等) 
+- 会议内提供的其他功能(如会议控制、屏幕共享等)
 
 ### 运行示例程序
 
@@ -23,7 +23,7 @@
   - [云信开发者账号](https://id.163yun.com/register?h=media&t=media&from=nim&clueFrom=nim)
   - 在云信控制台创建应用，并获取对应的 AppKey  [参考文档](../../../云信控制平台/应用创建和服务开通.md)。
   - 为此应用开通音视频通话 2.0、IM 专业版相关服务
-  - [网易会议账户](##示例项目会议账号)
+  - [网易会议账号](##示例项目会议账号)
 
 ## 开发环境
 
@@ -40,11 +40,11 @@
 ## 操作步骤
   1. 创建云信项目和获取 APPKEY
        - 参考文档 [应用创建和服务开通](../../../云信控制平台/应用创建和服务开通.md)
-       
+
   2. 配置示例项目
        考以下步骤配置示例项目：
-         - 克隆[NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/Android) 仓库至本地.
-        - 找到NEMeeting/SampleCode/Android 示例项目文件夹，在 app/src/main/res/values/strings.xml 文件中填写你从云信控制台获取的AppKey
+        - 克隆[NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/Android) 仓库至本地.
+        - 找到`NEMeeting/SampleCode/Android` 示例项目文件夹，在 `app/src/main/res/values/strings.xml` 文件中填写你从云信控制台获取的AppKey
           ```
           <?xml version="1.0" encoding="utf-8"?>
                 <resources>
@@ -54,21 +54,22 @@
           </resources>
           ```
         - AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
-       
+
   3. 集成SDK说明
 	在app/build.gradle文件中已经添加了网易会议SDK和NIM-SDK依赖
 	  ```
-	  //NEMeeting-SDK	
-	      implementation 'com.netease.yunxin:meetinglib:2.0.0'
-	      //NIM-SDK, 如果单独接入了云信NIM，或者需要依赖指定的NIM版本，则可根据需要进行依赖声明。
-	      //正常情况下不用声明
-	      implementation 'com.netease.nimlib:basesdk:8.4.6'
+	  //NEMeeting-SDK
+	  implementation 'com.netease.yunxin:meetinglib:2.0.0'
+	  //NIM-SDK, 如果单独接入了云信NIM，或者需要依赖指定的NIM版本，则可根据需要进行依赖声明。
+	  //正常情况下不用声明
+	  implementation 'com.netease.nimlib:basesdk:8.4.6'
 	  ```
-	
+
   4. 编译并运行示例项目
 
-       连接上 Android 设备后，用 Android Studio 打开 NEMeeting/SampleCode/Android  示例项目，然后编译并运行示例项目。
-       
+       连接上 Android 设备后，用 Android Studio 打开 `NEMeeting/SampleCode/Android`  示例项目，然后编译并运行示例项目。运行效果如下图所示
+      <image width="30%" src="../images/demo_meeting_main_page.png">
+
 ## 示例项目登录账号
 
 为了体验示例项目中的创建会议功能，在以上完善应用Appkey的基础上，还需要使用会议账号完成SDK的登录鉴权。

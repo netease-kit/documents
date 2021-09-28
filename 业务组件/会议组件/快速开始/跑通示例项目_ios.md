@@ -1,4 +1,4 @@
-# 跑通ios示例项目
+# 跑通iOS示例项目
 
 
 网易智慧企业 在 GitHub 上提供一个开源的网易会议组件示例项目 [NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/iOS)。本文介绍如何快速跑通该示例项目，体验 在线会议功能。示例代码中包含了详细的API调用场景、参数封装以及回调处理。 你也可以直接体验我们的线上[网易会议](https://meeting.163.com/)产品。
@@ -7,7 +7,7 @@
 
 - 通过账号、密码完成会议SDK登录鉴权；注销登录
 - 创建会议、加入会议
-- 会议内提供的其他功能(如会议控制、屏幕共享等) 
+- 会议内提供的其他功能(如会议控制、屏幕共享等)
 
 ### 运行示例程序
 
@@ -47,18 +47,18 @@
    考以下步骤配置示例项目：
 
      - 克隆[NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/iOS) 仓库至本地.
-     - 进入NEMeetingDemoSampleCode/NEMeetingDemo路径，执行
+     - 进入`NEMeetingDemoSampleCode/NEMeetingDemo`路径，执行
        ```
        pod install
        ```
-    - Appkey是应用接入会议SDK的凭证，开发者首先需要在网易会议开发者平台完成申请，并将其填写至`"NEMeetingDemo/Config.m"`资源文件中的对应资源项上。
+     - Appkey是应用接入会议SDK的凭证，开发者首先需要在网易会议开发者平台完成申请，并将其填写至`NEMeetingDemo/Config.m`资源文件中的对应资源项上。
       ```xml
          NSString *const kAppKey = 请填入您的AppKey;
       ```
-    - AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
 
-  4. 编译并运行示例项目
+3. 编译并运行示例项目
      连接上 iOS 设备后，用 Xcode 打开示例项目，然后编译并运行项目。
+     <image width="30%" src="../images/demo_meeting_main_page.png">
 
 
 ## 示例项目会议账号
@@ -67,7 +67,7 @@
 
 会议SDK的登录鉴权需要提供一个有效的会议账号(可使用网易会议PaaS服务提供的创建会议账号接口完成创建)，并通过对应的账号ID和TOKEN来完成登录鉴权。
 
-在此示例项目中，开发者需要在`"NEMeetingDemo/Config.m"`实现一以下方法
+在此示例项目中，开发者需要在`NEMeetingDemo/Config.m`实现一以下方法
 
 ```objective-c
 + (void)queryAccountInfoWithUserName:(NSString *)userName

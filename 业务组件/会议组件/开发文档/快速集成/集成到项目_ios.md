@@ -19,10 +19,10 @@
 
     a. 运行XCode，选择Create a new Xcode project，选择Single View App，选择Next。
     ![new android project](../../images/ios_new_project.png)
-    
+
     b. 配置工程相关信息，选择Next。
     ![configure project](../../images/ios_configure_project.png)
-    
+
     c. 然后选择合适的工程本地路径，选择Create完成工程创建。
 
 2. 通过CocoaPods集成SDK
@@ -47,7 +47,7 @@
 
     网易会议SDK正常工作需要摄像头、麦克风权限，用户需要在工程中的Info.list文件中配置相关的权限信息
 
-    ![auth](../images/auth.png)
+    ![auth](../../images/auth.png)
 
     以上权限需要在进入会议之前由用户根据需要进行权限申请，权限申请的代码如下：
 
@@ -63,11 +63,9 @@
 4. 渲染view注册。在info.plist文件中注册平台渲染视图，保证正常渲染。
 
     `io.flutter.embedded_views_preview     String       YES`
-    
-    
-    
-    ![viewconfig](../images/viewconfig.png)
-    
+
+    ![viewconfig](../../images/viewconfig.png)
+
 5. SDK初始化
 
     在使用SDK其他功能之前首先需要完成SDK初始化，初始化操作建议在**AppDelegate.m**的**application:didFinishLaunchingWithOptions:**方法执行。代码示例如下：
@@ -88,7 +86,7 @@
 
 6. 调用相关接口完成特定功能，详情请参考API文档。
 
-- 登录鉴权
+  - 登录鉴权
     ```objective-c
     //[NEMeetingSDK getInstance]
     - (void)login:(NSString *)account
@@ -96,21 +94,21 @@
          callback:(NECallbackOnResult)callback
     ```
     
-- 创建会议
+  - 创建会议
     ```objective-c
     //[[NEMeetingSDK getInstance] getMeetingService]
     - (void)startMeeting:(NEStartMeetingParams *)param
                     opts:(NEStartMeetingOptions *)opts
                 callback:(NECallbackOnResult)callback;
     ```
-- 加入会议
+  - 加入会议
     ```objective-c
     //[[NEMeetingSDK getInstance] getMeetingService]
     - (void)joinMeeting:(NEJoinMeetingParams *)param
                    opts:(NEJoinMeetingOptions *)opts
                callback:(NECallbackOnResult)callback;
     ```
-- 注销登录
+  - 注销登录
     ```objective-c
     //[NEMeetingSDK getInstance]
     - (void)logout:(NECallbackOnResult)callback;
@@ -128,14 +126,14 @@
 
 1. 配置初始化相关参数
 
-```objective-c
-NEMeetingSDKConfig *config = [[NEMeetingSDKConfig alloc] init];
-config.appKey = [DemoConfig shareConfig].appKey; //应用APPKey
-```
+   ```objective-c
+    NEMeetingSDKConfig *config = [[NEMeetingSDKConfig alloc] init];
+    config.appKey = [DemoConfig shareConfig].appKey; //应用APPKey
+   ```
 
 2. 调用接口并进行回调处理，该接口无额外回调结果数据
 
-```objective-c
+   ```objective-c
 [[NEMeetingSDK getInstance] initialize:config
                           callback:^(NSInteger resultCode, NSString *resultMsg, id result) 
 {
@@ -145,7 +143,7 @@ config.appKey = [DemoConfig shareConfig].appKey; //应用APPKey
           //初始化失败
       }
 }];
-```
+   ```
 
 #### 注意事项
 
@@ -162,25 +160,24 @@ config.appKey = [DemoConfig shareConfig].appKey; //应用APPKey
 #### 业务流程
 
 1. 获取登录用账号ID和Token。Token由网易会议应用服务器下发，但SDK不提供对应接口获取该信息，需要开发者自己实现。
-
-```objective-c
-NSString *accountId = @"accountToken";
-NSString *accountToken = @"accountToken";
-```
+     ```objective-c
+    NSString *accountId = @"accountToken";
+    NSString *accountToken = @"accountToken";
+    ```
 
 2. 登录并进行回调处理，该接口无额外回调结果数据
 
-```objective-c
-[[NEMeetingSDK getInstance] login:accountId
-                            token:accountToken
-                         callback:^(NSInteger resultCode, NSString *resultMsg, id result) {
-      if (resultCode == ERROR_CODE_SUCCESS) {
-         	//登录成功
-      } else {
-					//登录失败
-      }
-}];
-```
+   ```objective-c
+    [[NEMeetingSDK getInstance] login:accountId
+                                token:accountToken
+                             callback:^(NSInteger resultCode, NSString *resultMsg, id result) {
+          if (resultCode == ERROR_CODE_SUCCESS) {
+                //登录成功
+          } else {
+                        //登录失败
+          }
+    }];
+   ```
 
 #### 注意事项
 
@@ -198,34 +195,34 @@ NSString *accountToken = @"accountToken";
 
 1. 配置创建会议用的相关参数
 
-```objective-c
-NEStartMeetingParams *params = [[NEStartMeetingParams alloc] init]; //会议参数
-params.meetingId = @"123456789";    //会议号
-params.displayName = @"我的会议昵称;  //会议昵称
+    ```objective-c
+    NEStartMeetingParams *params = [[NEStartMeetingParams alloc] init]; //会议参数
+    params.meetingId = @"123456789";    //会议号
+    params.displayName = @"我的会议昵称;  //会议昵称
 
-NEStartMeetingParams params = new NEStartMeetingParams();   //会议参数
-params.meetingId = "123456789";                             //会议号
-params.displayName = "我的会议昵称";                          //会议昵称
+    NEStartMeetingParams params = new NEStartMeetingParams();   //会议参数
+    params.meetingId = "123456789";                             //会议号
+    params.displayName = "我的会议昵称";                          //会议昵称
 
-NEStartMeetingOptions *options = [[NEStartMeetingOptions alloc] init]; //会议选项
-options.noVideo = YES; //入会时关闭视频，默认为YES
-options.noAudio = YES; //入会时关闭音频，默认为YES
-```
+    NEStartMeetingOptions *options = [[NEStartMeetingOptions alloc] init]; //会议选项
+    options.noVideo = YES; //入会时关闭视频，默认为YES
+    options.noAudio = YES; //入会时关闭音频，默认为YES
+    ```
 
 2. 调用接口并进行回调处理。该接口无额外回调结果数据，可根据错误码判断是否成功
 
-```objective-c
-NEMeetingService *meetingServce = [NEMeetingSDK getInstance].getMeetingService;
-[meetingServce startMeeting:params
-                       opts:options
-                   callback:^(NSInteger resultCode, NSString *resultMsg, id result) {
-    if (resultCode == ERROR_CODE_SUCCESS) {
-        //创建会议成功
-    } else {
-        //创建会议失败
-    }
-}];
-```
+    ```objective-c
+    NEMeetingService *meetingServce = [NEMeetingSDK getInstance].getMeetingService;
+    [meetingServce startMeeting:params
+                           opts:options
+                       callback:^(NSInteger resultCode, NSString *resultMsg, id result) {
+        if (resultCode == ERROR_CODE_SUCCESS) {
+            //创建会议成功
+        } else {
+            //创建会议失败
+        }
+    }];
+    ```
 
 3. 创建会议成功后，SDK会拉起会议界面并接管会议逻辑，开发者无需做其他处理。创会人会自动成为该会议的主持人，可进行相关的会议控制操作。其他参会者可通过该会议号加入到该会议中来。
 
@@ -246,19 +243,19 @@ NEMeetingService *meetingServce = [NEMeetingSDK getInstance].getMeetingService;
 
 1. 配置加入会议用的相关参数
 
-```objective-c
-NEJoinMeetingParams *params = [[NEJoinMeetingParams alloc] init]; //会议参数
-params.meetingId = @"123456789";    //会议号
-params.displayName = @"我的会议昵称;  //会议昵称
+    ```objective-c
+    NEJoinMeetingParams *params = [[NEJoinMeetingParams alloc] init]; //会议参数
+    params.meetingId = @"123456789";    //会议号
+    params.displayName = @"我的会议昵称;  //会议昵称
 
-NEJoinMeetingOptions *options = [[NEJoinMeetingOptions alloc] init]; //会议选项
-options.noAudio = YES;  //入会时关闭视频，默认为YES
-options.noVideo = YES;  //入会时关闭音频，默认为YES
-```
+    NEJoinMeetingOptions *options = [[NEJoinMeetingOptions alloc] init]; //会议选项
+    options.noAudio = YES;  //入会时关闭视频，默认为YES
+    options.noVideo = YES;  //入会时关闭音频，默认为YES
+    ```
 
 2. 调用接口并进行回调处理。该接口无额外回调结果数据，可根据错误码判断是否成功
 
-```objective-c
+    ```objective-c
 NEMeetingService *meetingServce = [NEMeetingSDK getInstance].getMeetingService;
 [meetingServce joinMeeting:params
                       opts:options
@@ -269,7 +266,7 @@ NEMeetingService *meetingServce = [NEMeetingSDK getInstance].getMeetingService;
         //加入会议失败
     }
 }];
-```
+    ```
 
 3. 加入会议成功后，SDK会拉起会议界面并接管会议逻辑，开发者无需做其他处理。
 
@@ -290,7 +287,7 @@ NEMeetingService *meetingServce = [NEMeetingSDK getInstance].getMeetingService;
 
 1. 创建预约会议
 
-```objc
+    ```objc
 //获取会议预约服务
 NEPreMeetingService *premeetingService = [NEMeetingSDK getInstance].getPreMeetingService;
 
@@ -306,11 +303,11 @@ item.live.liveWebAccessControlLevel = NEMeetingLiveAuthLevelToken;//设置直播
 NEMeetingItemSetting *setting = [[NEMeetingItemSetting alloc] init];
 setting.attendeeAudioOff = NO;        //入会时打开音频开关
 setting.cloudRecordOn = YES;        //是否开启云端录制
-```
+    ```
 
 2. 调用接口并进行回调处理，可根据错误码判断是否成功
 
-```objc
+    ```objc
 //预定会议
 [premeetingService scheduleMeeting:item 
                           callback:^(NSInteger resultCode, NSString * _Nonnull resultMsg, NEMeetingItem * _Nonnull item) {
@@ -322,7 +319,7 @@ setting.cloudRecordOn = YES;        //是否开启云端录制
 						//预定失败, resultCode 参考 NEMeetingErrorCode
         }
 }];
-```
+    ```
 
 #### 注意事项
 
@@ -338,7 +335,7 @@ setting.cloudRecordOn = YES;        //是否开启云端录制
 
 #### 业务流程
 
-```objc
+    ```objc
 //获取会议预约服务
 NEPreMeetingService *premeetingService = [NEMeetingSDK getInstance].getPreMeetingService;
 
@@ -352,7 +349,7 @@ NEMeetingItem *item = self.item;
 						//取消失败, resultCode 参考 NEMeetingErrorCode
         }
 }];
-```
+    ```
 
 #### 注意事项
 
@@ -369,7 +366,7 @@ NEMeetingItem *item = self.item;
 
 #### 业务流程
 
-```objc
+    ```objc
 //获取会议预约服务
 NEPreMeetingService *premeetingService = [NEMeetingSDK getInstance].getPreMeetingService;
 
@@ -384,7 +381,7 @@ NEPreMeetingService *premeetingService = [NEMeetingSDK getInstance].getPreMeetin
             //查询失败
         }
 }];
-```
+    ```
 
 #### 注意事项
 
@@ -400,7 +397,7 @@ NEPreMeetingService *premeetingService = [NEMeetingSDK getInstance].getPreMeetin
 
 #### 业务流程
 
-```objective-c
+    ```objective-c
 //获取会议预约服务
 NEPreMeetingService *premeetingService = [NEMeetingSDK getInstance].getPreMeetingService;
 
@@ -419,7 +416,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
             //查询失败
         }
  }];
-```
+    ```
 
 #### 注意事项
 
@@ -435,7 +432,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 
 #### 业务流程
 
-```objc
+    ```objc
 //注册事件回调
 [[NEMeetingSDK getInstance].getPreMeetingService addListener:self];
 
@@ -451,7 +448,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 
 //反注册事件回调（在不需要的时候移除，例如在dealloc方法中）
 [[NEMeetingSDK getInstance].getPreMeetingService removeListener:self];
-```
+    ```
 
 #### 注意事项
 
@@ -470,7 +467,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 
 1. 注册delegate，在回调中接收会议状态。
 
-```objective-c
+    ```objective-c
 //会议添加监听
 [[NEMeetingSDK getInstance].getMeetingService addListener:self];
 
@@ -478,13 +475,13 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 - (void)onMeetingStatusChanged:(NEMeetingEvent *)event {
      //根据event处理相关业务
 }
-```
+    ```
 
 2. 停止接收会议状态
 
-```objective-c
+    ```objective-c
 [[NEMeetingSDK getInstance].getMeetingService removeListener:self];
-```
+    ```
 
 #### 注意事项
 
@@ -505,7 +502,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 1. 确认已经通过入会方式（加入会议/创建会议/匿名入会）在会议内
 2. 调用接口并进行回调处理。该接口的回调数据类型为NEMeetingInfo对象类型；如果当前无正在进行中的会议，则回调数据对象为空，错误原因请参考错误码类型。
 
-```objective-c
+    ```objective-c
  [[NEMeetingSDK getInstance].getMeetingService getCurrentMeetingInfo:^(NSInteger resultCode, NSString * _Nonnull resultMsg, NEMeetingInfo * _Nonnull info) {
     if (resultCode != ERROR_CODE_SUCCESS) {
         //查询失败
@@ -513,7 +510,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
        //查询成功
     }
 }];
-```
+    ```
 
 #### 注意事项
 
@@ -533,7 +530,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 
 2. 调用接口并进行回调处理。该接口的回调结果数据类型为字符串类型，可根据错误码判断是否成功
 
-```objective-c
+    ```objective-c
 NEAccountService *accountService = [NEMeetingSDK getInstance].getAccountService;
 [accountService getPersonalMeetingId:^(NSInteger resultCode, NSString *resultMsg, id result) {
     if (resultCode == ERROR_CODE_SUCCESS) {
@@ -542,7 +539,7 @@ NEAccountService *accountService = [NEMeetingSDK getInstance].getAccountService;
         //获取个人会议号失败
     }
 }];
-```
+    ```
 
 3. 获取个人会议号后，可用于创建会议
 
@@ -560,37 +557,38 @@ NEAccountService *accountService = [NEMeetingSDK getInstance].getAccountService;
 
 #### 业务流程
 
-	1. 配置匿名入会/创建会议/加入会议的Options相关参数，增加自定义列表
+1. 配置匿名入会/创建会议/加入会议的Options相关参数，增加自定义列表
 
-  ```objective-c
-NEJoinMeetingOptions *options = [[NEJoinMeetingOptions alloc] init];
-options.noChat = NO;
-options.noInvite = NO;
+    ``` objective-c
+    NEJoinMeetingOptions *options = [[NEJoinMeetingOptions alloc] init];
+    options.noChat = NO;
+    options.noInvite = NO;
 
-//配置自定义菜单
-NSMutableArray *menuItems = [NSMutableArray array];
-for (int i = 0; i < 3; i++) { //最多不能超过3个，超过之后只取前3个
-    NEMeetingMenuItem *item = [[NEMeetingMenuItem alloc] init];
-    item.itemId = 100 + i; //必须大于100，且要保证不重复
-    item.title = [@"测试Title" stringByAppendingString:@(i).stringValue];
-}
-options.injectedMoreMenuItems = menuItems;
-  ```
+    //配置自定义菜单
+    NSMutableArray *menuItems = [NSMutableArray array];
+    for (int i = 0; i < 3; i++) { //最多不能超过3个，超过之后只取前3个
+        NEMeetingMenuItem *item = [[NEMeetingMenuItem alloc] init];
+        item.itemId = 100 + i; //必须大于100，且要保证不重复
+        item.title = [@"测试Title" stringByAppendingString:@(i).stringValue];
+    }
+    options.injectedMoreMenuItems = menuItems;
+
+    ```
 
 2. 设置回调接口开始监听，并在回调方法中处理自定义按钮事件
 
-```objective-c
-//添加回调监听
-[[NEMeetingSDK getInstance].getMeetingService addListener:self];
+    ```objective-c
+    //添加回调监听
+    [[NEMeetingSDK getInstance].getMeetingService addListener:self];
 
-//实现MeetingServiceListener协议方法
-- (void)onInjectedMenuItemClick:(NEMeetingMenuItem *)menuItem
-                    meetingInfo:(NEMeetingInfo *)meetingInfo {
-      //menuItem 是点击的item，需要用户根据itemId进行匹配
-      //meetingInfo 是当前的会议状态
-}
+    //实现MeetingServiceListener协议方法
+    - (void)onInjectedMenuItemClick:(NEMeetingMenuItem *)menuItem
+                        meetingInfo:(NEMeetingInfo *)meetingInfo {
+          //menuItem 是点击的item，需要用户根据itemId进行匹配
+          //meetingInfo 是当前的会议状态
+    }
 
-```
+    ```
 
 #### 注意事项
 
@@ -613,15 +611,15 @@ options.injectedMoreMenuItems = menuItems;
 
 1. 调用接口并进行回调处理。该接口无额外回调结果数据，可根据错误码判断是否成功
 
-```objective-c
-[[NEMeetingSDK getInstance] logout:^(NSInteger resultCode, NSString *resultMsg, id result) {
-    if (resultCode == ERROR_CODE_SUCCESS) {
-        //注销登录成功
-    } else {
-        //注销登录失败
-    }
-}];
-```
+    ```objective-c
+    [[NEMeetingSDK getInstance] logout:^(NSInteger resultCode, NSString *resultMsg, id result) {
+        if (resultCode == ERROR_CODE_SUCCESS) {
+            //注销登录成功
+        } else {
+            //注销登录失败
+        }
+    }];
+    ```
 
 #### 注意事项
 
@@ -639,23 +637,23 @@ options.injectedMoreMenuItems = menuItems;
 
 1. 获取会议设置服务
 
-```objective-c
-NESettingsService *settingsService = [NEMeetingSDK getInstance].getSettingsService;
-```
+    ```objective-c
+    NESettingsService *settingsService = [NEMeetingSDK getInstance].getSettingsService;
+    ```
 
 2. 调用不同接口保存设置项或查询设置项
 
-```objective-c
-// 设置并保存会议设置
-[settingsService enableShowMyMeetingElapseTime:YES];
-[settingsService setTurnOnMyAudioWhenJoinMeeting:YES];
-[settingsService setTurnOnMyVideoWhenJoinMeeting:YES];
+    ```objective-c
+    // 设置并保存会议设置
+    [settingsService enableShowMyMeetingElapseTime:YES];
+    [settingsService setTurnOnMyAudioWhenJoinMeeting:YES];
+    [settingsService setTurnOnMyVideoWhenJoinMeeting:YES];
 
-//查询会议设置
-BOOL showMeetingElapseTimeEnabled = [settingsService isShowMyMeetingElapseTimeEnabled];
-BOOL audioEnabled = [settingsService isTurnOnMyAudioWhenJoinMeetingEnabled];
-BOOL videoEnabled = [settingsService isTurnOnMyVideoWhenJoinMeetingEnabled];
-```
+    //查询会议设置
+    BOOL showMeetingElapseTimeEnabled = [settingsService isShowMyMeetingElapseTimeEnabled];
+    BOOL audioEnabled = [settingsService isTurnOnMyAudioWhenJoinMeetingEnabled];
+    BOOL videoEnabled = [settingsService isTurnOnMyVideoWhenJoinMeetingEnabled];
+    ```
 
 #### 注意事项
 
@@ -712,39 +710,37 @@ BOOL videoEnabled = [settingsService isTurnOnMyVideoWhenJoinMeetingEnabled];
 
 3. 自定义遥控器的设置、邀请按钮
 
-```objc
-//移除遥控器事件监听
-- (void)dealloc {
-    [[[NEMeetingSDK getInstance] getControlService] removeListener:self];
-}
+    ```objc
+    //移除遥控器事件监听
+    - (void)dealloc {
+        [[[NEMeetingSDK getInstance] getControlService] removeListener:self];
+    }
 
-//添加遥控器事件监听
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [[[NEMeetingSDK getInstance] getControlService] addListener:self];
-}
+    //添加遥控器事件监听
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+        [[[NEMeetingSDK getInstance] getControlService] addListener:self];
+    }
 
-//<NEControlListener>
-- (void)onInjectedSettingMenuItemClick:(NEControlMenuItem *)item
-                                  info:(NEMeetingInfo *)info {
-       //遥控器首页右上角设置自定义按钮菜单点击事件
-}
+    //<NEControlListener>
+    - (void)onInjectedSettingMenuItemClick:(NEControlMenuItem *)item
+                                      info:(NEMeetingInfo *)info {
+           //遥控器首页右上角设置自定义按钮菜单点击事件
+    }
 
-- (void)onInjectedShareMenuItemClick:(NEControlMenuItem *)item
-                                info:(NEMeetingInfo *)info {
-        //遥控器会控页面邀请设置自定义按钮菜单点击事件                          
-}
+    - (void)onInjectedShareMenuItemClick:(NEControlMenuItem *)item
+                                    info:(NEMeetingInfo *)info {
+            //遥控器会控页面邀请设置自定义按钮菜单点击事件                          
+    }
 
-- (void)onStartMeetingResult:(NEControlResult *)result {
-         //遥控器页面，创建会议回调
-}
+    - (void)onStartMeetingResult:(NEControlResult *)result {
+             //遥控器页面，创建会议回调
+    }
 
-- (void)onJoinMeetingResult:(NEControlResult *)result {
-          //遥控器页面，加入会议回调
-}
-
-
-```
+    - (void)onJoinMeetingResult:(NEControlResult *)result {
+              //遥控器页面，加入会议回调
+    }
+    ```
 
 #### 注意事项
 
