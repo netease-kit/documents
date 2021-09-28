@@ -39,11 +39,17 @@
 ## 产品架构 
 
 1. 组件架构图
+
+   
+
    <image width="80%" src="images/vce_sdk_structure.png">
 
-2. 时序图
+   
 
-   <image width="80%" src="images/vce_sdk_time_series">
+2. 时序图
+   
+
+   <image width="80%" src="images/vce_sdk_time_series.png">
 
 
 
