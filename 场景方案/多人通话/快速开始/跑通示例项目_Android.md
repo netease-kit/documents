@@ -39,6 +39,7 @@
 1. GitHub下载源代码 [源码](https://github.com/netease-kit/NEGroupCall/tree/master/Android)
 2. 导入Android Studio
 3. 找到config文件夹下的test.properties文件和online.properties文件替换自己的APP_KEY，请[联系云信商务经理](https://yunxin.163.com/bizQQWPA.html)开通音视频功能
+   
 ```
 test.properties文件
 APP_KEY="请输入你的app key"
@@ -51,7 +52,8 @@ BASE_URL=https://yiyong.netease.im/
 ```
   
 4. 如果需要使用美颜功能请使用自己的相芯证书替换lib-beauty-faceunity/src/main/java/com/beautyFaceunity/authpack.java 证书文件
-   ```
+  
+```
 package com.faceunity;
 
 import java.security.MessageDigest;
@@ -60,4 +62,5 @@ public class authpack {
 
 }
 ```
+
 5. 运行在自己的Android设备上
