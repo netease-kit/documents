@@ -16,5 +16,16 @@
   2.  配置示例项目参考以下步骤配置示例项目：
 
    - 克隆[VideoCall](https://github.com/netease-kit/NEVideoCall-1to1/tree/master/NLiteAVDemo-Android-Java )仓库至本地。
+
+   - 将自己的 appkey 告知 so 人员添加对应 demo 的体验权限；
+
    - 找到 app 下的 build.gradle 文件替换自己的 appkey；
+
+     ```groovy
+     
+     // app key for code
+     defaultConfig {
+         buildConfigField "String", "APP_KEY", "your self app key!!!"
+     }
+     ```
   3. 编译并运行示例项目。
