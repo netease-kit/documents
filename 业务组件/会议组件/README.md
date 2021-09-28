@@ -47,8 +47,10 @@
 
 ## 产品架构 
 1. 会议组件架构图
+
     <image width="60%" src="images/meeting_sdk_structure.png">
-    会议SDK全局接口，提供初始化、管理其他会议相关子服务的能力
+    
+   会议SDK全局接口，提供初始化、管理其他会议相关子服务的能力
 
 
 ## 体验应用
@@ -60,7 +62,7 @@
    </tr>
     <tr>
     <td >iOS</td>
-    <td > <image width="10%" src="images/meeting-iOS.png"> </image></td>
+    <td > <a href=https://apps.apple.com/cn/app/%E7%BD%91%E6%98%93%E4%BC%9A%E8%AE%AE/id1525524757>下载</a></td>
    </tr>
    <tr>
     <td>Android</td>
@@ -82,16 +84,17 @@
 
 
 ### 效果展示
-- 视频会议页面 
-  <image width="30%" src="images/demo_meeting_camera.jpeg">
+- 视频会议页面
+   <image width="30%" src="images/demo_meeting_camera.jpeg">
 - 视频会议共享屏幕 
-  <image width="30%" src="images/demo_meeting_share_screen.jpeg">
+   <image width="30%" src="images/demo_meeting_share_screen.jpeg">
+  
 - 视频会议白板
-  <image width="30%" src="images/demo_meeting_whiteborad.jpeg">
+   <image width="30%" src="images/demo_meeting_whiteborad.jpeg">
 - 视频会议聊天
-  <image width="30%" src="images/demo_meeting_white_chat.jpeg">
+   <image width="30%" src="images/demo_meeting_white_chat.jpeg">
 - 视频会议成员管理 
-  <image width="30%" src="images/demo_meeting_user_list.jpeg">
+   <image width="30%" src="images/demo_meeting_user_list.jpeg">
 - 视频会议其他功能
-  <image width="30%" src="images/demo_meeting_other.jpeg">
+   <image width="30%" src="images/demo_meeting_other.jpeg">
 
