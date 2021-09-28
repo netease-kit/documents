@@ -65,11 +65,17 @@
 如果 示例代码 中默认实现的 UI 不符合您的预期，您可以按需实现自己的用户界面，即只使用我们封装好的组件所提供的音视频能力，自行实现 UI 部分。
 
 教育组件功能模块：
-<image width="70%" src="Images/ios_layer.jpeg">
+<image width="70%" src="../Images/ios_layer.jpeg">
 
 **EduUI：**包含教育组件的UI的实现，包括1v1、小班课、大班课、直播大班课场景的ViewController、View以及model部分。
 
 **EduLogic：**是依赖云信的音视频SDK、IMSDK以及白板SDK对于教育逻辑的实现，分别对应NEEduRtcService、NEEduIMService、NEWhiteBoard。
+
+**NEEduRtcService：**是音视频服务，提供可供 App 调用的音视频相关方法。
+
+**NEEduIMService：**是IM服务，提供可供 App 调用的即时通信、聊天室相关方法。
+
+**NEWhiteBoard：**是互动白板服务，提供可供 App 调用的互动白板相关方法。
 
 ## 后续步骤
 
