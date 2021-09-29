@@ -1,4 +1,6 @@
-# Android核心API参考
+## Android API接口
+本页提供 多人通话 for Android 的  API 参考,更详细的NERTC SDK文档说明请移步到[这里](https://dev.yunxin.163.com/docs/product/互动直播2.0/客户端API/Android)。
+### 多人通话工程核心API概览
 - 房间管理
 
 API | 功能描述
