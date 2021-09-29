@@ -36,4 +36,35 @@
  </tr>
 </table>
 
+## 产品架构 
+
+1. 组件架构图
+
+   
+
+   <image width="80%" src="images/vce_sdk_structure.png">
+
+   
+
+2. 时序图
+   
+
+   <image width="80%" src="images/vce_sdk_time_series.png">
+
+
+
+
+## 体验应用
+
+### 下载体验包
+
+#### 坐席侧：
+
+https://app.yunxin.163.com/webdemo/yxFinance/index.html
+
+#### 客户侧：
+
+|                      Android 安装包                       |                       IOS安装包                       |
+| :-------------------------------------------------------: | :---------------------------------------------------: |
+| <image width="50%" src="images/vce-android.png"> </image> | <image width="50%" src="images/vce-iOS.png"> </image> |
 

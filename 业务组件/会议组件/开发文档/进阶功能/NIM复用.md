@@ -32,22 +32,20 @@ Meeting-Account  -------- 唯一绑定 -------->  IM-Account
 开启复用功能，需要进行一系列必要的设置，下面进行一一说明。
 
 1. 重新设置Meeting-AppKey与IM-AppKey的绑定关系
-   
+
    默认情况下，Meeting-AppKey在申请创建时，会自动创建并绑定一个IM-AppKey(假设为AppKey1)，IM-AppKey用于初始化IM-SDK。同时因为开发者需要独立接入IM-SDK，因此也会通过网易云信后台申请到另外一个IM-AppKey(假设为AppKey2)。这两个IM-AppKey是不相同的，因此，这里首先需要重新设置绑定关系，即`将Meeting-AppKey绑定到IM-AppKey2上`，开发者可通过`网易会议开发者后台或联系技术客服`进行设置。
 
 2. 将Meeting账号绑定到IM账号
-   
+
    一个给定的IM账号由(imAccid、imToken)二元组唯一标识，假定现在需要复用该IM账号，则需要首先创建一个绑定到该IM账号的Meeting账号。我们需要通过[创建会议账号RESTApi](https://github.com/netease-im/NEMeeting/blob/master/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/REST%20APIs/user_guide.md#%E4%BC%9A%E8%AE%AE%E8%B4%A6%E5%8F%B7%E5%88%9B%E5%BB%BA)来创建会议账号，`入参传入要复用的IM账号的imAccid、imToken`。这样创建的Meeting账号就与该IM账号绑定到一起了，同时该接口返回Meeting账号的accountId、accountToken，可用来登录Meeting-SDK。
 
-
 3. 使用Meeting账号登录Meeting-SDK
-   
+
    完成以上两个步骤之后，就具备了在各端上开启复用的前提条件。下面以Android端为例给出具体示例代码：
 
    1. SDK初始化
-   
+
       在Application中进行相关SDK的初始化操作。`在开启复用之后，Meeting-SDK不会自动进行IM-SDK的初始化，因此应用层需要显示进行IM-SDK初始化。同时，在初始化Meeting-SDK时，打开NEMeetingSDKConfig#reuseNIM开关`。如下：
-      
 
       ```java
       public class MyMeetingApplication extends Application {
@@ -78,7 +76,7 @@ Meeting-Account  -------- 唯一绑定 -------->  IM-Account
       ```
 
    2. 登录IM-SDK
-   
+
       开启IM复用时，应用层需要确保已经提前使用与Meeting账号对应的IM账号登录了IM-SDK，可通过IM账号的imAccid与imToken来完成登录：
 
       ```java
@@ -86,7 +84,7 @@ Meeting-Account  -------- 唯一绑定 -------->  IM-Account
       ```
 
    3. 登录Meeting-SDK
-   
+
       最后一步，就是使用对应的Meeting账号登录Meeting-SDK，accountId与accountToken就是上面通过创建账号接口返回的。如下：
 
       ```java

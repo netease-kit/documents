@@ -1,21 +1,21 @@
-# CHANGELOG
+## CHANGELOG
 
-#  v2.0.0 (2021-8-16)
+### v2.0.0 (2021-8-16)
 
-## Added
+##### 新增特性
 
 * 创建即刻会议时可设置会议密码：`NEMeetingParams.password`
 * 创建/加入会议时可设置连接超时时间，超时会自动离开：`NEMeetingOptions.joinTimeout`
 * 新增离开会议接口：`NEMeetingService.leaveCurrentMeeting`
 * 支持更细粒度的会议退出码，详情请查看 `NEMeetingCode`
 
-## Changed
+#### 功能更新
 
 * 创建会议时，如果设置了`NEMeetingOptions.noChat`为`YES`，将不再会创建聊天室
 
-# v1.10.0 (2021-7-9)
+### v1.10.0 (2021-7-9)
 
-## Added
+#### 新增特性
 
 * 创建和加入会议可设置成员标签，对应字段为：`NEMeetingParams.tag`
 * 会议中的成员信息类可获取到入会时设置的成员标签，对应字段为：`NEInMeetingUserInfo.tag`
@@ -23,9 +23,9 @@
   - 创建会议时使用`NEStartMeetingParams.scene`字段配置
   - 预约会议时使用`NEMeetingItemSetting.scene`字段配置
 
-#  v1.9.0 (2021-5-30)
+### v1.9.0 (2021-5-30)
 
-## Added
+#### 新增特性
 
 * 支持屏幕共享
 * SDK初始化时支持设置SDK日志路径与日志级别
@@ -35,14 +35,14 @@
   - 新增`NEMeetingInfo.userList`字段，可获取当前时刻会议中的参会者信息列表
   - 新增`NEMeetingInfo.hostUserId`字段，代表当前时刻会议的主持人用户Id
 
-## Deprecated
+#### 废弃
 
 * 废弃`NEMeetingSDKConfig.enableDebugLog`，使用`NEMeetingSDKConfig.loggerConfig`代替
 * 废弃`NEMeetingSDKConfig.logSize`，使用`NEMeetingSDKConfig.loggerConfig`代替
 
-#  v1.8.1(2021-5-01)
+### v1.8.1 (2021-5-01)
 
-## Added
+#### 新增特性
 
 * 支持屏幕共享辅流
 * 支持会议云端录制功能开关
@@ -52,17 +52,17 @@
   - 新增`NEMeetingInfo.sipId`字段
   - 新增`NEHistoryMeetingItem.sipId`字段
 
-#  v1.7.2 (2021-4-30 )
+### v1.7.2 (2021-4-30 )
 
-## Added
+#### 新增特性
 
 * 支持预约会议设置直播安全模式 
 
 - 新增`NEMeetingItemLive.liveWebAccessControlLevel`选项配置“直播安全模式”
 
-# v1.7.0 (2021-3-18)
+### v1.7.0 (2021-3-18)
 
-## Added
+#### 新增特性
 
 * 支持会中改名，通过`NEMeetingOptions.noRename`选项配置该功能是否开启，默认为开启
 * 支持查询历史参会记录信息，通过`NESettingsService.getHistoryMeetingItem`接口可返回最近一次的参会信息
@@ -74,9 +74,9 @@
 * 优化会中邀请页面，时间显示格式为24小时制
 * 支持会中聊天室文本消息长按复制
 
-#  v1.5.2 (2021-1-15)
+### v1.5.2 (2021-1-15)
 
-## Added
+#### 新增特性
 
 * 支持自定义音频流
   - 订阅会议内某一音视频流：`NEMeetingService.subscribeRemoteAudioStream`
@@ -91,15 +91,15 @@
   - 配置工具栏菜单列表：`NEMeetingOptions.fullToolbarMenuItems`
   - 配置更多展开菜单列表：`NEMeetingOptions.fullMoreMenuItems`
 
-# v1.5.1(2020-12-25)
+### v1.5.1 (2020-12-25)
 
-## Fixed
+#### 问题修复
 
 * 修复IM复用时登录状态错误
 
-#  v1.5.0 (2020-12-21)
+### v1.5.0 (2020-12-21)
 
-## Added
+#### 新增特性
 
 * 支持会议内菜单自定义
   - 新增单状态菜单项：`NESingleStateMenuItem`
@@ -121,19 +121,19 @@
   - `NEMeetingOptions.noSwitchAudioMode`
 * 新增SIP拨号入会 
 
-## Changed
+#### 功能更新
 
 * 废弃`NEMeetingMenuItem.title`菜单名称字段，使用`NESingleStateMenuItem`或`NECheckableMenuItem`创建菜单项
 * 废弃`MeetingServiceListener onInjectedMenuItemClick:meetingInfo:`协议回调，使用`MeetingServiceListener onInjectedMenuItemClick:meetingInfo:stateController：`代替
 
-## Fixed
+#### 问题修复
 
 * 视频镜像优化
 * 入会前后横竖屏切换逻辑优化
 
-#  v1.3.1 (2020-11-13)
+### v1.3.1 (2020-11-13)
 
-## Added
+#### 新增特性
 
 * 观看屏幕共享时支持手势缩放
 * 新增SSOToken登录、自动登录
@@ -144,9 +144,9 @@
 * 支持配置画廊模式开关
   - 配置项：`NEMeetingOptions.noGallery`
 
-# v1.3.0 (2020-10-29 )
+### v1.3.0 (2020-10-29 )
 
-## Added
+#### 新增特性
 
 * 新增画廊模式
 * 新增结束会议添加断网提示
@@ -158,7 +158,7 @@
   - 会议短号获取：`NEAccountInfo.shortMeetingId`
   - 邀请里面包含了短号字段 `shortId`
 
-## Changed
+#### 功能更新
 
 * 个人会议号获取方式变更
   - `NEAccountInfo.meetingId`
@@ -167,20 +167,20 @@
 * 状态栏适配优化
 * 会中视觉优化调整
 
-## Fixed
+#### 问题修复
 
 * 修复会议显示时长偏差
 * 优化屏幕共享过程中正在讲话逻辑
 
-## Removed
+#### 移除
 
 * `NEMeetingInfo.getPersonalMeetingId`
 
 --------
 
-# v1.2.6 (2020-09-29)
+### v1.2.6 (2020-09-29)
 
-## Added
+#### 新增特性
 
 * `NEMeetingSDKConfig.NEForegroundServiceConfig`新增配置会议时显示前台服务
 * `NEAuthListener.onAuthInfoExpired`新增账号信息过期通知
@@ -188,9 +188,9 @@
 
 ---------
 
-# v1.2.5 (2020-09-24)
+### v1.2.5 (2020-09-24)
 
-## Added
+#### 新增特性
 
 * `NEMeetingSDKConfig.appName`增加配置入会应用名称
 * `NEMeetingOptions.noMinimize`配置会议中是否允许最小化会议页面
@@ -204,9 +204,9 @@
 
 -------
 
-# 2020-09-18 @ v1.2.3
+### v1.2.3 (2020-09-18)
 
-## Added
+#### 新增特性
 
 * `NEJoinMeetingParams.password`新增密码入会字段
 * `NEMeetingStatus.MEETING_STATUS_WAITING`新增会议等待状态
@@ -222,9 +222,9 @@
 
 -------
 
-# 2020-09-04   @ v1.2.0
+### v1.2.0 (2020-09-04)
 
-## Added
+#### 新增特性
 
 * `NEMeetingService.setOnInjectedMenuItemClickListener`添加自定义菜单按钮监听
 * `NEMeetingService.getCurrentMeetingInfo`获取当前会议信息
@@ -234,9 +234,9 @@
 
 -------
 
-# 2020-08-31  @ v1.1.0
+### v1.1.0 (2020-08-31)
 
-## Added
+#### 新增特性
 
 * `NEMeetingSDK.isInitialized()`查询SDK初始化状态
 * `NEMeetingService.getMeetingStatus()`查询当前会议状态
@@ -245,9 +245,9 @@
 
 -------
 
-# 2020-07-10 @ v1.0.0
+# v1.0.0 (2020-07-10)
 
-## Added
+#### 新增特性
 
 * 首次正式发布
 
