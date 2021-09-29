@@ -2,7 +2,7 @@
 
 ## 产品介绍
 
-网易会议Android SDK提供了一套简单易用的接口，允许开发者通过调用NEMeeting SDK(以下简称SDK)提供的API，快速地集成音视频会议功能至现有Android应用中。为企业打造专属的会议能力，卓越的音视频性能，丰富的会议协作能力，坚实的会议安全保障，提升协作效率，满足大中小会议全场景需求。提供全套开放、简单、安全的视频会议服务。您可以使用进行远程音视频会议、在线协作、会管会控、会议录制、指定邀请、布局管理等。
+网易会议NEMeeting SDK(以下简称SDK)提供了一套简单易用的接口，允许开发者通过调用 SDK提供的API，快速地集成音视频会议功能至现有应用中。为企业打造专属的会议能力，卓越的音视频性能，丰富的会议协作能力，坚实的会议安全保障，提升协作效率，满足大中小会议全场景需求。提供全套开放、简单、安全的视频会议服务。您可以使用进行远程音视频会议、在线协作、会管会控、会议录制、指定邀请、布局管理等。
 
 ## 功能特性
 
@@ -45,32 +45,66 @@
  </tr>
 </table>
 
-## 产品架构 
+## 产品架构
 1. 会议组件架构图
-    <image width="80%" src="images/meeting_sdk_structure.png">
-    会议SDK全局接口，提供初始化、管理其他会议相关子服务的能力
+
+    <image width="60%" src="images/meeting_sdk_structure.png">
+
+   会议SDK全局接口，提供初始化、管理其他会议相关子服务的能力
 
 
 ## 体验应用
 ### 下载体验包
-| Android 安装包 | IOS安装包 |
-| :---: | :---: |
-| <image width="50%" src="images/meeting-android.png"> </image>  | <image width="50%" src="images/meeting-iOS.png"> </image> |
+<table>
+    <tr>
+    <th width=100>平台</th>
+    <th width=200>下载地址</th>
+   </tr>
+    <tr>
+    <td >iOS</td>
+    <td > <a href=https://apps.apple.com/cn/app/%E7%BD%91%E6%98%93%E4%BC%9A%E8%AE%AE/id1525524757>下载</a></td>
+   </tr>
+   <tr>
+    <td>Android</td>
+    <td> <a href=https://yx-web.nos-hz.163yun.com/package/meeting_mobile_online.apk >下载</a></td>
+   </tr>
+   <tr>
+    <td>macOS</td>
+    <td> <a href=https://yx-web.nos-hz.163yun.com/package/meeting_macos_online.dmg>下载</a></td>
+   </tr>
+   <tr>
+    <td >Windows</td>
+    <td><a href=https://yx-web.nos-hz.163yun.com/package/meeting_win_online.exe>下载</a></td>
+   </tr>
+   <tr>
+    <td>TV</td>
+      <td> <a href= https://yx-web.nos-hz.163yun.com/package/1610715275/meeting_tv_20210115160553_758967a_common.apk>下载</a></td>
+   </tr>
+</table>
 
-| mac 体验包 | windows体验包 | TV体验包 |
-| ---------- | ------------- | -------- |
-| [ 下载 ](https://yx-web.nos-hz.163yun.com/package/meeting_macos_online.dmg) | [ 下载 ](https://yx-web.nos-hz.163yun.com/package/meeting_win_online.exe) | [ 下载 ](https://yx-web.nos-hz.163yun.com/package/1610715275/meeting_tv_20210115160553_758967a_common.apk ) |
 
 ### 效果展示
-** 视频会议页面 **
-<image width="30%" src="images/meeting_page.jpeg">
+- 视频会议页面
 
-** 视频会议共享屏幕 **
-<image width="30%" src="images/meeting_share_screen.jpeg">
+    <image width="25%" src="images/demo_meeting_camera.jpeg">
 
-** 视频会议共享屏幕 **
-<image width="30%" src="images/meeting_chat_page.jpeg">
+- 视频会议共享屏幕
 
-** 视频会议共享屏幕 **
-<image width="30%" src="images/meeting_white_broad.jpeg">
+    <image width="25%" src="images/demo_meeting_share_screen.jpeg">
+
+- 视频会议白板
+
+    <image width="25%" src="images/demo_meeting_whiteborad.jpeg">
+
+- 视频会议聊天
+
+    <image width="25%" src="images/demo_meeting_chat.jpeg">
+
+- 视频会议成员管理
+
+    <image width="25%" src="images/demo_meeting_user_list.jpeg">
+
+- 视频会议其他功能
+
+    <image width="25%" src="images/demo_meeting_other.jpeg">
 

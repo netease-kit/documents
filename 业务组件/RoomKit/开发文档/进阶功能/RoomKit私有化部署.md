@@ -1,3 +1,4 @@
+
 组件化SDK支持私有化服务，支持接入在企业内部部署的私有房间服务器。开启私有化服务的步骤如下：
  
 # 1.部署私有化房间服务器
@@ -10,10 +11,9 @@
  
 ## Flutter
 
- 
 - 将配置文件重命名为 `server.conf`，并在构建前添加到 `assets` 资源根目录下（不要使用多级目录）
-- 修改SDK初始化逻辑，打开 `NEMeetingSDKConfig#useAssetServerConfig` 初始化配置，代码如下:
- 
+- 修改 SDK 初始化逻辑，打开 `NEMeetingSDKConfig#useAssetServerConfig` 初始化配置，代码如下:
+
 ```dart
     /// 该配置需要设置为true，SDK会自动解析 server.conf 配置文件
       String? customServerConfig = await NEMeetingPlugin().getAssetService().loadCustomServer();
@@ -23,11 +23,11 @@
     ));
 ```
 
- 
 ## Windows & MacOS
-- 重命名并拷贝配置文件到指定目录：将配置文件重命名为`server.config`, Windows下在 NetEaseMeetingHost.exe 程序同级目录下放入 server.config 文件；MacOS 下在 NetEaseMeetingHost.app 应用 Contents/MacOS 目录下放入 server.config 文件。
-- 修改SDK初始化逻辑，代码如下：
-  
+
+- 重命名并拷贝配置文件到指定目录：将配置文件重命名为`server.config`, Windows 下在 NetEaseMeetingClient.exe 程序同级目录下放入 server.config 文件；MacOS 下在 NetEaseMeetingClient.app 应用 Contents/MacOS 目录下放入 server.config 文件。
+- 修改 SDK 初始化逻辑，代码如下：
+
 ```c++
 NEMeetingSDKConfig config;
 
@@ -44,6 +44,6 @@ config.getAppInfo()->ApplicationName("Your_App_Name");
 config.setDomain("Your domain");
 //开启私有化配置
 config.setUseAssetServerConfig(true);
-	
+
 NEMeetingSDK::getInstance()->initialize(config, callback)
 ```

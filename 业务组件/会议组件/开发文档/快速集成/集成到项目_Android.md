@@ -1,18 +1,17 @@
 # 网易会议组件
 网易会议Android SDK提供了一套简单易用的接口，允许开发者通过调用NEMeeting SDK(以下简称SDK)提供的API，快速地集成音视频会议功能至现有Android应用中。
 
-## 准备工作
+## 快速接入
+ ### 开发环境
+   | 名称 | 要求 |
+   | :------ | :------ |
+   | JDK版本  | >1.8.0 |
+   | 最小Android API 版本 | API 21, Android 5.0 |
+   | CPU架构支持 | ARM64、ARMV7 |
+   | IDE | Android Studio |
+   | 其他 | 依赖androidx，不支持support库 |
 
-1. 环境准备
-| 名称 | 要求 |
-| :------ | :------ |
-| JDK版本  | >1.8.0 |
-| 最小Android API 版本 | API 21, Android 5.0 |
-| CPU架构支持 | ARM64、ARMV7 |
-| IDE | Android Studio |
-| 其他 | 依赖androidx，不支持support库 |
-
-## 集成
+### SDK集成
 
 1. 新建Android工程
 
@@ -128,30 +127,30 @@
 
 1. 配置初始化相关参数
 
-```java
-NEMeetingSDKConfig config = new NEMeetingSDKConfig();
-config.appKey = Constants.APPKEY; //应用AppKey
-config.appName = context.getString(R.string.app_name); //应用AppName
-//配置会议时显示前台服务
-NEForegroundServiceConfig foregroundServiceConfig = new NEForegroundServiceConfig();
-foregroundServiceConfig.contentTitle = context.getString(R.string.app_name);
-config.foregroundServiceConfig = foregroundServiceConfig;
-```
+    ```java
+    NEMeetingSDKConfig config = new NEMeetingSDKConfig();
+    config.appKey = Constants.APPKEY; //应用AppKey
+    config.appName = context.getString(R.string.app_name); //应用AppName
+    //配置会议时显示前台服务
+    NEForegroundServiceConfig foregroundServiceConfig = new NEForegroundServiceConfig();
+    foregroundServiceConfig.contentTitle = context.getString(R.string.app_name);
+    config.foregroundServiceConfig = foregroundServiceConfig;
+    ```
 
 2. 调用接口并进行回调处理，该接口无额外回调结果数据
 
-```java
-NEMeetingSDK.getInstance().initialize(getApplication(), config, new NECallback<Void>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, Void result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //初始化成功
-        } else {
-            //初始化失败
+    ```java
+    NEMeetingSDK.getInstance().initialize(getApplication(), config, new NECallback<Void>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, Void result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //初始化成功
+            } else {
+                //初始化失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 #### 注意事项
 
@@ -179,25 +178,25 @@ NEMeetingSDK.getInstance().initialize(getApplication(), config, new NECallback<V
 
 1. 获取登录用账号ID和Token。Token由网易会议应用服务器下发，但SDK不提供对应接口获取该信息，需要开发者自己实现。
 
-```java
-String accountId = "accountId";
-String accountToken = "accountToken";
-```
+    ```java
+    String accountId = "accountId";
+    String accountToken = "accountToken";
+    ```
 
 2. 登录并进行回调处理，该接口无额外回调结果数据
 
-```java
-NEMeetingSDK.getInstance().login(accountId, accountToken, new NECallback<Void>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, Void result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //登录成功
-        } else {
-            //登录失败
+    ```java
+    NEMeetingSDK.getInstance().login(accountId, accountToken, new NECallback<Void>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, Void result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //登录成功
+            } else {
+                //登录失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 #### 注意事项
 
@@ -215,39 +214,39 @@ NEMeetingSDK.getInstance().login(accountId, accountToken, new NECallback<Void>()
 
 1. 配置创建会议用的相关参数
 
-```java
-NEStartMeetingParams params = new NEStartMeetingParams();   //会议参数
-params.meetingId = "123456789";                             //会议号
-params.displayName = "我的会议昵称";                          //会议昵称
+    ```java
+    NEStartMeetingParams params = new NEStartMeetingParams();   //会议参数
+    params.meetingId = "123456789";                             //会议号
+    params.displayName = "我的会议昵称";                          //会议昵称
 
-NEStartMeetingOptions options = new NEStartMeetingOptions(); //会议选项
-options.noVideo = true;                                      //入会时关闭视频，默认为true
-options.noAudio = true;                                      //入会时关闭音频，默认为true
-options.noInvite = false;                                    //入会隐藏"邀请"按钮，默认为false
-options.noChat = false;                                      //入会隐藏"聊天"按钮，默认为false
-options.noWhiteBoard = false;                                //入会隐藏白板入口，默认为false
-options.noCloudRecord = true;                                //入会隐藏"录制中"显示，默认为true
-options.noMinimize = true;                                   //入会是否允许最小化会议页面，默认为true
-options.defaultWindowMode = true;                              //入会默认会议视图模式，默认为NEWindowMode.normal
+    NEStartMeetingOptions options = new NEStartMeetingOptions(); //会议选项
+    options.noVideo = true;                                      //入会时关闭视频，默认为true
+    options.noAudio = true;                                      //入会时关闭音频，默认为true
+    options.noInvite = false;                                    //入会隐藏"邀请"按钮，默认为false
+    options.noChat = false;                                      //入会隐藏"聊天"按钮，默认为false
+    options.noWhiteBoard = false;                                //入会隐藏白板入口，默认为false
+    options.noCloudRecord = true;                                //入会隐藏"录制中"显示，默认为true
+    options.noMinimize = true;                                   //入会是否允许最小化会议页面，默认为true
+    options.defaultWindowMode = true;                              //入会默认会议视图模式，默认为NEWindowMode.normal
 
-//options.fullToolbarMenuItems = configToolbarMenuItems();    //自定义【Toolbar】菜单
-//options.fullToolbarMenuItems = configMoreMenuItems();    //自定义【更多】菜单
-```
+    //options.fullToolbarMenuItems = configToolbarMenuItems();    //自定义【Toolbar】菜单
+    //options.fullToolbarMenuItems = configMoreMenuItems();    //自定义【更多】菜单
+    ```
 
 2. 调用接口并进行回调处理。该接口无额外回调结果数据，可根据错误码判断是否成功
 
-```java
-NEMeetingSDK.getInstance().getMeetingService().startMeeting(getActivity(), params, options, new NECallback<Void>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, Void result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //创建会议成功
-        } else {
-            //创建会议失败
+    ```java
+    NEMeetingSDK.getInstance().getMeetingService().startMeeting(getActivity(), params, options, new NECallback<Void>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, Void result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //创建会议成功
+            } else {
+                //创建会议失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 3. 创建会议成功后，SDK会拉起会议界面并接管会议逻辑，开发者无需做其他处理。创会人会自动成为该会议的主持人，可进行相关的会议控制操作。其他参会者可通过该会议号加入到该会议中来。
 
@@ -293,18 +292,18 @@ options.defaultWindowMode = true;                              //入会默认会
 
 2. 调用接口并进行回调处理。该接口无额外回调结果数据，可根据错误码判断是否成功
 
-```java
-NEMeetingSDK.getInstance().getMeetingService().joinMeeting(getActivity(), params, options, new NECallback<Void>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, Void result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //加入会议成功
-        } else {
-            //加入会议失败
+    ```java
+    NEMeetingSDK.getInstance().getMeetingService().joinMeeting(getActivity(), params, options, new NECallback<Void>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, Void result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //加入会议成功
+            } else {
+                //加入会议失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 3. 加入会议成功后，SDK会拉起会议界面并接管会议逻辑，开发者无需做其他处理。
 
@@ -327,41 +326,41 @@ NEMeetingSDK.getInstance().getMeetingService().joinMeeting(getActivity(), params
 
 1. 创建预约会议
 
-```java
-    public NEMeetingItem createScheduleMeetingItem() {
-        return NEMeetingSDK.getInstance().getPreMeetingService()
-          .createScheduleMeetingItem();
-    }
-    public void scheduleMeeting(NEMeetingItem item, NECallback<NEMeetingItem> callback) {
-        NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(item,callback);
-    }
-```
+    ```java
+        public NEMeetingItem createScheduleMeetingItem() {
+            return NEMeetingSDK.getInstance().getPreMeetingService()
+              .createScheduleMeetingItem();
+        }
+        public void scheduleMeeting(NEMeetingItem item, NECallback<NEMeetingItem> callback) {
+            NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(item,callback);
+        }
+    ```
 
 2. 调用接口并进行回调处理，可根据错误码判断是否成功
 
-```java
-	       neMeetingItem.setSubject("会议主题")	     //预约会议主题
-                            .setStartTime(startTime)   //预约会议开始时间
-                            .setEndTime(endTime)	     //预约会议结束时间								
-                        		.setPassword("passWord");  //预约会议配置密码
-                    }
-                    NEMeetingItemSetting setting = new NEMeetingItemSetting();
-                    setting.isAttendeeAudioOff = false; //是否使用入会时音频开关
-                    setting.cloudRecordOn = false; //是否开启云端录制
-                     NEMeetingItemLive live = NEMeetingSDK.getInstance().getPreMeetingService().createMeetingItemLive();
-                    live.setEnable(isLiveOn);
-                    live.setLiveWebAccessControlLevel(isLiveLevelOpen? NEMeetingLiveAuthLevel.appToken:NEMeetingLiveAuthLevel.token);
-                    neMeetingItem.setLive(live);
-                    neMeetingItem.setSetting(setting);
-NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(neMeetingItem, new ToastCallback<NEMeetingItem>() {
-                        @Override
-                        public void onResult(int resultCode, String resultMsg, NEMeetingItem resultData) {
-                            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-                                //TODO do something
-                            }
+    ```java
+               neMeetingItem.setSubject("会议主题")	     //预约会议主题
+                                .setStartTime(startTime)   //预约会议开始时间
+                                .setEndTime(endTime)	     //预约会议结束时间								
+                                    .setPassword("passWord");  //预约会议配置密码
                         }
-                    });
-```
+                        NEMeetingItemSetting setting = new NEMeetingItemSetting();
+                        setting.isAttendeeAudioOff = false; //是否使用入会时音频开关
+                        setting.cloudRecordOn = false; //是否开启云端录制
+                         NEMeetingItemLive live = NEMeetingSDK.getInstance().getPreMeetingService().createMeetingItemLive();
+                        live.setEnable(isLiveOn);
+                        live.setLiveWebAccessControlLevel(isLiveLevelOpen? NEMeetingLiveAuthLevel.appToken:NEMeetingLiveAuthLevel.token);
+                        neMeetingItem.setLive(live);
+                        neMeetingItem.setSetting(setting);
+    NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(neMeetingItem, new ToastCallback<NEMeetingItem>() {
+                            @Override
+                            public void onResult(int resultCode, String resultMsg, NEMeetingItem resultData) {
+                                if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                                    //TODO do something
+                                }
+                            }
+                        });
+    ```
 
 #### 注意事项
 
@@ -379,24 +378,24 @@ NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(neMeetingItem,
 
 1. 取消预约会议
 
-```java
-      public void cancelMeeting(long meetingUniqueId, NECallback<Void> callback) {
-      NEMeetingSDK.getInstance().getPreMeetingService()
-        .cancelMeeting(meetingUniqueId,callback);
-    }
-   
-```
+    ```java
+          public void cancelMeeting(long meetingUniqueId, NECallback<Void> callback) {
+          NEMeetingSDK.getInstance().getPreMeetingService()
+            .cancelMeeting(meetingUniqueId,callback);
+        }
+
+    ```
 
 2. 调用接口并进行回调处理，可根据错误码判断是否成功
 
-```java
-  NEMeetingSDK.getInstance().getPreMeetingService().cancelMeeting(meetingUniqueId, new ToastCallback<Void>() {
-                @Override
-                public void onResult(int resultCode, String resultMsg, Void resultData) {
-                    //TODO  do something
-                }
-            });
-```
+    ```java
+      NEMeetingSDK.getInstance().getPreMeetingService().cancelMeeting(meetingUniqueId, new ToastCallback<Void>() {
+                    @Override
+                    public void onResult(int resultCode, String resultMsg, Void resultData) {
+                        //TODO  do something
+                    }
+                });
+    ```
 
 #### 注意事项
 
@@ -415,23 +414,23 @@ NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(neMeetingItem,
 
 1. 查询预定会议信息
 
-```java
-  public void getMeetingItemById(int meetingUniqueId, NECallback<NEMeetingItem> callback) {
-        NEMeetingSDK.getInstance().getPreMeetingService().getMeetingItemById(meetingUniqueId,callback);
-    }
-   
-```
+    ```java
+      public void getMeetingItemById(int meetingUniqueId, NECallback<NEMeetingItem> callback) {
+            NEMeetingSDK.getInstance().getPreMeetingService().getMeetingItemById(meetingUniqueId,callback);
+        }
+
+    ```
 
 2. 调用接口并进行回调处理，可根据错误码判断是否成功
 
-```java
-  NEMeetingSDK.getInstance().getPreMeetingService().getMeetingItemById(meetingUniqueId, new ToastCallback<NEMeetingItem>() {
-                @Override
-                public void onResult(int resultCode, String resultMsg, NEMeetingItem resultData) {
-                    //TODO  do something
-                }
-            });
-```
+    ```java
+      NEMeetingSDK.getInstance().getPreMeetingService().getMeetingItemById(meetingUniqueId, new ToastCallback<NEMeetingItem>() {
+                    @Override
+                    public void onResult(int resultCode, String resultMsg, NEMeetingItem resultData) {
+                        //TODO  do something
+                    }
+                });
+    ```
 
 #### 注意事项
 
@@ -449,28 +448,28 @@ NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(neMeetingItem,
 
 1. 查询预约会议列表
 
-```java
-  List<NEMeetingItemStatus> status = new ArrayList<>();
-        status.add(NEMeetingItemStatus.init);
-        status.add(NEMeetingItemStatus.started);
-        status.add(NEMeetingItemStatus.ended);
+    ```java
+      List<NEMeetingItemStatus> status = new ArrayList<>();
+            status.add(NEMeetingItemStatus.init);
+            status.add(NEMeetingItemStatus.started);
+            status.add(NEMeetingItemStatus.ended);
 
-  public void getMeetingList(List<NEMeetingItemStatus> status, NECallback<List<NEMeetingItem>> callback) {
-        NEMeetingSDK.getInstance().getPreMeetingService().getMeetingList(status,callback);
-    }
-   
-```
+      public void getMeetingList(List<NEMeetingItemStatus> status, NECallback<List<NEMeetingItem>> callback) {
+            NEMeetingSDK.getInstance().getPreMeetingService().getMeetingList(status,callback);
+        }
+
+    ```
 
 2. 调用接口并进行回调处理，可根据错误码判断是否成功
 
-```java
-  NEMeetingSDK.getInstance().getPreMeetingService().getMeetingList(status, new ToastCallback< List<NEMeetingItem> >() {
-                @Override
-                public void onResult(int resultCode, String resultMsg, List<NEMeetingItem> resultData) {
-                    //TODO  do something
-                }
-            });
-```
+    ```java
+      NEMeetingSDK.getInstance().getPreMeetingService().getMeetingList(status, new ToastCallback< List<NEMeetingItem> >() {
+                    @Override
+                    public void onResult(int resultCode, String resultMsg, List<NEMeetingItem> resultData) {
+                        //TODO  do something
+                    }
+                });
+    ```
 
 #### 注意事项
 
@@ -489,22 +488,22 @@ NEMeetingSDK.getInstance().getPreMeetingService().scheduleMeeting(neMeetingItem,
 
 1. 注册回调接口开始监听，并在回调方法中处理感兴趣的事件
 
-```java
-    NEScheduleMeetingStatusListener listener = new NEScheduleMeetingStatusListener() {
+    ```java
+        NEScheduleMeetingStatusListener listener = new NEScheduleMeetingStatusListener() {
 
-    @Override
-    public void onScheduleMeetingStatusChange(List<NEMeetingItem> changedMeetingItemList, boolean incremental) {
-      //TODO do something        
-    }
-};
-NEMeetingSDK.getInstance().getPreMeetingService().registerScheduleMeetingStatusListener(listener);
-```
+        @Override
+        public void onScheduleMeetingStatusChange(List<NEMeetingItem> changedMeetingItemList, boolean incremental) {
+          //TODO do something        
+        }
+    };
+    NEMeetingSDK.getInstance().getPreMeetingService().registerScheduleMeetingStatusListener(listener);
+    ```
 
 2. 反注册回调接口停止监听
 
-```java
-NEMeetingSDK.getInstance().getPreMeetingService().unRegisterScheduleMeetingStatusListener(listener);
-```
+    ```java
+    NEMeetingSDK.getInstance().getPreMeetingService().unRegisterScheduleMeetingStatusListener(listener);
+    ```
 
 #### 注意事项
 
@@ -526,21 +525,21 @@ NEMeetingSDK.getInstance().getPreMeetingService().unRegisterScheduleMeetingStatu
 
 1. 注册回调接口开始监听，并在回调方法中处理感兴趣的事件
 
-```java
-NEMeetingStatusListener listener = new NEMeetingStatusListener() {
-    @Override
-    public void onMeetingStatusChanged(Event event) {
-       //处理会议状态变更事件          
-    }
-};
-NEMeetingSDK.getInstance().getMeetingService().addMeetingStatusListener(listener);
-```
+    ```java
+    NEMeetingStatusListener listener = new NEMeetingStatusListener() {
+        @Override
+        public void onMeetingStatusChanged(Event event) {
+           //处理会议状态变更事件          
+        }
+    };
+    NEMeetingSDK.getInstance().getMeetingService().addMeetingStatusListener(listener);
+    ```
 
 2. 反注册回调接口停止监听
 
-```java
-NEMeetingSDK.getInstance().getMeetingService().removeMeetingStatusListener(listener);
-```
+    ```java
+    NEMeetingSDK.getInstance().getMeetingService().removeMeetingStatusListener(listener);
+    ```
 
 #### 注意事项
 
@@ -562,15 +561,15 @@ NEMeetingSDK.getInstance().getMeetingService().removeMeetingStatusListener(liste
 
 2. 调用接口并进行回调处理。该接口的回调结果数据类型为NEMeetingInfo对象类型；如果当前无正在进行中的会议，则回调数据对象为空
 
-```java
-
-NEMeetingSDK.getInstance().getMeetingService().getCurrentMeetingInfo(new NECallback<NEMeetingInfo>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, NEMeetingInfo resultData) {
-        Log.d("OnCustomMenuListener", "getCurrentMeetingInfo:resultCode " + resultCode + "#resultData " + resultData.toString());
-    }
-});
-```
+    ```java
+    
+    NEMeetingSDK.getInstance().getMeetingService().getCurrentMeetingInfo(new NECallback<NEMeetingInfo>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, NEMeetingInfo resultData) {
+            Log.d("OnCustomMenuListener", "getCurrentMeetingInfo:resultCode " + resultCode + "#resultData " + resultData.toString());
+        }
+    });
+    ```
 #### 注意事项
 
 - 在SDK进入会议会议状态，才能获取当前会议信息
@@ -589,18 +588,18 @@ NEMeetingSDK.getInstance().getMeetingService().getCurrentMeetingInfo(new NECallb
 
 2. 调用接口并进行回调处理。该接口的回调结果数据类型为字符串类型，可根据错误码判断是否成功
 
-```java
-NEMeetingSDK.getInstance().getAccountService().getPersonalMeetingId(new NECallback<String>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, String result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //获取个人会议号成功，result即为个人会议号
-        } else {
-            //获取个人会议号失败
+    ```java
+    NEMeetingSDK.getInstance().getAccountService().getPersonalMeetingId(new NECallback<String>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, String result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //获取个人会议号成功，result即为个人会议号
+            } else {
+                //获取个人会议号失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 3. 获取个人会议号后，可用于创建会议
 
@@ -620,26 +619,26 @@ NEMeetingSDK.getInstance().getAccountService().getPersonalMeetingId(new NECallba
 
 1. 注册回调接口开始监听，并在回调接口中处理感兴趣的事件
 
-```java
-NEAuthListener authListener = new NEAuthListener() {
-    @Override
-    public void onKickOut() {
-        //当前账号已在其他设备上登录
-    }
-  
-    @Override
-    public void onAuthInfoExpired() {
-        //账号信息过期通知，原因为用户修改了密码，应用层随后应该重新登录
-    }
-};
-NEMeetingSDK.getInstance().addAuthListener(authListener);    //添加监听
-```
+    ```java
+    NEAuthListener authListener = new NEAuthListener() {
+        @Override
+        public void onKickOut() {
+            //当前账号已在其他设备上登录
+        }
+
+        @Override
+        public void onAuthInfoExpired() {
+            //账号信息过期通知，原因为用户修改了密码，应用层随后应该重新登录
+        }
+    };
+    NEMeetingSDK.getInstance().addAuthListener(authListener);    //添加监听
+    ```
 
 2. 反注册回调接口停止监听
 
-```java
-NEMeetingSDK.getInstance().removeAuthListener(authListener); //移除监听
-```
+    ```java
+    NEMeetingSDK.getInstance().removeAuthListener(authListener); //移除监听
+    ```
 
 #### 注意事项
 
@@ -651,50 +650,50 @@ NEMeetingSDK.getInstance().removeAuthListener(authListener); //移除监听
 ### [自定义会中【更多】菜单内容](../../SDK进阶/自定义菜单.md)
 1. 配置匿名入会/创建会议/加入会议的Options相关参数
 
-```java
-options.noInvite = false;                                    //入会隐藏"邀请"按钮，默认为false
-options.noChat = false;                                      //入会隐藏"聊天"按钮，默认为false
-configMoreMenus(options);
-
-private void configMoreMenus(NEMeetingOptions options) {
-        //1. 创建更多菜单列表构建类，列表默认包含："邀请"、"聊天"
-        NEMenuItemListBuilder moreMenuBuilder = NEMenuItemListBuilder.moreMenuBuilder();
-        //2. 添加一个多选菜单项
-        moreMenuBuilder.addMenu(new NECheckableMenuItem(
-                        100, NEMenuVisibility.VISIBLE_ALWAYS,
-                        new NEMenuItemInfo("菜单-未选中", R.drawable.icon),
-                        new NEMenuItemInfo("菜单-选中", R.drawable.icon)
-                )
-        );
-        //3. 配置完成，设置参数字段
-        options.fullMoreMenuItems = moreMenuBuilder.build();
-    }
-```
+    ```java
+    options.noInvite = false;                                    //入会隐藏"邀请"按钮，默认为false
+    options.noChat = false;                                      //入会隐藏"聊天"按钮，默认为false
+    configMoreMenus(options);
+    
+    private void configMoreMenus(NEMeetingOptions options) {
+            //1. 创建更多菜单列表构建类，列表默认包含："邀请"、"聊天"
+            NEMenuItemListBuilder moreMenuBuilder = NEMenuItemListBuilder.moreMenuBuilder();
+            //2. 添加一个多选菜单项
+            moreMenuBuilder.addMenu(new NECheckableMenuItem(
+                            100, NEMenuVisibility.VISIBLE_ALWAYS,
+                            new NEMenuItemInfo("菜单-未选中", R.drawable.icon),
+                            new NEMenuItemInfo("菜单-选中", R.drawable.icon)
+                    )
+            );
+            //3. 配置完成，设置参数字段
+            options.fullMoreMenuItems = moreMenuBuilder.build();
+        }
+    ```
 2. 设置回调接口开始监听，并在回调方法中处理自定义按钮的事件
 
-```java
-// 监听"菜单点击"，只需设置一次即可，不用每次入会都进行设置
-    private void setupMenuClickListener() {
-        NEMeetingSDK.getInstance().getMeetingService()
-                .setOnInjectedMenuItemClickListener(new NEMeetingOnInjectedMenuItemClickListener() {
-
-                    @Override
-                    public void onInjectedMenuItemClick(Context context,
-                                                        NEMenuClickInfo clickInfo, NEMeetingInfo meetingInfo, NEMenuStateController stateController) {
-                        //1. 获取被点击菜单项ID
-                        final int id = clickInfo.getItemId();
-                        //2. 如果是多状态菜单，获取被点击时的状态
-                        if (clickInfo instanceof NEStatefulMenuClickInfo) {
-                            // 菜单项点击时的选中状态
-                            final boolean isChecked = ((NEStatefulMenuClickInfo) clickInfo).isChecked();
-                            // 3. 控制菜单项的状态迁移
-                            final boolean needTransition = conditionCheck();
-                            stateController.didStateTransition(needTransition, null);
+    ```java
+    // 监听"菜单点击"，只需设置一次即可，不用每次入会都进行设置
+        private void setupMenuClickListener() {
+            NEMeetingSDK.getInstance().getMeetingService()
+                    .setOnInjectedMenuItemClickListener(new NEMeetingOnInjectedMenuItemClickListener() {
+    
+                        @Override
+                        public void onInjectedMenuItemClick(Context context,
+                                                            NEMenuClickInfo clickInfo, NEMeetingInfo meetingInfo, NEMenuStateController stateController) {
+                            //1. 获取被点击菜单项ID
+                            final int id = clickInfo.getItemId();
+                            //2. 如果是多状态菜单，获取被点击时的状态
+                            if (clickInfo instanceof NEStatefulMenuClickInfo) {
+                                // 菜单项点击时的选中状态
+                                final boolean isChecked = ((NEStatefulMenuClickInfo) clickInfo).isChecked();
+                                // 3. 控制菜单项的状态迁移
+                                final boolean needTransition = conditionCheck();
+                                stateController.didStateTransition(needTransition, null);
+                            }
                         }
-                    }
-                });
-    }
-```
+                    });
+        }
+    ```
 
 #### 注意事项
 
@@ -713,18 +712,18 @@ private void configMoreMenus(NEMeetingOptions options) {
 
 1. 调用接口并进行回调处理。该接口无额外回调结果数据，可根据错误码判断是否成功
 
-```java
-NEMeetingSDK.getInstance().logout(new NECallback<Void>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, Void result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //注销登录成功
-        } else {
-            //注销登录失败
+    ```java
+    NEMeetingSDK.getInstance().logout(new NECallback<Void>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, Void result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //注销登录成功
+            } else {
+                //注销登录失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 #### 注意事项
 
@@ -743,84 +742,84 @@ NEMeetingSDK.getInstance().logout(new NECallback<Void>() {
 
 1. 获取会议设置服务
 
-```java
-NESettingsService settingsService = NEMeetingSDK.getInstance().getSettingsService();
-```
+    ```java
+    NESettingsService settingsService = NEMeetingSDK.getInstance().getSettingsService();
+    ```
 
 2. 调用不同接口保存设置项或查询设置项
 
 - 查询通用入会设置
 
-```java
-// 设置并保存会议设置
-settingsService.enableShowMyMeetingElapseTime(true);
-settingsService.setTurnOnMyAudioWhenJoinMeeting(true);
-settingsService.setTurnOnMyVideoWhenJoinMeeting(true);
+    ```java
+    // 设置并保存会议设置
+    settingsService.enableShowMyMeetingElapseTime(true);
+    settingsService.setTurnOnMyAudioWhenJoinMeeting(true);
+    settingsService.setTurnOnMyVideoWhenJoinMeeting(true);
 
-//查询会议设置
-boolean showMeetingElapseTimeEnabled = settingsService.isShowMyMeetingElapseTimeEnabled();
-boolean audioEnabled = settingsService.isTurnOnMyAudioWhenJoinMeetingEnabled();
-boolean videoEnabled = settingsService.isTurnOnMyVideoWhenJoinMeetingEnabled();
-```
+    //查询会议设置
+    boolean showMeetingElapseTimeEnabled = settingsService.isShowMyMeetingElapseTimeEnabled();
+    boolean audioEnabled = settingsService.isTurnOnMyAudioWhenJoinMeetingEnabled();
+    boolean videoEnabled = settingsService.isTurnOnMyVideoWhenJoinMeetingEnabled();
+    ```
 
 - 查询直播开通状态
-```java
-
-    /**
-      * 查询直播开通状态
-      * @return true-打开，false-关闭
-     */
-    NEMeetingSDK.getInstance().getSettingsService().isMeetingLiveEnabled();
-```
+    ```java
+    
+        /**
+          * 查询直播开通状态
+          * @return true-打开，false-关闭
+         */
+        NEMeetingSDK.getInstance().getSettingsService().isMeetingLiveEnabled();
+    ```
 - 查询美颜开通状态
-```java
-    /**
-      * 查询美颜开通状态，开通请咨询下面注意事项官网地址
-      * @return true-打开，false-关闭
-      */
-    boolean isBeautyFaceEnabled = NEMeetingSDK.getInstance().getSettingsService().isBeautyFaceEnabled();
-```
+    ```java
+        /**
+          * 查询美颜开通状态，开通请咨询下面注意事项官网地址
+          * @return true-打开，false-关闭
+          */
+        boolean isBeautyFaceEnabled = NEMeetingSDK.getInstance().getSettingsService().isBeautyFaceEnabled();
+    ```
 - 设置并保存美颜配置
-```java
-
-    /**
-     * 设置美颜参数
-     * @param value 传入美颜等级，参数规则为[0,10]整数
-     */
-    NEMeetingSDK.getInstance().getSettingsService().setBeautyFaceValue(value);
-```
+    ```java
+    
+        /**
+         * 设置美颜参数
+         * @param value 传入美颜等级，参数规则为[0,10]整数
+         */
+        NEMeetingSDK.getInstance().getSettingsService().setBeautyFaceValue(value);
+    ```
 - 查询美颜配置
-```java
-    /**
-     * 获取当前美颜参数，关闭返回0
-     */
-    NEMeetingSDK.getInstance().getSettingsService().getBeautyFaceValue(
-        (resultCode, resultMsg, resultData)->
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //获取成功
-            Log.d("TAG", "getBeautyFaceValue = " +resultData )
-        } else {
-            //获取失败
-        }
-    );
-```
+    ```java
+        /**
+         * 获取当前美颜参数，关闭返回0
+         */
+        NEMeetingSDK.getInstance().getSettingsService().getBeautyFaceValue(
+            (resultCode, resultMsg, resultData)->
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //获取成功
+                Log.d("TAG", "getBeautyFaceValue = " +resultData )
+            } else {
+                //获取失败
+            }
+        );
+    ```
 - 打开美颜界面
-```java
-    /**
-     * 打开美颜界面，必须在init之后调用该接口，支持会前设置使用。
-     *
-     * @param context
-     * @param callback 回调
-     */
-    NEMeetingSDK.getInstance().getSettingsService().openBeautyUI(context,
-        (resultCode, resultMsg, resultData) ->
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //打开预览页面成功
-        } else {
-            //打开预览页面失败
-        }
-    );
-```
+    ```java
+        /**
+         * 打开美颜界面，必须在init之后调用该接口，支持会前设置使用。
+         *
+         * @param context
+         * @param callback 回调
+         */
+        NEMeetingSDK.getInstance().getSettingsService().openBeautyUI(context,
+            (resultCode, resultMsg, resultData) ->
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //打开预览页面成功
+            } else {
+                //打开预览页面失败
+            }
+        );
+    ```
 
 #### 注意事项
 
@@ -843,70 +842,66 @@ boolean videoEnabled = settingsService.isTurnOnMyVideoWhenJoinMeetingEnabled();
 
 1. 获取遥控器服务
 
-```java
-NEControlService controlService = NEMeetingSDK.getInstance().getControlService();
-```
+    ```java
+    NEControlService controlService = NEMeetingSDK.getInstance().getControlService();
+    ```
 
 2. 打开遥控器
 
-```java   
+    ```java
+    NEControlParams params = new NEControlParams();              //遥控器参数
+    params.displayName = "我的会议昵称";                           //会议昵称
+    NEControlOptions options = new NEControlOptions();           //遥控器选项
+    options.settingMenu = new NEControlMenuItem("自定义设置名称"); //自定义【更多】按钮菜单。
+    options.shareMenu = new NEControlMenuItem("自定义邀请名称");   //自定义【更多】按钮菜单。
 
-NEControlParams params = new NEControlParams();              //遥控器参数
-params.displayName = "我的会议昵称";                           //会议昵称
-
-
-NEControlOptions options = new NEControlOptions();           //遥控器选项
-options.settingMenu = new NEControlMenuItem("自定义设置名称"); //自定义【更多】按钮菜单。
-options.shareMenu = new NEControlMenuItem("自定义邀请名称");   //自定义【更多】按钮菜单。
-
- 
-NEMeetingSDK.getInstance().getControlService().openControlUI(context, params, opts, new NECallback<Void>() {
-    @Override
-    public void onResult(int resultCode, String resultMsg, Void result) {
-        if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
-            //打开遥控器成功
-        } else {
-            //打开遥控器失败
+    NEMeetingSDK.getInstance().getControlService().openControlUI(context, params, opts, new NECallback<Void>() {
+        @Override
+        public void onResult(int resultCode, String resultMsg, Void result) {
+            if (resultCode == NEMeetingError.ERROR_CODE_SUCCESS) {
+                //打开遥控器成功
+            } else {
+                //打开遥控器失败
+            }
         }
-    }
-});
-```
+    });
+    ```
 
 3. 自定义遥控器的设置、邀请按钮
 
-```java
-NEMeetingSDK.getInstance().getControlService().setOnCustomMenuItemClickListener(new NEControlMenuItemClickListener {
-        @Override
-        public void onSettingMenuItemClick(NEControlMenuItem menuItem) {
-            Toast.makeText(MainActivity.this, "点击了" + menuItem.title, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onShareMenuItemClick(NEControlMenuItem menuItem, NEMeetingInfo meetingInfo) {
-            Toast.makeText(MainActivity.this, "点击了" + menuItem.title, Toast.LENGTH_SHORT).show();
-        }
-    });
-
-```
+    ```java
+    NEMeetingSDK.getInstance().getControlService().setOnCustomMenuItemClickListener(new NEControlMenuItemClickListener {
+            @Override
+            public void onSettingMenuItemClick(NEControlMenuItem menuItem) {
+                Toast.makeText(MainActivity.this, "点击了" + menuItem.title, Toast.LENGTH_SHORT).show();
+            }
+    
+            @Override
+            public void onShareMenuItemClick(NEControlMenuItem menuItem, NEMeetingInfo meetingInfo) {
+                Toast.makeText(MainActivity.this, "点击了" + menuItem.title, Toast.LENGTH_SHORT).show();
+            }
+        });
+    
+    ```
 4. 遥控器内部状态监听注册和反注册
 
-```java
-
-    NEControlListener controlListener = new NEControlListener() {
-        @Override
-        public void onStartMeetingResult(NEControlResult status) {
-            Toast.makeText(MainActivity.this, "遥控器开始会议事件回调:" + status.code + "#" + status.message, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onJoinMeetingResult(NEControlResult status) {
-            Toast.makeText(MainActivity.this, "遥控器加入会议事件回调:" + status.code + "#" + status.message, Toast.LENGTH_SHORT).show();
-        }
-    };
-  NEMeetingSDK.getInstance().getControlService().registerControlListener(listener);
-  
-  NEMeetingSDK.getInstance().getControlService().unRegisterControlListener(listener);
-```
+    ```java
+    
+        NEControlListener controlListener = new NEControlListener() {
+            @Override
+            public void onStartMeetingResult(NEControlResult status) {
+                Toast.makeText(MainActivity.this, "遥控器开始会议事件回调:" + status.code + "#" + status.message, Toast.LENGTH_SHORT).show();
+            }
+    
+            @Override
+            public void onJoinMeetingResult(NEControlResult status) {
+                Toast.makeText(MainActivity.this, "遥控器加入会议事件回调:" + status.code + "#" + status.message, Toast.LENGTH_SHORT).show();
+            }
+        };
+      NEMeetingSDK.getInstance().getControlService().registerControlListener(listener);
+    
+      NEMeetingSDK.getInstance().getControlService().unRegisterControlListener(listener);
+    ```
 
 #### 注意事项
 

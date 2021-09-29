@@ -1,3 +1,7 @@
+### 1.3.3 => 1.4.0
+
+可直接升级；
+
 ### 1.3.1 => 1.3.3
 
 1. 将 `implementation 'com.netease.yunxin.kit:call:1.3.3'` 替换为 `implementation 'com.netease.yunxin.kit:call-adapter:1.3.3'`；
