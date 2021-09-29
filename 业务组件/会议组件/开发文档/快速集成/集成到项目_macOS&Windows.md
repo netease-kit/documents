@@ -1,20 +1,20 @@
 ## 概述
 
-网易会议 Windows/macOS SDK 提供了一套简单易用的接口，允许开发者通过调用 NEMeeting SDK (以下简称SDK) 提供的API，快速地集成音视频会议功能至现有桌面应用中。
+网易会议 Windows/macOS SDK 提供了一套简单易用的接口，允许开发者通过调用 NEMeeting SDK (以下简称 SDK) 提供的 API，快速地集成音视频会议功能至现有桌面应用中。
 
 ## 环境要求
 
 | 名称 | 要求                                           |
 | :--- | :--------------------------------------------- |
 | IDE  | Visual Studio 2019 or Qt5 or Xcode 11.3.1 以上 |
-| OS   | Windows 7 以上 or macOS 10.13 以上             |
+| OS   | Windows 7 以上 or macOS 10.14 以上             |
 
 ## 业务开发
 
 #### SDK 引入
 
- - [点击此处下载 Windows C++ SDK](http://yx-web.nos.netease.com/package/1631187072/NEMeeting_SDK_Windows_v2.0.4.zip)
- - [点击此处下载 macOS C++ SDK](http://yx-web.nos.netease.com/package/1631186906/NEMeeting_SDK_macOS_v2.0.4.zip)
+- [点击此处下载 Windows C++ SDK](http://yx-web.nos.netease.com/package/1631187072/NEMeeting_SDK_Windows_v2.0.4.zip)
+- [点击此处下载 macOS C++ SDK](http://yx-web.nos.netease.com/package/1631186906/NEMeeting_SDK_macOS_v2.0.4.zip)
 
 **1）Windows 开发环境配置**
 
@@ -168,7 +168,7 @@ if (ipcSettingService)
     if (videoController)
     {
         videoController->isTurnOnMyVideoWhenJoinMeetingEnabled([this](NEErrorCode errorCode, const std::string& errorMessage, const bool& bOn){
-            // errorCode 错误码，errorMessage 错误信息，bOn 视频开关状态 
+            // errorCode 错误码，errorMessage 错误信息，bOn 视频开关状态
         });
     }
 }
@@ -199,7 +199,7 @@ if (ipcSettingService)
     {
         //std::promise<bool> promise;
         AudioController->isTurnOnMyAudioWhenJoinMeetingEnabled([this](NEErrorCode errorCode, const std::string& errorMessage, const bool& bOn){
-            // errorCode 错误码，errorMessage 错误信息，bOn 音频开关状态 
+            // errorCode 错误码，errorMessage 错误信息，bOn 音频开关状态
         });
     }
 }
@@ -346,7 +346,7 @@ if (meetingService)
 在加入或者创建会议前后，您可能需要关注议的创建/加入进度以及会议中状态的变更通知，如需关注这些信息，您需要先继承 `NEMeetingStatusListener`，然后实现 `onMeetingStatusChanged` 通知，并将该子类注册到监听队列中。示例代码如下：
 
 ```C++
-// 继承子类并覆写 
+// 继承子类并覆写
 
 class NEMeetingSDKManager : public NEMeetingStatusListener
 {
