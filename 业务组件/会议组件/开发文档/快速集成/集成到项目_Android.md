@@ -562,7 +562,7 @@ options.defaultWindowMode = true;                              //入会默认会
 2. 调用接口并进行回调处理。该接口的回调结果数据类型为NEMeetingInfo对象类型；如果当前无正在进行中的会议，则回调数据对象为空
 
     ```java
-
+    
     NEMeetingSDK.getInstance().getMeetingService().getCurrentMeetingInfo(new NECallback<NEMeetingInfo>() {
         @Override
         public void onResult(int resultCode, String resultMsg, NEMeetingInfo resultData) {
@@ -654,7 +654,7 @@ options.defaultWindowMode = true;                              //入会默认会
     options.noInvite = false;                                    //入会隐藏"邀请"按钮，默认为false
     options.noChat = false;                                      //入会隐藏"聊天"按钮，默认为false
     configMoreMenus(options);
-
+    
     private void configMoreMenus(NEMeetingOptions options) {
             //1. 创建更多菜单列表构建类，列表默认包含："邀请"、"聊天"
             NEMenuItemListBuilder moreMenuBuilder = NEMenuItemListBuilder.moreMenuBuilder();
@@ -676,7 +676,7 @@ options.defaultWindowMode = true;                              //入会默认会
         private void setupMenuClickListener() {
             NEMeetingSDK.getInstance().getMeetingService()
                     .setOnInjectedMenuItemClickListener(new NEMeetingOnInjectedMenuItemClickListener() {
-
+    
                         @Override
                         public void onInjectedMenuItemClick(Context context,
                                                             NEMenuClickInfo clickInfo, NEMeetingInfo meetingInfo, NEMenuStateController stateController) {
@@ -764,7 +764,7 @@ options.defaultWindowMode = true;                              //入会默认会
 
 - 查询直播开通状态
     ```java
-
+    
         /**
           * 查询直播开通状态
           * @return true-打开，false-关闭
@@ -781,7 +781,7 @@ options.defaultWindowMode = true;                              //入会默认会
     ```
 - 设置并保存美颜配置
     ```java
-
+    
         /**
          * 设置美颜参数
          * @param value 传入美颜等级，参数规则为[0,10]整数
@@ -875,31 +875,31 @@ options.defaultWindowMode = true;                              //入会默认会
             public void onSettingMenuItemClick(NEControlMenuItem menuItem) {
                 Toast.makeText(MainActivity.this, "点击了" + menuItem.title, Toast.LENGTH_SHORT).show();
             }
-
+    
             @Override
             public void onShareMenuItemClick(NEControlMenuItem menuItem, NEMeetingInfo meetingInfo) {
                 Toast.makeText(MainActivity.this, "点击了" + menuItem.title, Toast.LENGTH_SHORT).show();
             }
         });
-
+    
     ```
 4. 遥控器内部状态监听注册和反注册
 
     ```java
-
+    
         NEControlListener controlListener = new NEControlListener() {
             @Override
             public void onStartMeetingResult(NEControlResult status) {
                 Toast.makeText(MainActivity.this, "遥控器开始会议事件回调:" + status.code + "#" + status.message, Toast.LENGTH_SHORT).show();
             }
-
+    
             @Override
             public void onJoinMeetingResult(NEControlResult status) {
                 Toast.makeText(MainActivity.this, "遥控器加入会议事件回调:" + status.code + "#" + status.message, Toast.LENGTH_SHORT).show();
             }
         };
       NEMeetingSDK.getInstance().getControlService().registerControlListener(listener);
-
+    
       NEMeetingSDK.getInstance().getControlService().unRegisterControlListener(listener);
     ```
 
