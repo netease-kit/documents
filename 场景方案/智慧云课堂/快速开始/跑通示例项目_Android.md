@@ -48,7 +48,7 @@
 | AUTHORIZATION | 调用服务端接口时，请求头中的校验参数。      |
 
 > 说明：
-> 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs)。体验账号的课堂时长限制为 30 分钟。
+> 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs/智慧云课堂体验账号.md)。体验账号的课堂时长限制为 30 分钟。
 5. 在 Android Studio 中，**单击Sync Project with Gradle Files** 按钮，同步工程依赖。
 6. 选中设备直接运行，即可体验 演示App。
 <image width="25%" src="../Images/login.png">
