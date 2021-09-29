@@ -56,7 +56,7 @@
    4. 选择 Release 作为构建选项，点击构建按钮进行构建。
 
    5. 构建完成后，点击运行按钮运行项目。 在界面上输入AppKey、账号ID和密码，点击 LOGIN 即可进入会议主页。
-   	<img src="../images/macos_windows_demo.png"/>
+   	<img width="50%" src="../images/macos_windows_demo.png"/>
 
 ## 示例项目账号
 
