@@ -22,10 +22,10 @@
    - 找到 app 下的 build.gradle 文件替换自己的 appkey；
 
      ```groovy
-     
+     def appKey = "Here, please fill your appKey!!!"
      // app key for code
      defaultConfig {
-         buildConfigField "String", "APP_KEY", "your self app key!!!"
+     		buildConfigField "String", "APP_KEY", "\"${appKey}\""
      }
      ```
   3. 编译并运行示例项目。

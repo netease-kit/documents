@@ -124,9 +124,10 @@ CallKitUI.init(getApplicationContext(), options);
 3. 用户A 通过如下代码触发呼叫 用户B 的操作：
 
    ```java
-   CallParam param = CallParam.createSingleCallParam(2, 						 // 呼叫类型 1-音频呼叫，2-视频呼叫
-                           													"用户A AccId",  // 呼叫方 IM 账号 Id
-                           													"用户B AccId"); // 被叫方 IM 账号 id
+   // @param type：呼叫类型 1-音频呼叫，2-视频呼叫
+   // @param callerAccId： 呼叫方 IM 账号 Id
+   // @param calledAccId： 被叫方 IM 账号 id
+   CallParam param = CallParam.createSingleCallParam(2,"用户A AccId","用户B AccId");
    CallKitUI.startSingleCall(getActivity(), param);
    ```
    
