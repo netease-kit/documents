@@ -91,15 +91,16 @@
 <tr><td>1.0.0</td>
   <td>2020-07-10</td>
   <td>首次发布会议组件</td></tr>
+</table>
 
 ## CHANGELOG
 
-### [Android](CHANGELOG_android.md)
+ - [Android](CHANGELOG_Android.md)
 
-### [ios](CHANGELOG_ios.md)
+ - [iOS](CHANGELOG_iOS.md)
 
-### [macOS & Windows](CHANGELOG_macOS&Windows.md)
+ - [macOS & Windows](CHANGELOG_macOS&Windows.md)
 
-### [TV](CHANGELOG_TV.md)
+ - [TV](CHANGELOG_TV.md)
 
-### [web](CHANGELOG_web.md)
+ - [Web](CHANGELOG_Web.md)

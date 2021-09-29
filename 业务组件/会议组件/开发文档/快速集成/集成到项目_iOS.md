@@ -4,7 +4,7 @@
 
 ## 快速接入
 
-#### 开发环境准备
+### 开发环境
 
 | 名称        | 要求         |
 | :---------- | :----------- |
@@ -13,7 +13,7 @@
 | IDE         | XCode        |
 | 其他        | CocoaPods    |
 
-#### SDK快速接入
+### SDK集成
 
 1. 新建iOS工程
 
@@ -134,15 +134,15 @@
 2. 调用接口并进行回调处理，该接口无额外回调结果数据
 
    ```objective-c
-[[NEMeetingSDK getInstance] initialize:config
+   [[NEMeetingSDK getInstance] initialize:config
                           callback:^(NSInteger resultCode, NSString *resultMsg, id result) 
-{
+   {
 			if (resultCode == ERROR_CODE_SUCCESS) {
       		//初始化成功
       } else {
           //初始化失败
       }
-}];
+   }];
    ```
 
 #### 注意事项
@@ -308,8 +308,8 @@ setting.cloudRecordOn = YES;        //是否开启云端录制
 2. 调用接口并进行回调处理，可根据错误码判断是否成功
 
     ```objc
-//预定会议
-[premeetingService scheduleMeeting:item 
+    //预定会议
+    [premeetingService scheduleMeeting:item 
                           callback:^(NSInteger resultCode, NSString * _Nonnull resultMsg, NEMeetingItem * _Nonnull item) {
         if (resultCode == ERROR_CODE_SUCCESS) { 
             //预定成功
@@ -318,7 +318,7 @@ setting.cloudRecordOn = YES;        //是否开启云端录制
         } else {
 						//预定失败, resultCode 参考 NEMeetingErrorCode
         }
-}];
+    }];
     ```
 
 #### 注意事项
@@ -444,7 +444,7 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
    } else {
      //进行增量更新
    }
-}
+                      }
 
 //反注册事件回调（在不需要的时候移除，例如在dealloc方法中）
 [[NEMeetingSDK getInstance].getPreMeetingService removeListener:self];
@@ -474,13 +474,14 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 //MeetingServiceListener协议实现
 - (void)onMeetingStatusChanged:(NEMeetingEvent *)event {
      //根据event处理相关业务
-}
+    }
+    
     ```
 
 2. 停止接收会议状态
 
     ```objective-c
-[[NEMeetingSDK getInstance].getMeetingService removeListener:self];
+    [[NEMeetingSDK getInstance].getMeetingService removeListener:self];
     ```
 
 #### 注意事项
@@ -503,13 +504,13 @@ NSArray *meetingStatus = @[@(NEMeetingItemStatusInit),
 2. 调用接口并进行回调处理。该接口的回调数据类型为NEMeetingInfo对象类型；如果当前无正在进行中的会议，则回调数据对象为空，错误原因请参考错误码类型。
 
     ```objective-c
- [[NEMeetingSDK getInstance].getMeetingService getCurrentMeetingInfo:^(NSInteger resultCode, NSString * _Nonnull resultMsg, NEMeetingInfo * _Nonnull info) {
+     [[NEMeetingSDK getInstance].getMeetingService getCurrentMeetingInfo:^(NSInteger resultCode, NSString * _Nonnull resultMsg, NEMeetingInfo * _Nonnull info) {
     if (resultCode != ERROR_CODE_SUCCESS) {
         //查询失败
     } else {
        //查询成功
     }
-}];
+    }];
     ```
 
 #### 注意事项
@@ -580,14 +581,14 @@ NEAccountService *accountService = [NEMeetingSDK getInstance].getAccountService;
     ```objective-c
     //添加回调监听
     [[NEMeetingSDK getInstance].getMeetingService addListener:self];
-
+    
     //实现MeetingServiceListener协议方法
     - (void)onInjectedMenuItemClick:(NEMeetingMenuItem *)menuItem
                         meetingInfo:(NEMeetingInfo *)meetingInfo {
           //menuItem 是点击的item，需要用户根据itemId进行匹配
           //meetingInfo 是当前的会议状态
     }
-
+    
     ```
 
 #### 注意事项
@@ -648,7 +649,7 @@ NEAccountService *accountService = [NEMeetingSDK getInstance].getAccountService;
     [settingsService enableShowMyMeetingElapseTime:YES];
     [settingsService setTurnOnMyAudioWhenJoinMeeting:YES];
     [settingsService setTurnOnMyVideoWhenJoinMeeting:YES];
-
+    
     //查询会议设置
     BOOL showMeetingElapseTimeEnabled = [settingsService isShowMyMeetingElapseTimeEnabled];
     BOOL audioEnabled = [settingsService isTurnOnMyAudioWhenJoinMeetingEnabled];
@@ -715,28 +716,28 @@ NEAccountService *accountService = [NEMeetingSDK getInstance].getAccountService;
     - (void)dealloc {
         [[[NEMeetingSDK getInstance] getControlService] removeListener:self];
     }
-
+    
     //添加遥控器事件监听
     - (void)viewDidLoad {
         [super viewDidLoad];
         [[[NEMeetingSDK getInstance] getControlService] addListener:self];
     }
-
+    
     //<NEControlListener>
     - (void)onInjectedSettingMenuItemClick:(NEControlMenuItem *)item
                                       info:(NEMeetingInfo *)info {
            //遥控器首页右上角设置自定义按钮菜单点击事件
     }
-
+    
     - (void)onInjectedShareMenuItemClick:(NEControlMenuItem *)item
                                     info:(NEMeetingInfo *)info {
             //遥控器会控页面邀请设置自定义按钮菜单点击事件                          
     }
-
+    
     - (void)onStartMeetingResult:(NEControlResult *)result {
              //遥控器页面，创建会议回调
     }
-
+    
     - (void)onJoinMeetingResult:(NEControlResult *)result {
               //遥控器页面，加入会议回调
     }
