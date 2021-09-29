@@ -91,7 +91,6 @@
 5. 调用相关接口完成特定功能，详情请参考API文档。
 
 - [登录鉴权](#登录鉴权)
-    
     ```java
     //Token登录
     NEMeetingSDK.getInstance().login(String account, String token, NECallback<Void> callback);
@@ -103,19 +102,16 @@
     NEMeetingSDK.getInstance().tryAutoLogin(NECallback<Void> callback);
     ```
 - [创建会议](#创建会议)
-    
     ```java
     NEMeetingService meetingService = NEMeetingSDK.getInstance().getMeetingService();
     meetingService.startMeeting(Context context, NEStartMeetingParams param, NEStartMeetingOptions opts, NECallback<Void> callback);
     ```
 - [加入会议](#加入会议)
-    
     ```java
     NEMeetingService meetingService = NEMeetingSDK.getInstance().getMeetingService();
     meetingService.joinMeeting(Context context, NEJoinMeetingParams param, NEJoinMeetingOptions opts, NECallback<Void> callback);
     ```
 - [注销登录](#注销)
-    
     ```java
     NEMeetingSDK.getInstance().logout(NECallback<Void> callback);
     ```
