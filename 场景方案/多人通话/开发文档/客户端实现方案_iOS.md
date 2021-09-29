@@ -48,7 +48,7 @@ Privacy - Microphone Usage Description
 6、离开rtc房间
 ```
 [[NERtcEngine sharedEngine] leaveChannel];
-```  
+```
 
 ### 音视频通话API参考
 [iOS SDK  API](https://dev.yunxin.163.com/docs/interface/NERTC_SDK/Latest/iOS/html/)
