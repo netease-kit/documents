@@ -58,7 +58,8 @@
 
 3. 编译并运行示例项目
      连接上 iOS 设备后，用 Xcode 打开示例项目，然后编译并运行项目。
-     <image width="30%" src="../images/demo_meeting_main_page.png">
+
+     <image width="25%" src="../images/demo_meeting_main_page.png">
 
 
 ## 示例项目会议账号
