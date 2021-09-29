@@ -95,9 +95,9 @@
 
 ## CHANGELOG
 
- - [Android](CHANGELOG_android.md)
+ - [Android](CHANGELOG_Android.md)
 
- - [ios](CHANGELOG_ios.md)
+ - [iOS](CHANGELOG_iOS.md)
 
  - [macOS & Windows](CHANGELOG_macOS&Windows.md)
 
