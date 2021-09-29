@@ -9,7 +9,7 @@
 ## 前提条件
 在开始运行示例项目之前，请确保您已完成以下操作：
 
-- 在云信控制台创建应用，并获取对应的 AppKey。
+- 在云信控制台创建应用，并获取对应的 AppKey，可参考[本文](https://github.com/netease-kit/documents/blob/main/云信控制平台/应用创建和服务开通.md)。
 - 为此应用开通以下相关服务与抄送：
   - 产品服务：音视频通话 2.0、IM 专业版、聊天室、信令、互动白板、云端录制、点播。
   - 产品功能：
@@ -51,7 +51,7 @@
 > 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs)。体验账号的课堂时长限制为 30 分钟。
 5. 在 Android Studio 中，**单击Sync Project with Gradle Files** 按钮，同步工程依赖。
 6. 选中设备直接运行，即可体验 演示App。
-<image width="30%" src="../Images/login.png">
+<image width="25%" src="../Images/login.png">
 7. 输入课程号、昵称，选择课堂类型、老师或学生，然后点击加入课堂，即可进入智慧云课堂，看到以下画面
 <image width="70%" src="../Images/room.png">
 

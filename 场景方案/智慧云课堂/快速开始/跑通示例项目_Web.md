@@ -9,7 +9,7 @@
 ## 前提条件
 在开始运行示例项目之前，请确保您已完成以下操作：
 
-- 在云信控制台创建应用，并获取对应的 AppKey。
+- 在云信控制台创建应用，并获取对应的 AppKey，可参考[本文](https://github.com/netease-kit/documents/blob/main/云信控制平台/应用创建和服务开通.md)。
 - 为此应用开通以下相关服务与抄送：
   - 产品服务：音视频通话 2.0、IM 专业版、聊天室、信令、互动白板、云端录制、点播。
   - 产品功能：
@@ -52,6 +52,9 @@
     npm install               // 安装依赖
     npm start                 // 开发环境
     ```
+    执行完命令即可直接运行，即可体验 演示App。
+    <image width="70%" src="../Images/web_login.png">
+    
 4. 构建项目。
 
     ```
@@ -59,7 +62,6 @@
     npm run build:dev         // 打包测试环境
     npm run build             // 打包线上环境
     ```
-
 
 ## 运行Electron示例源码
 
@@ -95,7 +97,10 @@
     npm run build:win    // 打包win生产包
     ```
 
+5. builder目录下面有构建完成的dmg（Mac环境）或exe（Windows环境）文件，直接安装运行，即可体验 演示App。
+
 ## 示例项目结构
+
 ```
 ├── build                   构建后生成的文件
 ├── public                  
