@@ -31,8 +31,7 @@
 ## 运行Web示例源码
 
 1. 获取示例项目。
-
-    在 GitHub 的 [WisdomEducation](https://github.com/netease-kit/WisdomEducation) 示例项目 下载 Demo 源码工程。
+在智慧云课堂[示例代码](https://netease.im/edu#page4)页面下载需要体验的示例项目或 示例代码 源码工程。
 
 2. 在示例项目中配置相关字段。
 
@@ -43,7 +42,8 @@
     | REACT_APP_SDK_APPKEY        | 应用的 AppKey。可以在网易云信控制台中查看。 |
     | REACT_APP_SDK_AUTHORIZATION       | 调用服务端接口时，请求头中的校验参数。 |
     
-    > 如果仅需要本地跑通示例项目，您可以使用[智慧云课堂体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs/智慧云课堂体验账号.md)。体验账号的课堂时长限制为 30 分钟。
+> 说明：
+> 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs/智慧云课堂体验账号.md)。体验账号的课堂时长限制为 30 分钟。
 
 3. 进入 `Wisdom_Educaiton_Web` 目录，安装依赖并启动项目。
 
@@ -66,8 +66,7 @@
 ## 运行Electron示例源码
 
 1. 获取示例项目。
-
-    在 GitHub 的 [WisdomEducation](https://github.com/netease-kit/WisdomEducation) 示例项目 下载 Demo 源码工程。
+在智慧云课堂[示例代码](https://netease.im/edu#page4)页面下载需要体验的示例项目或 示例代码 源码工程。
 
 2. 在示例项目中配置相关字段。
 
@@ -78,7 +77,8 @@
     | REACT_APP_SDK_APPKEY        | 应用的 AppKey。可以在网易云信控制台中查看。 |
     | REACT_APP_SDK_AUTHORIZATION       | 调用服务端接口时，请求头中的校验参数。 |
     
-    > 如果仅需要本地跑通示例项目，您可以使用[智慧云课堂体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs/智慧云课堂体验账号.md)。体验账号的课堂时长限制为 30 分钟。
+> 说明：
+> 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs/智慧云课堂体验账号.md)。体验账号的课堂时长限制为 30 分钟。
 
 3. 进入 `Wisdom_Educaiton_Web` 目录，安装依赖并启动项目。
 

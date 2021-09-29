@@ -34,7 +34,8 @@
 
 ## 运行示例项目
 
-1. 在 GitHub 的 [WisdomEducation](https://github.com/netease-kit/WisdomEducation) 示例项目 下载 Demo 源码工程。
+1. 获取示例项目。
+在智慧云课堂[示例代码](https://netease.im/edu#page4)页面下载需要体验的示例项目或 示例代码 源码工程。
 
 2. 在 Podfile 所在文件夹中打开终端，执行命令 `pod install`。
 
@@ -49,7 +50,8 @@
    | appId         | 应用的 AppId。可以在网易云信控制台中查看。 |
    | authorization | 调用服务端接口时，请求头中的校验参数。     |
 
-   **说明：**如果仅需要本地跑通示例项目，您可以使用[智慧云课堂体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs)。体验账号的课堂时长限制为 30 分钟。
+> 说明：
+> 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs/智慧云课堂体验账号.md)。体验账号的课堂时长限制为 30 分钟。
    
 5. 选中设备直接运行，即可体验 演示App。     
    <image width="25%" src="../Images/enterroom.png">
