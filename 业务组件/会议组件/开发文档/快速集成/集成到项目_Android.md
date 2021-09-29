@@ -2,6 +2,7 @@
 网易会议Android SDK提供了一套简单易用的接口，允许开发者通过调用NEMeeting SDK(以下简称SDK)提供的API，快速地集成音视频会议功能至现有Android应用中。
 
 ## 准备工作
+
 1. 环境准备
 | 名称 | 要求 |
 | :------ | :------ |
@@ -90,6 +91,7 @@
 5. 调用相关接口完成特定功能，详情请参考API文档。
 
 - [登录鉴权](#登录鉴权)
+    
     ```java
     //Token登录
     NEMeetingSDK.getInstance().login(String account, String token, NECallback<Void> callback);
@@ -101,16 +103,19 @@
     NEMeetingSDK.getInstance().tryAutoLogin(NECallback<Void> callback);
     ```
 - [创建会议](#创建会议)
+    
     ```java
     NEMeetingService meetingService = NEMeetingSDK.getInstance().getMeetingService();
     meetingService.startMeeting(Context context, NEStartMeetingParams param, NEStartMeetingOptions opts, NECallback<Void> callback);
     ```
 - [加入会议](#加入会议)
+    
     ```java
     NEMeetingService meetingService = NEMeetingSDK.getInstance().getMeetingService();
     meetingService.joinMeeting(Context context, NEJoinMeetingParams param, NEJoinMeetingOptions opts, NECallback<Void> callback);
     ```
 - [注销登录](#注销)
+    
     ```java
     NEMeetingSDK.getInstance().logout(NECallback<Void> callback);
     ```
