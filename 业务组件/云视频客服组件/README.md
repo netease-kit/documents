@@ -68,3 +68,21 @@ https://app.yunxin.163.com/webdemo/yxFinance/index.html
 | :-------------------------------------------------------: | :---------------------------------------------------: |
 | <image width="50%" src="images/vce-android.png"> </image> | <image width="50%" src="images/vce-iOS.png"> </image> |
 
+### 效果展示
+
+- 坐席页面
+
+  <image width="25%" src="images/kefu-01.png">
+
+  <image width="25%" src="images/kefu-02.png">
+
+  <image width="25%" src="images/kefu-03.png">
+
+  <image width="25%" src="images/kefu-04.png">
+
+- 客户页面
+
+  <image width="25%" src="images/demo_vce_main_page.png">
+
+  <image width="25%" src="images/demo_vce_second_page.png">
+
