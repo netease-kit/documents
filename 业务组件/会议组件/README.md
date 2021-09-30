@@ -48,7 +48,7 @@
 ## 产品架构
 1. 会议组件架构图
 
-    <image width="60%" src="./images/meeting_sdk_structure.png">
+    <image width="60%" src="https://github.com/chandarlee/documents/main/%E4%B8%9A%E5%8A%A1%E7%BB%84%E4%BB%B6/%E4%BC%9A%E8%AE%AE%E7%BB%84%E4%BB%B6/images/meeting_sdk_structure.png">
 
    会议SDK全局接口，提供初始化、管理其他会议相关子服务的能力
 
