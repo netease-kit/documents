@@ -171,3 +171,32 @@ eduManager.enterClass(neEduClassOptions).map {
 
 教学双方加入教室后，开启课程。智慧云课堂提供了丰富的[课堂互动](../进阶功能/课堂互动_Android.md)能力。
 
+## 示例项目结构
+
+| 文件夹/文件                  | 说明              |
+| -------------------------  | ----------------- |
+| app                        | 壳工程        |
+| base                       | 公共基础组件 |
+| edu-logic                  | 教育核心业务模块  |
+| edu-ui                     | UIKit组件    |
+| im                         | IM服务组件      |
+| rtc                        | 音视频通话服务组件      |
+| whiteboard                 | 白板组件      |
+| config.properties          | 定义项目需要的各种配置信息      |
+
+## 自定义课堂UI
+
+如果 示例代码 中默认实现的 UI 不符合您的预期，您可以按需实现自己的用户界面，即只使用我们封装好的组件所提供的音视频能力，自行实现 UI 部分。
+
+教育组件功能模块：  
+<image width="70%" src="../../Images/layer.png" alt="chat"/>
+
+**EduUI：**包含教育组件的UI的实现，包括一对一教学、多人小班课、互动大班课、直播大班课等场景的ViewController、View以及model部分。
+
+**EduLogic：**是依赖云信的音视频SDK、IMSDK以及白板SDK对于教育逻辑的实现，分别对应NEEduRtcService、NEEduIMService、NEEduBoardService。
+
+**NEEduRtcService：**是音视频服务，提供可供 App 调用的音视频相关方法。
+
+**NEEduIMService：**是IM服务，提供可供 App 调用的即时通信、聊天室相关方法。
+
+**NEEduBoardService：**是互动白板服务，提供可供 App 调用的互动白板相关方法。
