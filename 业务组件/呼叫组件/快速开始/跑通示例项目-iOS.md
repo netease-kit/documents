@@ -19,12 +19,14 @@
 
    - 将自己的 appkey 告知 so 人员添加对应 demo 的体验权限；
 
+   - 修改项目中的 bundleid，bundleid 为 云信后台申请appkey所填写bundleid；
+
    - 找到工程中AppKey.h文件替换自己的 kAppKey；
 
      ```objc
 
      // app key for code
      static NSString * const kAppKey = @"your self app key!!!";
-     
+
      ```
   3. 编译并运行示例项目。
