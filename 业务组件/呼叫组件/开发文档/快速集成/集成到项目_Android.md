@@ -11,8 +11,13 @@
 
 ## 准备工作
 1. 环境准备
-   1. AndroidStudio 4.0 版本及以上；
-   2. Android sdk；
+   | 名称                 | 要求                          |
+   | :------------------- | :---------------------------- |
+   | JDK版本              | >1.8.0                        |
+   | 最小Android API 版本 | API 21, Android 5.0           |
+   | CPU架构支持          | ARM64、ARMV7                  |
+   | IDE                  | Android Studio                |
+   | 其他                 | 依赖androidx，不支持support库 |
 
 
 2. 开通相关功能
@@ -32,19 +37,19 @@
       1. 【IM专业版】
       2. 【G2话单功能】-云信控制台-音视频通话2.0-功能配置-话单配置-开启话单类型消息抄送。
 
-  3. 在控制台中【appkey管理】获取appkey。
+  3. 在控制台中【AppKey管理】获取 AppKey。
 
 ## 集成
 
 若需要在项目中引入呼叫组件按照以下步骤执行：
 
-### 0. 前提 
+### 1. 前提 
 
 已经完成云信 IM Sdk 接入，并实现了登录功能；
 
-### 1. Gradle 引入
+### 2. Gradle 引入
 
-打工工程根部 build.gradle 文件添加如下代码引入 maven 仓库
+打开工程根部 build.gradle 文件添加如下代码引入 maven 仓库
 
 ```groovy
 allprojects {
@@ -74,7 +79,7 @@ dependencies {
 }
 ```
 
-### 2. 初始化
+### 3. 初始化
 
 **！！！在IM 登录成功后进行！！！**
 
@@ -113,7 +118,7 @@ CallKitUIOptions options = new CallKitUIOptions.Builder()
 CallKitUI.init(getApplicationContext(), options);
 ```
 
-### 3. 实现一对一通话
+### 4. 实现一对一通话
 
 完成以上集成步骤后，若想实现 **用户A** 发起视频呼叫 **用户B** ，用户B 接收后进行视频通话的场景，可参考如下步骤：
 

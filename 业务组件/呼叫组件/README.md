@@ -29,7 +29,7 @@
 ### 下载 Demo
 |                        Android 安装包                        | [iOS安装包](https://apps.apple.com/cn/app/云信视频通话/id1531079950) | [Web 体验](https://app.yunxin.163.com/webdemo/imNew/loginByAccount.html) |                          小程序体验                          |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="./images/image-20210929104232367.png" alt="image-20210929104232367" width="75%;" /> | <img src="./images/image-20210929094327370.png" alt="image-20210929094327370" width="56%;" /> | <img src="./images/image-20210929094027070.png" alt="image-20210929094027070" width="56%;" /> | <img src="./images/image-20210929093722570.png" alt="image-20210929093722570-2879469" width="32%;" /> |
+| <img src="./images/image-20210929104232367.png" alt="image-20210929104232367" width="74%;" /> | <img src="./images/image-20210929094327370.png" alt="image-20210929094327370" width="56%;" /> | <img src="./images/image-20210929094027070.png" alt="image-20210929094027070" width="56%;" /> | <img src="./images/image-20210929093722570.png" alt="image-20210929093722570-2879469" width="32%;" /> |
 
 ### 效果展示
 
