@@ -3,7 +3,7 @@
 针对已经集成 IM sdk 的用户若希望快速实现音视频通话功能，可通过集成呼叫组件完成实现。
 
 ## 注意事项
-1. 若用户已经集成了 IM Sdk 或 NERTc Sdk 需参考**[产品动态](./产品动态-Android.md)** 关于 sdk 版本的映射关系，确保使用的 sdk 版本和组件版本一致。
+1. 若用户已经集成了 IM Sdk 或 NERTc Sdk 需参考[**产品动态**](./产品动态-Android.md)关于 sdk 版本的映射关系，确保使用的 sdk 版本和组件版本一致。
 2. 若用户未接入 IM Sdk 可参考[官网](https://doc.yunxin.163.com/docs/TM5MzM5Njk/zU4NzUxNjI?platformId=60002)完成 IM Sdk 的接入。
 
 **用户完成上述两点注意后继续参考下面内容。**
@@ -140,3 +140,5 @@ CallKitUI.init(getApplicationContext(), options);
 [自定义UI](../进阶功能/Android/自定义UI.md)：用户若希望自己实现UI可参考此章节内容完成；
 
 [一对一呼叫通话流程](../进阶功能/Android/一对一呼叫通话流程.md)：便于了解底层实现呼叫流程；
+
+[初始化支持配置列表](../进阶功能/Android/初始化支持配置列表.md)：列举初始化配置选项； 
