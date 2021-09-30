@@ -1,7 +1,6 @@
 # SeatService Android API
 ## 简介
-
-
+Android 客户端SDK API文档
 ## API
 
 ### 基础数据结构定义

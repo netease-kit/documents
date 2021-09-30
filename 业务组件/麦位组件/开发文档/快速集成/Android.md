@@ -58,7 +58,10 @@ dependencies {
 }
 ```
 
-### 2. 初始化
+### 2. 源码引入
+如果想参考源码做定制话需求可以联系云信技术支持获取源码。
+
+### 3. 初始化
 初始化时传入自己的baseUrl，Appkey，token,userId,roomId,以及是否委托rtc操作的rtcOption.
 ```kotlin
 val option = SeatOptions(
