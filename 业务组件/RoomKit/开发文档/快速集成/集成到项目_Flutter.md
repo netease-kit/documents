@@ -1,6 +1,6 @@
 # RoomKit组件
 
-RoomKit SDK提供了一套简单易用的接口，允许开发者通过调用NEMeeting SDK(以下简称SDK)提供的API，快速地集成音视频房间功能至现有 Flutter应用中。
+RoomKit 提供了一套简单易用的接口，允许开发者通过调用RoomKit提供的API，快速地集成音视频房间功能至现有 Flutter应用中。
 
 ## 准备工作
 
@@ -21,7 +21,7 @@ dependencies:
 
 3. 导入它
 
-现在在您的 Da rt 代码中，您可以使用：
+现在在您的 Dart 代码中，您可以使用：
 
 ```dart
 import 'package:yunxin_room_kit/room_kit.dart';
@@ -33,10 +33,9 @@ import 'package:yunxin_room_kit/room_service.dart';
    > 在使用SDK其他功能之前首先需要完成SDK初始化。代码示例如下：
 
 ```dart
-String? customServerConfig = await NEMeetingPlugin().getAssetService().loadCustomServer();
+
 var initRes = await _roomKit.initialize(NERoomKitConfig(
       appKey: 'Your appKey',
-      serverConfig: customServerConfig,
       reuseNIM: config.reuseNIM,
       extras: config.extras,
       aLoggerConfig: config.aLoggerConfig,
