@@ -3,7 +3,6 @@
 网易智慧企业 在 GitHub 上提供一个开源的呼叫组件示例项目 [VideoCall](https://github.com/netease-kit/NEVideoCall-1to1/tree/master/NLiteAVDemo-iOS-ObjC)。本文介绍如何快速跑通该示例项目，体验呼叫音视频通话功能。
 
 ##  前提条件
-  - 开发环境要求：
   - Xcode 10 及以上版本
   - iOS 9.0 及以上版本的 iOS 设备。
   - iOS 开发者账号，能够生成项目证书。

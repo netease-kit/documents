@@ -2,7 +2,7 @@
 
 ## 产品介绍
 
-RoomKit SDK提供了一套简单易用的接口，允许开发者通过调用NEMeeting SDK(以下简称SDK)提供的API，快速地集成音视频房间功能至现有 Flutter应用中。为企业打造专属的房间能力，卓越的音视频性能，丰富的房间协作能力，坚实的房间安全保障，提升协作效率，满足大中小房间全场景需求。提供全套开放、简单、安全的视频房间服务。您可以使用进行远程音视频房间、在线协作、会管会控、房间录制、指定邀请、布局管理等。
+RoomKit 提供了一套简单易用的接口，允许开发者通过调用 RoomKit提供的API，快速地集成音视频房间功能至现有 Flutter应用中。为企业打造专属的房间能力，卓越的音视频性能，丰富的房间协作能力，坚实的房间安全保障，提升协作效率，满足大中小房间全场景需求。提供全套开放、简单、安全的视频房间服务。您可以使用进行远程音视频房间、在线协作、会管会控、房间录制、指定邀请、布局管理等。
 
 ## 功能特性
 
@@ -47,11 +47,11 @@ RoomKit SDK提供了一套简单易用的接口，允许开发者通过调用NEM
 
 
 ## 产品架构
-架构图
-room_kit_pc
+
+- RoomKit PC端
     <image width="80%" src="images/room_kit_flutter.png">
-room_kit_web
+- RoomKit Web端
     <image width="80%" src="images/room_kit_web.png">
 
-room_kit_flutter
+- RoomKit Flutter端
     <image width="80%" src="images/room_kit_flutter.png">
