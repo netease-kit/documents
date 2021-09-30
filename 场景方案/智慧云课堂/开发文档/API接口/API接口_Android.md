@@ -1,5 +1,5 @@
 ## Android API接口
-本页提供 智慧云课堂 for Android 的  API 参考。
+本页提供 智慧云课堂 for Android 的  [API 参考](https://dev.yunxin.163.com/docs/interface/NERTC_SDK/EDU/html/index.html)。
 ### API概览
 
 **NEEduLogic组件的 API 接口列表如下：**

@@ -1,6 +1,6 @@
 # 跑通示例项目
 
-智慧云课堂（PaaS 方案）是网易云信提供的在线互动课堂场景解决方案。基于在线教育的常见场景，网易云信提供智慧云课堂开源项目，为您演示 1 对 1、小班课和大班课的典型方案。您可以直接基于我们的 示例代码 修改适配，也可以参考 示例代码，自行集成云信 IM SDK、音视频通话 2.0 NERTC SDK 和互动白板 SDK，实现在线教育场景。
+智慧云课堂（PaaS 方案）是网易云信提供的在线互动课堂场景解决方案。基于在线教育的常见场景，网易云信提供智慧云课堂开源项目，为您演示一对一教学、多人小班课、互动大班课等典型方案。您可以直接基于我们的 示例代码 修改适配，也可以参考 示例代码，自行集成云信 IM SDK、音视频通话 2.0 NERTC SDK 和互动白板 SDK，实现在线教育场景。
 
 
 
@@ -9,7 +9,7 @@
 ## 前提条件
 在开始运行示例项目之前，请确保您已完成以下操作：
 
-- 在云信控制台创建应用，并获取对应的 AppKey。
+- 在云信控制台创建应用，并获取对应的 AppKey，可参考[本文](https://github.com/netease-kit/documents/blob/main/云信控制平台/应用创建和服务开通.md)。
 - 为此应用开通以下相关服务与抄送：
   - 产品服务：音视频通话 2.0、IM 专业版、聊天室、信令、互动白板、云端录制、点播。
   - 产品功能：
@@ -51,7 +51,7 @@
 > 如果仅需要本地跑通示例项目，您可以使用[网易云信体验账号](https://github.com/netease-kit/WisdomEducation/tree/main/Wisdom_Education_Docs)。体验账号的课堂时长限制为 30 分钟。
 5. 在 Android Studio 中，**单击Sync Project with Gradle Files** 按钮，同步工程依赖。
 6. 选中设备直接运行，即可体验 演示App。
-<image width="30%" src="../Images/login.png">
+<image width="25%" src="../Images/login.png">
 7. 输入课程号、昵称，选择课堂类型、老师或学生，然后点击加入课堂，即可进入智慧云课堂，看到以下画面
 <image width="70%" src="../Images/room.png">
 
@@ -82,7 +82,7 @@
 教育组件功能模块：  
 <img src="../Images/layer.svg" alt="chat" style="zoom:100%;" />
 
-**EduUI：**包含教育组件的UI的实现，包括1v1、小班课、大班课、直播大班课场景的ViewController、View以及model部分。
+**EduUI：**包含教育组件的UI的实现，包括一对一教学、多人小班课、互动大班课等场景的ViewController、View以及model部分。
 
 **EduLogic：**是依赖云信的音视频SDK、IMSDK以及白板SDK对于教育逻辑的实现，分别对应NEEduRtcService、NEEduIMService、NEEduBoardService。
 

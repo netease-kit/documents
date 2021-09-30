@@ -2,8 +2,8 @@
 开发文档提供开发相关的指导文档包括：
 - [快速集成](快速集成/)，将网易会议组件SDK集成到项目工程中。
   - [集成到项目_Android](快速集成/集成到项目_Android.md)
-  - [集成到项目_ios](快速集成/集成到项目_ios.md)
-  - [集成到项目_macOs&Windows.md](快速集成/集成到项目_macOs&Windows.md.md)
+  - [集成到项目_iOS](快速集成/集成到项目_iOS.md)
+  - [集成到项目_macOS&Windows.md](快速集成/集成到项目_macOS&Windows.md.md)
   - [集成到项目_TV](快速集成/集成到项目_TV.md)
   - [集成到项目_web](快速集成/集成到项目_web.md)
   - [集成到项目_webLive](快速集成/集成到项目_webLive.md)
