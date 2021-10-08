@@ -1,3 +1,4 @@
+
 ## iOS API接口
 本页提供 多人通话 for iOS 的  API 参考,更详细的NERTC SDK文档说明请移步到[这里](https://dev.yunxin.163.com/docs/product/互动直播2.0/客户端API/iOS)。
 ### 多人通话工程核心API概览
@@ -21,6 +22,7 @@ API | 事件描述
 [onNERtcEngineDidDisconnectWithReason](https://dev.yunxin.163.com/docs/interface/音视频2.0iOS端/Protocols/NERtcEngineDelegate.html#//api/name/onNERtcEngineDidDisconnectWithReason:) | 从频道断开的回调
 
 
+
 - 音频管理
 
 API | 功能描述
@@ -39,6 +41,7 @@ API | 功能描述
 [setupRemoteVideoCanvas](https://dev.yunxin.163.com/docs/interface/音视频2.0iOS端/Protocols/INERtcEngine.html#//api/name/setupRemoteVideoCanvas:forUserID:) | 设置远端用户视图
 [subscribeRemoteVideo](https://dev.yunxin.163.com/docs/interface/音视频2.0iOS端/Protocols/INERtcEngineEx.html#//api/name/subscribeRemoteVideo:forUserID:streamType:) | 订阅 / 取消订阅指定远端用户的视频流。
 
+
 - 数据统计事件
 
 API | 事件描述
@@ -47,3 +50,4 @@ API | 事件描述
 [onNetworkQuality](https://dev.yunxin.163.com/docs/interface/音视频2.0iOS端/Protocols/NERtcEngineMediaStatsObserver.html#//api/name/onNetworkQuality:) | 通话中每个用户的网络上下行质量报告回调
 [addEngineMediaStatsObserver](https://dev.yunxin.163.com/docs/interface/音视频2.0iOS端/Protocols/INERtcEngineEx.html#//api/name/addEngineMediaStatsObserver:) | 添加 media 统计信息观测器
 [removeEngineMediaStatsObserver](https://dev.yunxin.163.com/docs/interface/音视频2.0iOS端/Protocols/INERtcEngineEx.html#//api/name/removeEngineMediaStatsObserver:) | 删除 media 统计信息观测器
+
