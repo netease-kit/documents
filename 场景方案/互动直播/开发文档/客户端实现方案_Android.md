@@ -3,7 +3,7 @@
 ## 功能实现流程
 ### 直播基础功能
 1. 主播开播流程   
-![主播开播](../../image/anchor_create_live_room.png)
+![主播开播](../image/anchor_create_live_room.png)
 * 客户端请求应用服务器创建房间   
 ```kotlin
 //lib_live_room_service/repository/LiveRoomApi.kt
@@ -126,7 +126,7 @@
     }
 ```
 3. 观众打赏流程   
-![观众打赏流程图](../../image/reward.png)
+![观众打赏流程图](../image/reward.png)
 * 观众调用应用服务器提供的打赏接口打赏
 ```kotlin
 //lib_live_room_service/repository/LiveRoomApi.kt
@@ -172,7 +172,7 @@
 ```
 ### PK直播
 1. 开始PK   
-![](../../image/startPk.png)
+![](../image/startPk.png)
 * 主播A通过调用应用服务器接口发起Pk请求
 ```kotlin
 //lib_live_pk_service/impl/PkServiceImpl.kt
@@ -267,7 +267,7 @@ fun updateStreamTask(task: NERtcLiveStreamTaskInfo): Int {
         }
 ```
 2. 结束PK
-![](../../image/endPk.png)
+![](../image/endPk.png)
 * pk倒计时结束，有主播主动结束PK或应用服务器收到某个主播rtc断开抄送都会触发Pk结束流程
 * 应用服务器通过聊天室发送结束Pk的消息，主播端收到后结束跨频道转发，并更新推流任务   
 ### 连麦直播   
