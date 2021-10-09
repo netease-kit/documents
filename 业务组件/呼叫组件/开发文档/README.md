@@ -8,6 +8,7 @@
     -  [话单功能](进阶功能/Android/话单功能.md)；
     -  [自定义UI](进阶功能/Android/自定义UI.md)；
     -  [初始化支持配置列表](进阶功能/Android/初始化支持配置列表.md)；
+    -   [设置自定义NERtcCallExtension](进阶功能/Android/设置自定义NERtcCallExtensio.md) ;
   - [iOS](进阶功能/iOS)，iOS 版本呼叫组件支持的进阶功能；
   -  [一对一呼叫通话流程](进阶功能/iOS/一对一呼叫通话流程.md)；
   -  [初始化支持配置列表](进阶功能/iOS/初始化支持配置列表.md)；
