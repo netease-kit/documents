@@ -36,4 +36,4 @@
      ```
   2. 编译并运行示例项目。
 
-<img src="../images/image-20210927094610691.png" width="30%"/>
+     <img src="../images/image-20210927094610691.png" width="30%"/>
