@@ -15,103 +15,66 @@
 
 | 环境要求         | 说明                                                         |
 | ---------------- | ------------------------------------------------------------ |
-| JDK 版本         | 1.8.0 及以上版本                                             |
-| Android API 版本 | API 23、Android 6.0 及以上版本                               |
-| CPU架构          | ARM64、ARMV7                                                 |
-| IDE              | Android Studio                                               |
-| 其他             | 依赖 Androidx，不支持 support 库。Android 系统 4.3 或以上版本的移动设备。 |  
+| Xcode 版本         | Xcode 11 及以上版本                                             |
+| iOS系统版本       |  iOS 10.0 及以上版本的 iOS 设备                              |
+  
 ## NERTC SDK集成步骤
 多人音视频通话功能需要使用NERTC SDK。集成NERTC SDK请参考以下文档
-- [NERTC SDK集成](https://doc.yunxin.163.com/docs/jcyOTA0ODM/DkyMDM2Mzk?platformId=50002)
+- [NERTC SDK集成](https://doc.yunxin.163.com/docs/jcyOTA0ODM/jcxMzg0OTc?platformId=50192)
 
 ## 集成多人音视频通话参数设置页
-- 参考[音视频参数设置页VideoRoomSetActivity](https://github.com/netease-kit/NEGroupCall/blob/master/Android/biz-video-group/src/main/java/com/netease/biz_video_group/yunxin/voideoGroup/ui/VideoRoomSetActivity.java)
-- 音视频参数设置参考rtcSetting属性
-  ```
-   private RtcSetting rtcSetting=new RtcSetting();
-  ```
+- 参考[音视频参数设置页NEMultiCallSetupViewController](https://github.com/netease-kit/NEGroupCall/blob/master/iOS/NEGroupCall-iOS/Class/GroupCall/Controller/NEMultiCallSetupViewController.m)
+
 ## 集成多人音视频通话页
-- 参考[多人通话页VideoRoomSetActivity](https://github.com/netease-kit/NEGroupCall/blob/master/Android/biz-video-group/src/main/java/com/netease/biz_video_group/yunxin/voideoGroup/ui/VideoMeetingRoomActivity.java)
-- SDK初始化,参考initData()方法
+- 参考[多人通话页NEGroupVideoJoinVC](https://github.com/netease-kit/NEGroupCall/blob/master/iOS/NEGroupCall-iOS/Class/GroupCall/Controller/NEGroupVideoJoinVC.m)
+- SDK初始化,参考initRTCSDK()方法
   ```
-    private void initData() {
-
-        if (roomInfo != null) {
-            appKey = roomInfo.nrtcAppKey;
-            long begin = System.currentTimeMillis();
-            setupNERtc(roomInfo.nrtcAppKey);
-            long end = System.currentTimeMillis();
-            long setupNeRtccost = end - begin;
-            TempLogUtil.log("setupNeRtc Cost:"+setupNeRtccost);
-            joinChannel(roomInfo.avRoomCheckSum, roomInfo.avRoomCName, roomInfo.avRoomUid);
-            long joinChannelCost = System.currentTimeMillis() - end;
-            TempLogUtil.log("joinChannel Cost:"+joinChannelCost);
-            neRtcEx.setStatsObserver(NERtcStatsDelegateManager.getInstance());
-        }
-        long beautyBegin = System.currentTimeMillis();
-        mFuRender = new FURenderer
-                .Builder(this)
-                .maxFaces(1)
-                .inputImageOrientation(getCameraOrientation(Camera.CameraInfo.CAMERA_FACING_FRONT))
-                .inputTextureType(FURenderer.FU_ADM_FLAG_EXTERNAL_OES_TEXTURE)
-                .setOnFUDebugListener(this)
-                .setOnTrackingStatusChangedListener(this)
-                .build();
-
-        mFuRender.setBeautificationOn(true);
-        long beautyInitCost = System.currentTimeMillis() - beautyBegin;
-        TempLogUtil.log("mFuRender Init Cost:"+beautyInitCost);
-
-        neRtcEx.setVideoCallback(neRtcVideoFrame -> {
-            if (ivBeauty.isSelected()) {
-                if (isFirstInit){
-                    if (rtcHandler==null){
-                        rtcHandler=new Handler(Looper.myLooper());
-                    }
-                    mFuRender.onSurfaceCreated();
-                    isFirstInit=false;
-                    return false;
-                }
-                //此处可自定义第三方的美颜实现
-                neRtcVideoFrame.textureId = mFuRender.onDrawFrame(neRtcVideoFrame.data, neRtcVideoFrame.textureId,
-                        neRtcVideoFrame.width, neRtcVideoFrame.height);
-
-                neRtcVideoFrame.format = NERtcVideoFrame.Format.TEXTURE_RGB;
-            }
-            return ivBeauty.isSelected();
-        }, true);
+   - (void)initRTCSDK {
+      NERtcEngine *coreEngine = [NERtcEngine sharedEngine];
+      
+      [coreEngine addEngineMediaStatsObserver:self];
+      
+      NERtcEngineContext *context = [[NERtcEngineContext alloc] init];
+      context.engineDelegate = self;
+      context.appKey = self.task.nrtcAppKey;
+      int res = [coreEngine setupEngineWithContext:context];
+      YXAlogInfo(@"初始化音视频引擎结果, res: %d", res);   
     }
   ```
-- 加入房间,参考joinChannel()方法
+- 加入房间,参考joinCurrentRoom()方法
   ```
-    private void joinChannel(String token, String channelName, long uid) {
-        NERtcEx.getInstance().joinChannel(token, channelName, uid);
-    }
+      [NERtcEngine.sharedEngine joinChannelWithToken:self.task.avRoomCheckSum channelName:self.task.avRoomCName myUid:self.task.avRoomUid completion:^(NSError * _Nullable error, uint64_t channelId, uint64_t elapesd) {
+          YXAlogError(@"joinChannel error:%@",error)
+      }];
   ```  
-- 离开房间，参考leave()方法
+- 离开房间，参考destory()方法
   ```
-    private void leave() {
-        neRtcEx.leaveChannel();
-        status = STATUS_CALL_END;
-    }
+    - (void)destory {
+      [UIApplication sharedApplication].idleTimerDisabled = NO;
+      //1.RTC
+      [[NERtcEngine sharedEngine] leaveChannel];
+      //2.移除观察者
+      [self removeOritationObserver];
+      [[NERtcEngine sharedEngine]removeEngineMediaStatsObserver:self];
+  }
   ```    
-- 销毁实例，参考onDestroy()方法
+- 销毁实例，参考destory()方法
   ```
-     @Override
-    protected void onDestroy() {
-        if (neRtcEx != null) {
-            //关掉美颜
-            neRtcEx.setVideoCallback(null, false);
-            neRtcEx.release();
-        }
-        if (rtcHandler!=null&&mFuRender!=null){
-            rtcHandler.post(() -> mFuRender.onSurfaceDestroyed());
-        }
-
-        NERtcStatsDelegateManager.getInstance().clearAll();
-        super.onDestroy();
-    }
+      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+          int res = [NERtcEngine destroyEngine];
+          YXAlogInfo(@"销毁音视频引擎, res: %d", res);
+          ntes_main_async_safe(^{
+              // 弹出视图
+              [self dismissViewControllerAnimated:YES completion:^{
+                  // 通知
+                  if (self.delegate && [self.delegate respondsToSelector:@selector(didLeaveRoom:roomUid:)]) {
+                      [self.delegate didLeaveRoom:self.task.avRoomCid roomUid:self.task.avRoomUid];
+                  }
+              }];
+          });
+      });
   ```   
 
-  ## 查看音视频实时数据
-  - 参考[StateDialog](https://github.com/netease-kit/NEGroupCall/blob/master/Android/biz-video-group/src/main/java/com/netease/biz_video_group/yunxin/voideoGroup/ui/StateDialog.java)
+   ## 查看音视频实时数据
+  - 参考[StateDialog](https://github.com/netease-kit/NEGroupCall/blob/master/iOS/NEGroupCall-iOS/Class/Custom/StatsInfo/NEStatsInfoVC.m)
+
