@@ -52,5 +52,5 @@ var configMap = {
 ```
 3. 进入demo，命令行输入`node app`
 4. 在浏览器中访问 http://127.0.0.1:8182/webdemo/imNew/login.html
-[image-20211011-173310.png](../images/image-20211011-173310.png)
 
+<img src="../images/image-20211011-173310.png" width="60%"/>
