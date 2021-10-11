@@ -21,7 +21,7 @@
 
 ## 操作步骤
 
-  2.  配置示例项目参考以下步骤配置示例项目：
+  1.  配置示例项目参考以下步骤配置示例项目：
 
    - 克隆[VideoCall](https://github.com/netease-kit/NEVideoCall-1to1/tree/master/NLiteAVDemo-Android-Java )仓库至本地。
 
@@ -34,6 +34,6 @@
      		buildConfigField "String", "APP_KEY", "\"${appKey}\""
      }
      ```
-  3. 编译并运行示例项目。
+  2. 编译并运行示例项目。
 
 <img src="../images/image-20210927094610691.png" width="30%"/>
