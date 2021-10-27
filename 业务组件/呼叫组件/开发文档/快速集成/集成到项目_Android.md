@@ -70,6 +70,16 @@ dependencies {
 }
 ```
 
+**注意，如果已经本地已经集成 IM 或者 NERTC sdk 或不想使用组件依赖版本通过如下方式实现（可能出现版本不兼容）**
+
+> ```groovy
+> implementation('com.netease.yunxin.kit:call-ui:1.4.0') {
+> 		exclude group: 'com.netease.nimlib'// 去除组件依赖的 IM sdk
+> 		exclude group: 'com.netease.yunxin', module: 'nertc' // 去除组件依赖的 NERTC sdk
+> }
+> ```
+
+
 ### 3. 初始化
 
 **！！！在IM 登录成功后进行！！！**
