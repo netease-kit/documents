@@ -2,7 +2,7 @@
 
 ## 下载
 
-1. 通过[链接](https://yx-web-nosdn.netease.im/package/1628829743/nertc-calling.zip?download=nertc-calling.zip)下载组件。
+1. 通过[链接](https://yx-web-nosdn.netease.im/package/1636966471292/lib.zip?download=lib.zip)下载组件。
 2. 将下载后的组件解压，重命名后放入项目中
 3. 添加到`eslintignore`或者`prettierignore`等忽略中，如没有可忽略这一步
 
