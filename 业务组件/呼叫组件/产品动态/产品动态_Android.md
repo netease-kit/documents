@@ -40,6 +40,7 @@
 #### 更新API
 
 1. `NERTCVideoCall#switchCallType` 支持 `ChannelType#VIDEO` 参数 从音频切换为视频通话；
+1. `CallKitNotificationConfig` 构造函数变更，新增 `channelId` 参数。
 
 ## 1.3.3（2021-08-26）
 
