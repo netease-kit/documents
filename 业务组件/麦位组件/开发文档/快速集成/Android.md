@@ -40,7 +40,7 @@ allprojects {
 }
 ```
 
-在主工程 build.gradle 文件中添加如下代码内容引入呼叫组件
+在主工程 build.gradle 文件中添加如下代码内容引入麦位组件
 
 ```groovy
 // 若出现 More than one file was found with OS independent path 'lib/arm64-v8a/libc++_shared.so'.

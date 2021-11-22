@@ -20,6 +20,8 @@ public class TestActivity extends CommonCallActivity {
 
 ### 2. 实现自己的布局并调用父类方法完成呼叫与被叫页面
 
+**详情可参考[附件](附件) （实现1v1视频通话示例）** 
+
 用户可通过关键字 `CommonCallActivity` 过滤日志信息，示例代码中未处理接口错误情况，可根据情况自己实现。
 
 **作为子类可使用如下方法以及参数完成相应实现。**
@@ -75,5 +77,3 @@ CallKitUI.init(getApplicationContext(), options);
 ### 4. 呼叫
 
 完成上述步骤后可参考[快速集成#集成到项目#实现一对一通话](../../快速集成/集成到项目_Android.md)章节实现通话。
-
-### 详情可参考附件（实现1v1视频通话示例）

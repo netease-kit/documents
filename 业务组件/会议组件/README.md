@@ -48,10 +48,13 @@
 ## 产品架构
 1. 会议组件架构图
 
-    <image width="60%" src="images/meeting_sdk_structure.png">
+    <image width="60%" src="./images/meeting_sdk_structure.png">
 
    会议SDK全局接口，提供初始化、管理其他会议相关子服务的能力
 
+2. 会议系统时序图   
+
+    <image width="60%" src="./images/meeting_flow_chart.png">
 
 ## 体验应用
 ### 下载体验包
@@ -86,25 +89,25 @@
 ### 效果展示
 - 视频会议页面
 
-    <image width="25%" src="images/demo_meeting_camera.jpeg">
+    <image width="25%" src="./images/demo_meeting_camera.jpeg">
 
 - 视频会议共享屏幕
 
-    <image width="25%" src="images/demo_meeting_share_screen.jpeg">
+    <image width="25%" src="./images/demo_meeting_share_screen.jpeg">
 
 - 视频会议白板
 
-    <image width="25%" src="images/demo_meeting_whiteborad.jpeg">
+    <image width="25%" src="./images/demo_meeting_whiteborad.jpeg">
 
 - 视频会议聊天
 
-    <image width="25%" src="images/demo_meeting_chat.jpeg">
+    <image width="25%" src="./images/demo_meeting_chat.jpeg">
 
 - 视频会议成员管理
 
-    <image width="25%" src="images/demo_meeting_user_list.jpeg">
+    <image width="25%" src="./images/demo_meeting_user_list.jpeg">
 
 - 视频会议其他功能
 
-    <image width="25%" src="images/demo_meeting_other.jpeg">
+    <image width="25%" src="./images/demo_meeting_other.jpeg">
 

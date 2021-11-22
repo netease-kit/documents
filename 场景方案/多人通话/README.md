@@ -21,26 +21,47 @@
 
 ### 效果展示
  
-1. 加入频道  
-<img src="images/加入频道.png" alt="image-20210923195218894" width="108" heigth="234" />
-2. 视频参数设置  
-<img src="images/视频参数设置.png" alt="image-20210923195218894" width="108" heigth="234" />
-3. 音频参数设置  
-<img src="images/音频参数设置.png" alt="image-20210923195218894" width="108" heigth="234" />
-4. 通话-单人  
-<img src="images/通话-单人.png" alt="image-20210923195218894" width="108" heigth="234" />  
-5. 通话-双人  
-<img src="images/通话-双人.png" alt="image-20210923195218894" width="108" heigth="234" />
-6. 通话-三人  
-<img src="images/通话-三人.png" alt="image-20210923195218894" width="108" heigth="234" />
-7. 通话-四人  
-<img src="images/通话-四人.png" alt="image-20210923195218894" width="108" heigth="234" />
-8. 演讲者模式-双人  
-<img src="images/演讲者模式-双人.png" alt="image-20210923195218894" width="108" heigth="234" />  
-9. 演讲者模式-三人  
-<img src="images/演讲者模式-三人.png" alt="image-20210923195218894" width="108" heigth="234" />
-10. 演讲者模式-四人  
-<img src="images/演讲者模式-四人.png" alt="image-20210923195218894" width="108" heigth="234" />  
-11. 通话实时数据  
-<img src="images/通话实时数据.png" alt="image-20210923195218894" width="108" heigth="234" />
+- 加入频道  
+
+    <img width="25%" src="images/加入频道.png"  />
+
+- 视频参数设置  
+
+    <img width="25%" src="images/视频参数设置.png"  />
+
+- 音频参数设置
+
+    <img width="25%" src="images/音频参数设置.png"  />
+
+- 通话-单人  
+
+    <img width="25%" src="images/通话-单人.png"  />  
+
+- 通话-双人  
+  
+    <img width="25%" src="images/通话-双人.png"  />
+
+- 通话-三人  
+  
+    <img width="25%" src="images/通话-三人.png"  />
+
+- 通话-四人  
+    
+    <img width="25%" src="images/通话-四人.png"  />
+
+- 演讲者模式-双人  
+  
+    <img width="25%" src="images/演讲者模式-双人.png"  />  
+
+- 演讲者模式-三人  
+  
+    <img width="25%" src="images/演讲者模式-三人.png"  />
+
+- 演讲者模式-四人  
+  
+    <img width="25%" src="images/演讲者模式-四人.png"  />  
+
+- 通话实时数据  
+  
+    <img width="25%" src="images/通话实时数据.png"  />
 
