@@ -139,7 +139,7 @@ pod 'NERtcCallKit'
     [[NERtcCallKit sharedInstance] call:@"im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
         NSLog(@"call error code : %@", error);
 
-        /* 设置
+        /* 设置视频通话的 view
         if (self.callType == NERtcCallTypeVideo) {
             [[NERtcCallKit sharedInstance] setupLocalView:self.bigVideoView.videoView];
         } */
