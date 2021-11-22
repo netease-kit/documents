@@ -103,7 +103,7 @@ pod 'NERtcCallKit'
 否则，可使用组件的`-[NERtcCallKit login:]` 进行登录，同样可使用`-[NERtcCallKit logout:]`进行登出，**_登出或未进行登录则不能进行呼叫_**。
 
 ```objc
-[[NERtcCallKit sharedInstance] login:@"accid" token:@"im token" completion:^(NSError * _Nullable error) {
+[[NERtcCallKit sharedInstance] login:@"im accid" token:@"im token" completion:^(NSError * _Nullable error) {
 
 }];
 
@@ -114,7 +114,7 @@ pod 'NERtcCallKit'
 
 ### 4. 实现一对一呼叫
 
-**无论是一对一通话还是群组通话，在呼叫或收到呼叫邀请时需要设置相应的回调监听，用于接收对应通话的控制消息。**首先在需要收到监听的地方实现`NERtcCallKitDelegate`
+无论是一对一通话还是群组通话，在呼叫或收到呼叫邀请时需要设置相应的回调监听，用于接收对应通话的控制消息。首先在需要收到监听的地方实现`NERtcCallKitDelegate`
 
 ```objc
 @interface SomeViewController: UIViewController <NERtcCallKitDelegate>
@@ -152,7 +152,6 @@ pod 'NERtcCallKit'
             if (error.code == 21000 || error.code == 21001) {
                 //呼叫失败销毁当前通话页面
             }
-            [self.view makeToast:error.localizedDescription];
         }
     }];
 }
