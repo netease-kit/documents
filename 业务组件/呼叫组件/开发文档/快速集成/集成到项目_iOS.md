@@ -66,9 +66,9 @@ pod 'NERtcCallKit'
 
 - (void)setupSDK {
     NERtcCallOptions *option = [NERtcCallOptions new];
-    option.APNSCerName = kAPNSCerName;
+    option.APNSCerName = @"anps cer name";
     NERtcCallKit *callkit = [NERtcCallKit sharedInstance];
-    [callkit setupAppKey:kAppKey options:option];
+    [callkit setupAppKey:@"app key" options:option];
 
     // 请求 rtc token 服务，若非安全模式则不需设置
     callkit.tokenHandler = ^(uint64_t uid, void (^complete)(NSString *token, NSError *error)) {
@@ -116,6 +116,7 @@ pod 'NERtcCallKit'
 无论是一对一通话还是群组通话，在呼叫或收到呼叫邀请时需要设置相应的回调监听，用于接收对应通话的控制消息。首先在需要收到监听的地方实现`NERtcCallKitDelegate`
 
 ```objc
+#import <NERtcCallKit/NERtcCallKit.h>
 @interface SomeViewController: UIViewController <NERtcCallKitDelegate>
 
 - (void)dealloc {
@@ -140,23 +141,11 @@ pod 'NERtcCallKit'
         if (error) {
             NSLog(@"fetchUserInfo failed : %@", error);
         }else {
-            /*
-            // 解析数据
             NIMUser *imUser = users.firstObject;
-            NEUser *remoteUser = [[NEUser alloc] init];
-            remoteUser.imAccid = imUser.userId;
-            remoteUser.mobile = imUser.userInfo.mobile;
-            remoteUser.avatar = imUser.userInfo.avatarUrl;
-
-            // 调出通话界面，需要用户根据G2的音视频API自己实现，或者参考示例代码
             NECallViewController *callVC = [[NECallViewController alloc] init];
-            callVC.localUser = [NEAccount shared].userModel;
-            callVC.remoteUser = remoteUser;
-            callVC.status = NERtcCallStatusCalled;
-            callVC.callType = type;
-            callVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+            //callVC.isCaller = NO;
+            //callVC.remoteImAccid = imUser.userId;
             [self.navigationController presentViewController:callVC animated:YES completion:nil];
-             */
         }
     }];
 }
@@ -164,14 +153,14 @@ pod 'NERtcCallKit'
 @end
 ```
 
-`SomeViewController` 为通话页面的前置页面，可能是通讯录 IM 消息页面等，通话页面的使用参考下面代码或者示例工程
+`SomeViewController` 为通话页面的前置页面，可能是通讯录 IM 消息等页面，通话页面的使用参考下面代码或者示例工程
 
 ```objc
 @interface NECallViewController : UIViewController<NERtcCallKitDelegate>
 
-@property(strong,nonatomic) NEVideoView *smallVideoView;
+@property(strong,nonatomic) UIView *smallVideoView;
 
-@property(strong,nonatomic) NEVideoView *bigVideoView;
+@property(strong,nonatomic) UIView *bigVideoView;
 
 @end
 
@@ -199,7 +188,7 @@ pod 'NERtcCallKit'
     self.smallVideoView.frame = CGRectMake(0, 0, 100, 100);
 }
 
-- (vod)setupSDK {
+- (void)setupSDK {
     [[NERtcCallKit sharedInstance] addDelegate:self];
     [NERtcCallKit sharedInstance].timeOutSeconds = 30;
     NSError *error;
@@ -233,6 +222,7 @@ pod 'NERtcCallKit'
 
 // 当被叫 onInvited 回调发生，调用 accept 接听呼叫
 - (void)acceptCall {
+    __weak typeof(self) weakSelf = self;
     [[NERtcCallKit sharedInstance] accept:^(NSError * _Nullable error) {
         if (error) {
             NSLog(@"接听失败 : %@", error);
@@ -240,8 +230,8 @@ pod 'NERtcCallKit'
                 // 销毁当前通话页面
             });
         }else {
-            [[NERtcCallKit sharedInstance] setupLocalView:self.smallVideoView.videoView];
-            [[NERtcCallKit sharedInstance] setupRemoteView:self.bigVideoView.videoView forUser:@"对端 im accid"];
+          [[NERtcCallKit sharedInstance] setupLocalView:weakSelf.smallVideoView];
+          [[NERtcCallKit sharedInstance] setupRemoteView:weakSelf.bigVideoView forUser:@"对端 im accid"];
         }
     }];
 }
@@ -253,17 +243,17 @@ pod 'NERtcCallKit'
     }];
 }
 
-- (NEVideoView *)bigVideoView {
+- (UIView *)bigVideoView {
     if (!_bigVideoView) {
-        _bigVideoView = [[NEVideoView alloc] init];
+        _bigVideoView = [[UIView alloc] init];
         _bigVideoView.backgroundColor = [UIColor darkGrayColor];
     }
     return _bigVideoView;
 }
 
-- (NEVideoView *)smallVideoView {
+- (UIView *)smallVideoView {
     if (!_smallVideoView) {
-        _smallVideoView = [[NEVideoView alloc] init];
+        _smallVideoView = [[UIView alloc] init];
         _smallVideoView.backgroundColor = [UIColor darkGrayColor];
     }
     return _smallVideoView;
@@ -273,10 +263,8 @@ pod 'NERtcCallKit'
 
 - (void)onUserEnter:(NSString *)userID {
     // 被叫加入可以进行视频通话，设置本地音视频相关api
-    [[NERtcCallKit sharedInstance] setupLocalView:self.smallVideoView.videoView];
-    self.smallVideoView.userID = @"当前用户 im accid";
-    [[NERtcCallKit sharedInstance] setupRemoteView:self.bigVideoView.videoView forUser:userID];
-    self.bigVideoView.userID = userID;
+    [[NERtcCallKit sharedInstance] setupLocalView:self.smallVideoView];
+    [[NERtcCallKit sharedInstance] setupRemoteView:self.bigVideoView forUser:userID];
 }
 
 ```
