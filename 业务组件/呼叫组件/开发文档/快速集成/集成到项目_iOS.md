@@ -265,8 +265,6 @@ pod 'NERtcCallKit'
     if (!_smallVideoView) {
         _smallVideoView = [[NEVideoView alloc] init];
         _smallVideoView.backgroundColor = [UIColor darkGrayColor];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(switchVideoView:)];
-        [_smallVideoView addGestureRecognizer:tap];
     }
     return _smallVideoView;
 }
