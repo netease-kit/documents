@@ -113,6 +113,72 @@ pod 'NERtcCallKit'
 
 ### 4. 实现一对一呼叫
 
+呼叫组件的典型应用场景为一对一呼叫场景，即用户 A 发起视频呼叫用户 B ，用户 B 同意呼叫，通话接通、两人进行实时音视频通信。
+
+1. 用户 A 以及用户 B 均完成云信 IM SDK 的登录，并成功初始化呼叫组件。</br>
+
+2. 用户 A 获取到自己以及用户 B 登录云信 IM SDK 的账号（AccId）。</br>
+
+3. 用户 A 通过如下代码触发呼叫用户 B 的操作。</br>
+
+```objc
+    [[NERtcCallKit sharedInstance] call:@"被叫 im Accid" type: NERtcCallTypeVideo        completion:^(NSError * _Nullable error) {
+
+    }];
+```
+
+4. 用户 B 实现会叫组件监听 并且在有呼叫回调发生时候调用 accept 方法即可实现通话。
+
+- 被叫通话页面的前置页面监听
+
+```objc
+- (void)onInvited:(NSString *)invitor
+          userIDs:(NSArray<NSString *> *)userIDs
+      isFromGroup:(BOOL)isFromGroup
+          groupID:(nullable NSString *)groupID
+             type:(NERtcCallType)type
+       attachment:(nullable NSString *)attachment {
+
+    [NIMSDK.sharedSDK.userManager fetchUserInfos:@[invitor] completion:^(NSArray<NIMUser *> * _Nullable users, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"fetchUserInfo failed : %@", error);
+        }else {
+            //调起通话页面(根据业务自己实现或者参考示例工程中的通话页面 NECallViewController )
+        }
+    }];
+}
+```
+
+- 被叫通话页面中接受通话邀请
+
+```objc
+- (void)acceptCall {
+    __weak typeof(self) weakSelf = self;
+    [[NERtcCallKit sharedInstance] accept:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"接听失败 : %@", error);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                // 销毁当前通话页面
+            });
+        }else {
+          //设置通话页面相关显示或者参考示例工程中的通话页面 NECallViewController
+        }
+    }];
+}
+```
+
+5. 通话完成后点击挂断即可。</br>
+
+```objc
+- (void)hangup{
+    [[NERtcCallKit sharedInstance] hangup:^(NSError * _Nullable error) {
+
+    }];
+}
+```
+
+由于完成一次视频通话还需要预览视图设置等复杂调用，如果要接入工程并完成视频呼叫流程还需参考如下代码，如果需要实现一些复杂操作请参考示例工程中的代码。
+
 无论是一对一通话还是群组通话，在呼叫或收到呼叫邀请时需要设置相应的回调监听，用于接收对应通话的控制消息。首先在需要收到监听的地方实现`NERtcCallKitDelegate`
 
 ```objc
