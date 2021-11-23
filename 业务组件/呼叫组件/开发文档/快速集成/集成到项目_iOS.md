@@ -123,36 +123,8 @@ pod 'NERtcCallKit'
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [NERtcCallKit.sharedInstance addDelegate:self];
-}
-
-// 主叫发起呼叫
-- (void)didCall {
-    [[NERtcCallKit sharedInstance] addDelegate:self];
-    [NERtcCallKit sharedInstance].timeOutSeconds = 30;
-    NSError *error;
-    [[NERtcCallKit sharedInstance] setLoudSpeakerMode:YES error:&error];
-    [[NERtcCallKit sharedInstance] enableLocalVideo:YES];
-    [[NERtcEngine sharedEngine] adjustRecordingSignalVolume:200];
-    [[NERtcEngine sharedEngine] adjustPlaybackSignalVolume:200];
-    [[NERtcCallKit sharedInstance] call:@"im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
-        NSLog(@"call error code : %@", error);
-
-        /* 设置视频通话的 view
-        if (self.callType == NERtcCallTypeVideo) {
-            [[NERtcCallKit sharedInstance] setupLocalView:self.bigVideoView.videoView];
-        } */
-        if (error) {
-            /// 对方离线时 通过APNS推送 UI不弹框提示
-            if (error.code == 10202 || error.code == 10201) {
-                return;
-            }
-
-            if (error.code == 21000 || error.code == 21001) {
-                //呼叫失败销毁当前通话页面
-            }
-        }
-    }];
 }
 
 #pragma mark - NERtcVideoCallDelegate
@@ -189,6 +161,76 @@ pod 'NERtcCallKit'
     }];
 }
 
+@end
+```
+
+`SomeViewController` 为通话页面的前置页面，可能是通讯录 IM 消息页面等，通话页面的使用参考下面代码或者示例工程
+
+```objc
+@interface NECallViewController : UIViewController<NERtcCallKitDelegate>
+
+@property(strong,nonatomic) NEVideoView *smallVideoView;
+
+@property(strong,nonatomic) NEVideoView *bigVideoView;
+
+@end
+
+@implementation NECallViewController {
+
+- (void)dealloc {
+    [NERtcCallKit.sharedInstance removeDelegate:self];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupUI];
+    [self setupSDK];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NERtcCallKit sharedInstance] setupLocalView:nil];
+}
+
+- (void)setupUI {
+    [self.view addSubview:self.bigVideoView];
+    self.bigVideoView.frame = self.view.bounds;
+    [self.view addSubview:self.smallVideoView];
+    self.smallVideoView.frame = CGRectMake(0, 0, 100, 100);
+}
+
+- (vod)setupSDK {
+    [[NERtcCallKit sharedInstance] addDelegate:self];
+    [NERtcCallKit sharedInstance].timeOutSeconds = 30;
+    NSError *error;
+    [[NERtcCallKit sharedInstance] setLoudSpeakerMode:YES error:&error];
+    [[NERtcCallKit sharedInstance] enableLocalVideo:YES];
+    [[NERtcEngine sharedEngine] adjustRecordingSignalVolume:200];
+    [[NERtcEngine sharedEngine] adjustPlaybackSignalVolume:200];
+}
+
+// 主叫发起呼叫
+- (void)didCall {
+
+    [[NERtcCallKit sharedInstance] call:@"im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
+        NSLog(@"call error code : %@", error);
+
+        [[NERtcCallKit sharedInstance] setupLocalView:self.bigVideoView.videoView];
+        if (error) {
+            /// 对方离线时 通过APNS推送 UI不弹框提示
+            if (error.code == 10202 || error.code == 10201) {
+                return;
+            }
+
+            if (error.code == 21000 || error.code == 21001) {
+                //呼叫失败销毁当前通话页面
+            }
+        }else {
+
+        }
+    }];
+}
+
 // 当被叫 onInvited 回调发生，调用 accept 接听呼叫
 - (void)acceptCall {
     [[NERtcCallKit sharedInstance] accept:^(NSError * _Nullable error) {
@@ -198,10 +240,8 @@ pod 'NERtcCallKit'
                 // 销毁当前通话页面
             });
         }else {
-            /* 设置rtc视频通话的view
             [[NERtcCallKit sharedInstance] setupLocalView:self.smallVideoView.videoView];
             [[NERtcCallKit sharedInstance] setupRemoteView:self.bigVideoView.videoView forUser:@"对端 im accid"];
-             */
         }
     }];
 }
@@ -213,5 +253,32 @@ pod 'NERtcCallKit'
     }];
 }
 
-@end
+- (NEVideoView *)bigVideoView {
+    if (!_bigVideoView) {
+        _bigVideoView = [[NEVideoView alloc] init];
+        _bigVideoView.backgroundColor = [UIColor darkGrayColor];
+    }
+    return _bigVideoView;
+}
+
+- (NEVideoView *)smallVideoView {
+    if (!_smallVideoView) {
+        _smallVideoView = [[NEVideoView alloc] init];
+        _smallVideoView.backgroundColor = [UIColor darkGrayColor];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(switchVideoView:)];
+        [_smallVideoView addGestureRecognizer:tap];
+    }
+    return _smallVideoView;
+}
+
+#pragma mark - NERtcVideoCallDelegate
+
+- (void)onUserEnter:(NSString *)userID {
+    // 被叫加入可以进行视频通话，设置本地音视频相关api
+    [[NERtcCallKit sharedInstance] setupLocalView:self.smallVideoView.videoView];
+    self.smallVideoView.userID = @"当前用户 im accid";
+    [[NERtcCallKit sharedInstance] setupRemoteView:self.bigVideoView.videoView forUser:userID];
+    self.bigVideoView.userID = userID;
+}
+
 ```
