@@ -67,7 +67,6 @@ pod 'NERtcCallKit'
 - (void)setupSDK {
     NERtcCallOptions *option = [NERtcCallOptions new];
     option.APNSCerName = kAPNSCerName;
-    option.supportAutoJoinWhenCalled = YES;
     NERtcCallKit *callkit = [NERtcCallKit sharedInstance];
     [callkit setupAppKey:kAppKey options:option];
 
