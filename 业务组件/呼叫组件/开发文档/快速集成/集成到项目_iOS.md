@@ -72,21 +72,9 @@ pod 'NERtcCallKit'
 
     // 请求 rtc token 服务，若非安全模式则不需设置
     callkit.tokenHandler = ^(uint64_t uid, void (^complete)(NSString *token, NSError *error)) {
-
-        /* 获取token以及回传给SDK token 的示例
-
-        NETokenTask *task = [NETokenTask taskWithUid:[NSString stringWithFormat:@"%llu",uid] withAppkey:kAppKey];
-        [task postWithCompletion:^(NSDictionary * _Nullable data, NSError * _Nullable error) {
-            if (error == nil && data && [data isKindOfClass:[NSDictionary class]]) {
-                NSNumber *code = data[@"code"];
-                NSString *checksum = data[@"checksum"];
-                if (code.intValue == 200 && checksum) {
-                    complete(checksum,nil);
-                    return;
-                }
-            }
-            complete(nil,error);
-        }]; */
+        // 获取token以及回传给SDK(通常从业务服务器获取)
+        NSString *token = @"get your token";
+        complete(token,nil);
     };
 }
 
