@@ -122,9 +122,9 @@ pod 'NERtcCallKit'
 3. 用户 A 通过如下代码触发呼叫用户 B 的操作。</br>
 
 ```objc
-    [[NERtcCallKit sharedInstance] call:@"被叫 im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
+[[NERtcCallKit sharedInstance] call:@"被叫 im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
 
-    }];
+}];
 ```
 
 4. 用户 B 实现会叫组件监听 并且在有呼叫回调发生时候调用 accept 方法即可实现通话。
