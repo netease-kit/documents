@@ -1,8 +1,10 @@
-### 1.3.0 => 1.4.0
+### 1.4.0 => 1.4.2
 
 可直接升级
 
-1. 添加被叫是否自动加入 channel 控制变量:
+1. 支持 IM SDK 和 NERtc SDK 向上兼容
+
+2. 支持私有化配置
 
    ```objc
    @interface NERtcCallOptions : NSObject
@@ -11,6 +13,22 @@
    @property (nonatomic, assign) BOOL supportAutoJoinWhenCalled;
 
    @end
+   ```
+
+### 1.3.0 => 1.4.0
+
+可直接升级
+
+1. 添加被叫是否自动加入 channel 控制变量:
+
+   ```objc
+   /// 初始化，所有功能需要先初始化，支持私有化
+   /// @param appKey 云信后台注册的appKey
+   /// @param options  IM 推送配置，Rtc是否初始化
+   /// @param context  Rtc初始化配置，私有化参数配置
+   - (void)setupAppKey:(NSString *)appKey
+               options:(nullable NERtcCallOptions *)options
+           withContext:(nonnull NERtcEngineContext *)context;
    ```
 
 2. 增加通话中根据 accId 获取 rtcUid 或根据 rtcUid 获取 accId:
