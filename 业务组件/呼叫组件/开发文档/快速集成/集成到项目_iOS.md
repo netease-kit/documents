@@ -3,211 +3,322 @@
 针对已经集成 IM sdk 的用户若希望快速实现音视频通话功能，可通过集成呼叫组件完成实现。
 
 ## 注意事项
-1. 若用户已经集成了 IM Sdk 或 NERTc Sdk 需参考**[产品动态](../../产品动态/产品动态-iOS.md)** 关于 sdk 版本的映射关系，确保使用的 sdk 版本和组件版本一致。
-2. 若用户未接入 IM Sdk 可参考[官网](https://doc.yunxin.163.com/docs/TM5MzM5Njk/DQ5MTA5ODQ?platformId=60278)完成 IM Sdk 的接入。
+
+1.  若用户已经集成了 IM Sdk 或 NERTc Sdk 需参考**[产品动态](../../产品动态/产品动态-iOS.md)** 关于 sdk 版本的映射关系，确保使用的 sdk 版本和组件版本一致。
+2.  若用户未接入 IM Sdk 可参考[官网](https://doc.yunxin.163.com/docs/TM5MzM5Njk/DQ5MTA5ODQ?platformId=60278)完成 IM Sdk 的接入。
 
 **用户完成上述两点注意后继续参考下面内容。**
 
-
 ## 准备工作
-1. 环境准备
-   1. Xcode 10 及以上版本；
-   2. iOS 9.0 及以上版本的 iOS 设备；
-   3. CocoaPods；
 
-2. 开通相关功能
+1.  环境准备
 
-    **注：如果已有相应的应用，可在原应用上申请开通【音视频通话2.0】及【信令】或 【IM 专业版】功能。**
+    1.  Xcode 10 及以上版本；
+    2.  iOS 9.0 及以上版本的 iOS 设备；
+    3.  CocoaPods；
 
-   针对新应用可按照如下操作实现功能开通。
+2.  开通相关功能
 
-   网易云控制台，点击【应用】>【创建】创建自己的App，在【功能管理】中申请开通如下功能
+    **注：如果已有相应的应用，可在原应用上申请开通【音视频通话 2.0】及【信令】或 【IM 专业版】功能。**
 
-   1. 若仅使用呼叫功能，则开通
+    针对新应用可按照如下操作实现功能开通。
 
-      1. 【信令】
-      2. 【音视频通话2.0】
-      3. 【安全模式】- 组件支持使用安全模式以及非安全模式，开启安全模式请咨询相应SO。
-   2. 若还需使用话单功能，则需要开通
-      1. 【IM专业版】
-      2. 【G2话单功能】-云信控制台-音视频通话2.0-功能配置-话单配置-开启话单类型消息抄送。
+    网易云控制台，点击【应用】>【创建】创建自己的 App，在【功能管理】中申请开通如下功能
 
-  3. 在控制台中【appkey管理】获取appkey。
+    1.  若仅使用呼叫功能，则开通
 
-## 集成
+        1.  【信令】
+        2.  【音视频通话 2.0】
+        3.  【安全模式】- 组件支持使用安全模式以及非安全模式，开启安全模式请咨询相应 SO。
 
-## 1. 集成说明
+    2.  若还需使用话单功能，则需要开通
+        1.  【IM 专业版】
+        2.  【G2 话单功能】-云信控制台-音视频通话 2.0-功能配置-话单配置-开启话单类型消息抄送。
 
-### 1.1 引入
+3.  在控制台中【appkey 管理】获取 appkey。
 
-> 建议使用CocoaPods进行管理，在`Podfile`中添加：
+## 集成说明
+
+### 1. 引入
+
+> 建议使用 CocoaPods 进行管理，在`Podfile`中添加：
 
 ```ruby
 pod 'NERtcCallKit'
 ```
 
-> 组件依赖NERtcSDK，NIMSDK的特定版本，请***不要***在Podfile中指定NERtcSDK及NIMSDK的版本
+> 组件依赖 NERtcSDK 的特定版本，请**_不要_**在 Podfile 中指定 NERtcSDK 的版本
 
-### 1.2 初始化
+### 2. 初始化
 
 组件实现为单实例，通过接口 `NERtcCallKit.sharedInstance` 获取此实例，调用实例方法 `setupAppKey` 完成初始化。
 
 ```objc
-/// 初始化，所有功能需要先初始化
-/// @param appKey 云信后台注册的appKey
-/// @param options 其他配置项，如证书名
-- (void)setupAppKey:(NSString *)appKey options:(nullable NERtcCallOptions *)options;
-```
+#import <NERtcCallKit/NERtcCallKit.h>
+@interface SomeViewController()<NERtcCallKitDelegate>
+@end
 
-> 注：setupAppKey方法为使用组件前 ***必须*** 调用的方法，若不调用，会发生不可预知的问题!
+@implementation SomeViewController
 
+- (void)viewDidLoad {
+    [self setupSDK];
+}
 
+- (void)setupSDK {
+    NERtcCallOptions *option = [NERtcCallOptions new];
+    option.APNSCerName = @"anps cer name";
+    NERtcCallKit *callkit = [NERtcCallKit sharedInstance];
+    [callkit setupAppKey:@"app key" options:option];
 
-### 1.3 登录/登出
+    // 请求 rtc token 服务，若非安全模式则不需设置
+    callkit.tokenHandler = ^(uint64_t uid, void (^complete)(NSString *token, NSError *error)) {
+        // 获取token以及回传给SDK(通常从业务服务器获取)
+        NSString *token = @"get your token";
+        complete(token,nil);
+    };
+}
 
-**若已经在 app 内实现了 NIMSDK 登录/登出逻辑，则不必调用相应的登录/登出接口，直接跳过此章节。**
-
-否则，可使用组件的`-[NERtcCallKit login:]` 进行登录，同样可使用`-[NERtcCallKit logout:]`进行登出，***登出或未进行登录则不能进行呼叫***。
-
-
-
-### 1.4 设置通话回调
-
- **无论是一对一通话还是群组通话，在呼叫或收到呼叫邀请时需要设置相应的回调监听，用于接收对应通话的控制消息。**首先在需要收到监听的地方实现`NERtcCallKitDelegate`
-
-```objc
-@interface SomeViewController: UIViewController <NERtcCallKitDelegate>
 @end
 ```
 
-**注册回调**
+> 注：setupAppKey 方法为使用组件前 **_必须_** 调用的方法，若不调用，会发生不可预知的问题!
+
+### 3.登录/登出
+
+**若已经在 app 内实现了 NIMSDK 登录/登出逻辑，则不必调用相应的登录/登出接口，直接跳过此章节。**
+
+否则，可使用组件的`-[NERtcCallKit login:]` 进行登录，同样可使用`-[NERtcCallKit logout:]`进行登出，**_登出或未进行登录则不能进行呼叫_**。
 
 ```objc
-// 执行设置回调监听
-[NERtcCallKit.sharedInstance addDelegate:self];
+[[NERtcCallKit sharedInstance] login:@"im accid" token:@"im token" completion:^(NSError * _Nullable error) {
 
-// 通话结束后或页面销毁时需要移除对应的回调监听
-[NERtcCallKit.sharedInstance removeDelegate:self];
+}];
+
+[[NERtcCallKit sharedInstance] logout:^(NSError * _Nullable error) {
+
+}];
 ```
 
-**回调监听方法说明：**
+### 4. 实现一对一呼叫
+
+呼叫组件的典型应用场景为一对一呼叫场景，即用户 A 发起视频呼叫用户 B ，用户 B 同意呼叫，通话接通、两人进行实时音视频通信。
+
+1. 用户 A 以及用户 B 均完成云信 IM SDK 的登录，并成功初始化呼叫组件。</br>
+
+2. 用户 A 获取到自己以及用户 B 登录云信 IM SDK 的账号（AccId）。</br>
+
+3. 用户 A 通过如下代码触发呼叫用户 B 的操作。</br>
 
 ```objc
-@protocol NERtcCallKitDelegate <NSObject>
+[[NERtcCallKit sharedInstance] call:@"被叫 im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
 
-@optional
+}];
+```
 
-/// 收到邀请的回调
-/// @param invitor 邀请方
-/// @param userIDs 房间中的被邀请的所有人（不包含邀请者）
-/// @param isFromGroup 是否是群组
-/// @param groupID 群组ID
-/// @param type 通话类型
+4. 用户 B 实现会叫组件监听 并且在有呼叫回调发生时候调用 accept 方法即可实现通话。
+
+- 被叫通话页面的前置页面监听
+
+```objc
 - (void)onInvited:(NSString *)invitor
           userIDs:(NSArray<NSString *> *)userIDs
       isFromGroup:(BOOL)isFromGroup
           groupID:(nullable NSString *)groupID
              type:(NERtcCallType)type
-       attachment:(nullable NSString *)attachment;
+       attachment:(nullable NSString *)attachment {
 
-/// 接受邀请的回调
-/// @param userID 接受者
-- (void)onUserEnter:(NSString *)userID;
+    [NIMSDK.sharedSDK.userManager fetchUserInfos:@[invitor] completion:^(NSArray<NIMUser *> * _Nullable users, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"fetchUserInfo failed : %@", error);
+        }else {
+            //调起通话页面(根据业务自己实现或者参考示例工程中的通话页面 NECallViewController )
+        }
+    }];
+}
+```
 
-/// 拒绝邀请的回调
-/// @param userID 拒绝者
-- (void)onUserReject:(NSString *)userID;
+- 被叫通话页面中接受通话邀请
 
-/// 取消邀请的回调
-/// @param userID 邀请方
-- (void)onUserCancel:(NSString *)userID;
+```objc
+- (void)acceptCall {
+    __weak typeof(self) weakSelf = self;
+    [[NERtcCallKit sharedInstance] accept:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"接听失败 : %@", error);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                // 销毁当前通话页面
+            });
+        }else {
+          //设置通话页面相关显示或者参考示例工程中的通话页面 NECallViewController
+        }
+    }];
+}
+```
 
-/// 用户离开的回调.
-/// @param userID 用户userID
-- (void)onUserLeave:(NSString *)userID;
+5. 通话完成后点击挂断即可。</br>
 
-/// 用户异常离开的回调
-/// @param userID 用户userID
-- (void)onUserDisconnect:(NSString *)userID;
+```objc
+- (void)hangup{
+    [[NERtcCallKit sharedInstance] hangup:^(NSError * _Nullable error) {
 
-/// 用户接受邀请的回调
-/// @param userID 用户userID
-- (void)onUserAccept:(NSString *)userID;
+    }];
+}
+```
 
-/// 忙线
-/// @param userID 忙线的用户ID
-- (void)onUserBusy:(NSString *)userID;
+由于完成一次视频通话还需要预览视图设置等复杂调用，如果要接入工程并完成视频呼叫流程还需参考如下代码，如果需要实现一些复杂操作请参考示例工程中的代码。
 
-/// 通话类型切换的回调（仅1对1呼叫有效）
-/// @param callType 切换后的类型
-- (void)onCallTypeChange:(NERtcCallType)callType;
+无论是一对一通话还是群组通话，在呼叫或收到呼叫邀请时需要设置相应的回调监听，用于接收对应通话的控制消息。首先在需要收到监听的地方实现`NERtcCallKitDelegate`
 
-/// 通话结束
-- (void)onCallEnd;
+```objc
+#import <NERtcCallKit/NERtcCallKit.h>
+@interface SomeViewController: UIViewController <NERtcCallKitDelegate>
 
-/// 呼叫超时
-- (void)onCallingTimeOut;
+- (void)dealloc {
+    [NERtcCallKit.sharedInstance removeDelegate:self];
+}
 
-/// 连接断开
-/// @param reason 断开原因
-- (void)onDisconnect:(NSError *)reason;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [NERtcCallKit.sharedInstance addDelegate:self];
+}
 
-/// 发生错误
-- (void)onError:(NSError *)error;
+#pragma mark - NERtcVideoCallDelegate
+// 被叫实现监听回调
+- (void)onInvited:(NSString *)invitor
+          userIDs:(NSArray<NSString *> *)userIDs
+      isFromGroup:(BOOL)isFromGroup
+          groupID:(nullable NSString *)groupID
+             type:(NERtcCallType)type
+       attachment:(nullable NSString *)attachment {
 
-/// 启用/禁用相机
-/// @param available 是否可用
-/// @param userID 用户ID
-- (void)onCameraAvailable:(BOOL)available userID:(NSString *)userID;
-
-/// 启用/禁用麦克风
-/// @param available 是否可用
-/// @param userID 用户userID
-- (void)onAudioAvailable:(BOOL)available userID:(NSString *)userID;
-
-/// 视频采集变更回调
-/// @param muted 是否关闭采集
-/// @param userID 用户ID
-- (void)onVideoMuted:(BOOL)muted userID:(NSString *)userID;
-
-/// 音频采集变更回调
-/// @param muted 是否关闭采集
-/// @param userID 用户ID
-- (void)onAudioMuted:(BOOL)muted userID:(NSString *)userID;
-
-/// 自己加入成功的回调，通常用来上报、统计等
-/// @param event 回调参数
-- (void)onJoinChannel:(NERtcCallKitJoinChannelEvent *)event;
-
-/// 首帧解码成功的回调
-/// @param userID 用户id
-/// @param width 宽度
-/// @param height 高度
-- (void)onFirstVideoFrameDecoded:(NSString *)userID width:(uint32_t)width height:(uint32_t)height;
-
-/// 网络状态监测回调
-/// @param stats key为用户ID, value为对应网络状态
-- (void)onUserNetworkQuality:(NSDictionary<NSString *, NERtcNetworkQualityStats *> *)stats;
-
-/// 呼叫请求已被其他端接收的回调
-- (void)onOtherClientAccept;
-
-/// 呼叫请求已被其他端拒绝的回调
-- (void)onOtherClientReject;
+    [NIMSDK.sharedSDK.userManager fetchUserInfos:@[invitor] completion:^(NSArray<NIMUser *> * _Nullable users, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"fetchUserInfo failed : %@", error);
+        }else {
+            NIMUser *imUser = users.firstObject;
+            NECallViewController *callVC = [[NECallViewController alloc] init];
+            //callVC.isCaller = NO;
+            //callVC.remoteImAccid = imUser.userId;
+            [self.navigationController presentViewController:callVC animated:YES completion:nil];
+        }
+    }];
+}
 
 @end
 ```
 
-
-### 1.5 设置TokenHandler
-
-若 NERtc sdk 采用安全模式则加入音视频房间时需要提供对应的token，详细参考[Token获取](https://doc.yunxin.163.com/docs/jcyOTA0ODM/DE0NjAwNDY?platformId=50192) 。
-
-呼叫组件依赖 token，需要在用户在初始化时同时设置 token 服务，此 token 服务为用户服务端自己实现。若 NERtc sdk 采用非安全模式，则服务返回结果为 null，但是必须设置 Token Handler
+`SomeViewController` 为通话页面的前置页面，可能是通讯录 IM 消息等页面，通话页面的使用参考下面代码或者示例工程
 
 ```objc
-    // 安全模式需要计算token，如果tokenHandler为nil表示非安全模式，需要联系经销商开通
-    NERtcCallKit.sharedInstance.tokenHandler = ^(uint64_t uid, void (^complete)(NSString *token, NSError *error)) {
-        // 在这里可以异步获取token，获取完成后调用complete(<tokenOrNil>, <errorOrNil>)
-    };
+@interface NECallViewController : UIViewController<NERtcCallKitDelegate>
+
+@property(strong,nonatomic) UIView *smallVideoView;
+
+@property(strong,nonatomic) UIView *bigVideoView;
+
+@end
+
+@implementation NECallViewController {
+
+- (void)dealloc {
+    [NERtcCallKit.sharedInstance removeDelegate:self];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupUI];
+    [self setupSDK];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NERtcCallKit sharedInstance] setupLocalView:nil];
+}
+
+- (void)setupUI {
+    [self.view addSubview:self.bigVideoView];
+    self.bigVideoView.frame = self.view.bounds;
+    [self.view addSubview:self.smallVideoView];
+    self.smallVideoView.frame = CGRectMake(0, 0, 100, 100);
+}
+
+- (void)setupSDK {
+    [[NERtcCallKit sharedInstance] addDelegate:self];
+    [NERtcCallKit sharedInstance].timeOutSeconds = 30;
+    NSError *error;
+    [[NERtcCallKit sharedInstance] setLoudSpeakerMode:YES error:&error];
+    [[NERtcCallKit sharedInstance] enableLocalVideo:YES];
+    [[NERtcEngine sharedEngine] adjustRecordingSignalVolume:200];
+    [[NERtcEngine sharedEngine] adjustPlaybackSignalVolume:200];
+}
+
+// 主叫发起呼叫
+- (void)didCall {
+
+    [[NERtcCallKit sharedInstance] call:@"im Accid" type: NERtcCallTypeVideo completion:^(NSError * _Nullable error) {
+        NSLog(@"call error code : %@", error);
+
+        [[NERtcCallKit sharedInstance] setupLocalView:self.bigVideoView.videoView];
+        if (error) {
+            /// 对方离线时 通过APNS推送 UI不弹框提示
+            if (error.code == 10202 || error.code == 10201) {
+                return;
+            }
+
+            if (error.code == 21000 || error.code == 21001) {
+                //呼叫失败销毁当前通话页面
+            }
+        }else {
+
+        }
+    }];
+}
+
+// 当被叫 onInvited 回调发生，调用 accept 接听呼叫
+- (void)acceptCall {
+    __weak typeof(self) weakSelf = self;
+    [[NERtcCallKit sharedInstance] accept:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"接听失败 : %@", error);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                // 销毁当前通话页面
+            });
+        }else {
+          [[NERtcCallKit sharedInstance] setupLocalView:weakSelf.smallVideoView];
+          [[NERtcCallKit sharedInstance] setupRemoteView:weakSelf.bigVideoView forUser:@"对端 im accid"];
+        }
+    }];
+}
+
+// 主叫被叫结束通话
+- (void)hangup{
+    [[NERtcCallKit sharedInstance] hangup:^(NSError * _Nullable error) {
+
+    }];
+}
+
+- (UIView *)bigVideoView {
+    if (!_bigVideoView) {
+        _bigVideoView = [[UIView alloc] init];
+        _bigVideoView.backgroundColor = [UIColor darkGrayColor];
+    }
+    return _bigVideoView;
+}
+
+- (UIView *)smallVideoView {
+    if (!_smallVideoView) {
+        _smallVideoView = [[UIView alloc] init];
+        _smallVideoView.backgroundColor = [UIColor darkGrayColor];
+    }
+    return _smallVideoView;
+}
+
+#pragma mark - NERtcVideoCallDelegate
+
+- (void)onUserEnter:(NSString *)userID {
+    // 被叫加入可以进行视频通话，设置本地音视频相关api
+    [[NERtcCallKit sharedInstance] setupLocalView:self.smallVideoView];
+    [[NERtcCallKit sharedInstance] setupRemoteView:self.bigVideoView forUser:userID];
+}
+
 ```
