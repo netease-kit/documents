@@ -6,6 +6,7 @@
   - [集成到项目_macOS&Windows.md](快速集成/集成到项目_macOS&Windows.md.md)
   - [集成到项目_TV](快速集成/集成到项目_TV.md)
   - [集成到项目_Web](快速集成/集成到项目_Web.md)
+  - [集成到项目_MiniApp](快速集成/集成到项目_MiniApp.md)
   - [集成到项目_WebLive](快速集成/集成到项目_WebLive.md)
 - [进阶功能](进阶功能/)，网易会议组件SDK的一些接口使用。
   - [会议私有化部署](进阶功能/会议私有化部署.md)
