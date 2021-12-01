@@ -209,6 +209,30 @@ this.meetingComponent.joinRoom(obj)
 	this.meetingComponent.getRoomKit()
 ```
 
+### 私有化部署
+
+> 注：页面跳转传参注意检查链接的完整性
+
+检查appkey，baseDomain以及G2 sdk和IM sdk 私有化配置对象，属性值要保持一致哦
+
+```js
+
+  /**
+   * @param param.debug 是否开启调试模式
+   * @param param.appKey appKey
+   * @param param.baseDomain [可选] 发起请求的domain
+   * @param param.neRtcServerAddresses [可选] G2 sdk 私有化配置
+   * @param param.imPrivateConf [可选] IM sdk 私有化配置
+   **/
+  this.meetingComponent.initSDK({
+    debug,
+    appKey,
+    baseDomain,
+    neRtcServerAddresses,
+    imPrivateConf
+  })
+
+```
 ## 注意事项
 
 * 销毁意味着退出会议
