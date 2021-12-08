@@ -41,6 +41,19 @@
 2. cd到已下载的项目路径下，执行podinstall。
 3. 找到AppKey.h 文件替换自己的appkey，配置对应的后台地址。
   * 此处的appkey请联系技术支持同学确认后台开通相关功能
-4. 如果需要使用美颜功能请使用自己的相芯证书替换authpack.h的内容
-5. 在xcode中执行run操作。
+4. 如果需要使用美颜功能请使用自己的相芯证书替换authpack.h的内容。
+* 如果不需要美颜功能就需要删除美颜和滤镜相关的UI及注释掉美颜相关代码注释，否则会影响项目顺利的跑通。具体注释代码如下。
+```
+//需要注释内容1
+    // 重置美颜配置
+    [[NETSFUManger shared] resetSkinParams];
+    // 重置滤镜配置
+    [[NETSFUManger shared] resetFilters];
+
+//需要注释内容2
+  [[NETSFUManger shared] renderItemsToPixelBuffer:bufferRef];
+```
+    
+    
+5. 在Xcode中执行run操作。
 
