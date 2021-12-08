@@ -7,6 +7,19 @@
 2. 支持私有化配置
 
    ```objc
+   /// 初始化，所有功能需要先初始化，支持私有化
+   /// @param appKey 云信后台注册的appKey
+   /// @param options  IM 推送配置，Rtc是否初始化
+   /// @param context  Rtc初始化配置，私有化参数配置
+   - (void)setupAppKey:(NSString *)appKey
+           options:(nullable NERtcCallOptions *)options
+       withContext:(nonnull NERtcEngineContext *)context;
+
+   ```
+
+3. 支持呼叫前切换音视频，默认不支持通话前切换，如需支持设置被叫自动加入 channel 为 YES，会影响多端登录的 case
+
+   ```objc
    @interface NERtcCallOptions : NSObject
 
    /// 被叫是否自动加入channel
