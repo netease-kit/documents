@@ -29,11 +29,19 @@
 
     修改工程目录下的'app/build.gradle'文件，添加网易会议SDK的依赖。
     ```groovy
-    dependencies {
-      //声明SDK依赖，版本可根据实际需要修改
-      implementation 'com.netease.yunxin:meetinglib:2.0.0'
+    android {
+      // 添加 packagingOptions，否则可能会造成资源文件冲突
+      packagingOptions {
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+      }
     }
-    ```
+
+    dependencies {
+	    //声明SDK依赖，版本可根据实际需要修改
+	    implementation 'com.netease.yunxin:meetinglib:2.0.0'
+    }
+	```
     之后通过顶部菜单'Build -> Make Project'构建工程，触发依赖下载，完成后即可在代码中引入SDK中的类和方法。
 
 3. 权限处理
@@ -227,7 +235,7 @@
     options.noWhiteBoard = false;                                //入会隐藏白板入口，默认为false
     options.noCloudRecord = true;                                //入会隐藏"录制中"显示，默认为true
     options.noMinimize = true;                                   //入会是否允许最小化会议页面，默认为true
-    options.defaultWindowMode = true;                              //入会默认会议视图模式，默认为NEWindowMode.normal
+    options.defaultWindowMode = NEWindowMode.normal;             //入会默认会议视图模式
 
     //options.fullToolbarMenuItems = configToolbarMenuItems();    //自定义【Toolbar】菜单
     //options.fullToolbarMenuItems = configMoreMenuItems();    //自定义【更多】菜单
@@ -284,7 +292,7 @@ options.noWhiteBoard = false;                                //入会隐藏白�
 options.noInvite = false;                                    //入会隐藏"邀请"按钮，默认为false
 options.noChat = false;                                      //入会隐藏"聊天"按钮，默认为false
 options.noMinimize = true;                              //入会是否允许最小化会议页面，默认为true
-options.defaultWindowMode = true;                              //入会默认会议视图模式，默认为NEWindowMode.normal
+options.defaultWindowMode = NEWindowMode.normal;        //入会默认会议视图模式
 
 //options.fullToolbarMenuItems = configToolbarMenuItems();    //自定义【Toolbar】菜单
 //options.fullToolbarMenuItems = configMoreMenuItems();    //自定义【更多】菜单

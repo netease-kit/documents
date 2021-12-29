@@ -43,9 +43,10 @@
     ```js
     const config = {
         appKey: '', //网易会议appkey
-        meetingServerDomain: '' //会议服务器地址，支持私有化部署
-        NIMconf: {// 选填，仅限于私有化配置时使用
-            // IM私有化配置项
+        meetingServerDomain: '', //会议服务器地址，支持私有化部署
+        imPrivateConf: {// 选填，IM SDK私有化配置仅限于私有化配置时使用
+        },
+        neRtcServerAddresses: { // 选填，G2 SDK私有化配置仅私有化配置使用
         }
     }
     neWebMeeting.actions.init(800, 800, config)//宽，高，配置项 宽高单位是px，建议比例4：3
@@ -91,7 +92,6 @@
     ```
 
 6. 创建房间
-
     ```js
     const obj = {
       nickName: '', //人员昵称
@@ -105,6 +105,12 @@
       defaultWindowMode: 1, // 入会时模式，1 常规（默认）， 2白板
       noCloudRecord: false, // 开启会议录制，false（默认） 录制 true 不录制
       memberTag: '', // 成员自定义tag
+      attendeeVideoOff: 0, // 成员入会后全体关闭视频，且不允许自主打开，默认允许打开
+      attendeeAudioOff: 0, // 成员入会后全体静音，且不允许自主打开，默认允许打开
+      showMaxCount: false, // 是否显示会议应进最大人数,需配合extraData字段设置
+      showSubject: false, // 是否显示会议主题
+      showMemberTag: false, // 是否显示成员标签
+      extraData: '', // 扩展字段，格式为json字符串，如果showMaxCount字段设置为true，且该字段传{maxCount: 100}，会议应进最大人数为100
       scene: { // 会议场景参数
         roleTypes: [
             {
@@ -137,6 +143,9 @@
       noRename: false, // 是否开启会中改名，默认为false（开启）
       defaultWindowMode: 1, // 入会时模式，1 常规（默认）， 2白板
       memberTag: '', // 成员自定义tag
+      showMaxCount: false, // 是否显示会议应进最大人数
+      showSubject: false, // 是否显示会议主题
+      showMemberTag: false, // 是否显示成员标签
     }
     neWebMeeting.actions.join(obj, callback)
     ```
@@ -262,6 +271,7 @@
     })
     ```
     
+
 18. 网络情况通知[参考](https://dev.yunxin.163.com/docs/product/%E9%9F%B3%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D2.0/%E8%BF%9B%E9%98%B6%E5%8A%9F%E8%83%BD/%E4%BD%93%E9%AA%8C%E6%8F%90%E5%8D%87/%E9%80%9A%E8%AF%9D%E4%B8%AD%E8%B4%A8%E9%87%8F%E7%9B%91%E6%B5%8B?#%E4%B8%8A%E4%B8%8B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%B4%A8%E9%87%8F%E5%90%8C%E6%AD%A5)
 
     ```js
@@ -324,7 +334,7 @@
                 console.log(res);
                 // res 上传路径以及文件名
             })
-        
+
             // 例子
             // 上传全部日志
             neWebMeeting.actions.uploadLog(['meetingLog', 'rtcLog']) 
@@ -332,7 +342,7 @@
             neWebMeeting.actions.uploadLog(['rtcLog'])
             // 上传某一时间段日志，如最近一小时
             neWebMeeting.actions.uploadLog(['meetingLog', 'rtcLog'], Date.now() - 3600000, Date.now())
-        
+
         ```
 
         * 日志下载
@@ -348,7 +358,7 @@
                 start: number, // 开始日志时间戳 默认 0
                 end: number, // 结束日志时间戳 默认 当前时间戳
             )
-        
+
             // 例子
             // 下载全部日志
             neWebMeeting.actions.downloadLog(['meetingLog', 'rtcLog']) 
@@ -356,9 +366,35 @@
             neWebMeeting.actions.downloadLog(['rtcLog'])
             // 下载某一时间段日志，如最近一小时
             neWebMeeting.actions.downloadLog(['meetingLog', 'rtcLog'], Date.now() - 3600000, Date.now())
-        
+
         ```
 
+23. 获取会议人员布局位置信息
+    * 主动获取
+        ```js
+            neWebMeeting.acitons.layout(): Layout
+            type Layout = {
+                canvas: { // 画布数据
+                    height: number;
+                    width: number;
+                },
+                users: Array<LayoutUser> // 每个成员布局数据
+            }
+            type LayoutUser = {
+                uid: number,
+                x: number,
+                y: number,
+                width: number,
+                height: number,
+                isScreen?: boolean // 是否为共享屏幕
+            }
+        ```
+    * 监听布局变化
+        ```js
+        neWebMeeting.actions.on('layoutChange', function(layout) {
+            // todo
+        })
+        ```
 #### 自定义按钮详细介绍
 
 1. <span id="custom-introduction">自定义组件的基本结构</span>
@@ -428,26 +464,26 @@
 
 2. 配置项目介绍
 
-    |       字段        |                             含义                             |          类型           |         必填         | 样例                             |
-    | :---------------: | :----------------------------------------------------------: | :---------------------: | :------------------: | :------------------------------- |
-    |        id         | 按钮的唯一标识 <br> 非预置按钮id大于100 <br> 预置按钮则小于等于100 |         number          |          是          | 0                                |
-    |       type        |      按钮类型 <br> 单状态：single <br> 多状态：multiple      |         string          |    非预置按钮必填    | single                           |
-    |     btnConfig     |    按钮配置项 <br> 单状态Object <br> 多状态Array[Object]     |      object\|array      |    非预置按钮必填    | [参考样例](#custom-introduction) |
-    | btnConfig下object | 图标url：icon（必填） <br> 图标文案：text（必填） <br> 图标状态：status（多状态按钮必填） |         object          |    非预置按钮必填    | [参考样例](#custom-introduction) |
-    |    visibility     | 按钮可见范围 <br> 全局可见（**默认**）：0  <br> 主持人可见：1 <br> 非主持人可见：2 |         number          |          否          | 0                                |
-    |     btnStatus     | 多状态按钮展示状态配置字段 <br> 类型未限制需与btnConfig配置状态保持对应 | number\|boolean\|string | 非预置多状态按钮必填 | [参考样例](#custom-introduction) |
-    |  injectItemClick  |                         按钮触发回调                         |        function         |          是          | [参考样例](#custom-introduction) |
+    | 字段 | 含义 | 类型 | 必填 | 样例 |
+    | :-: | :-: | :-: | :-: | :- |
+    | id | 按钮的唯一标识 <br> 非预置按钮id大于100 <br> 预置按钮则小于等于100 | number | 是 | 0 |
+    | type | 按钮类型 <br> 单状态：single <br> 多状态：multiple| string | 非预置按钮必填 | single |
+    | btnConfig | 按钮配置项 <br> 单状态Object <br> 多状态Array[Object] | object\|array | 非预置按钮必填 | [参考样例](#custom-introduction) |
+    | btnConfig下object | 图标url：icon（必填） <br> 图标文案：text（必填） <br> 图标状态：status（多状态按钮必填） | object | 非预置按钮必填 | [参考样例](#custom-introduction) |
+    | visibility | 按钮可见范围 <br> 全局可见（**默认**）：0  <br> 主持人可见：1 <br> 非主持人可见：2 | number | 否 | 0 |
+    | btnStatus | 多状态按钮展示状态配置字段 <br> 类型未限制需与btnConfig配置状态保持对应 | number\|boolean\|string | 非预置多状态按钮必填 | [参考样例](#custom-introduction) |
+    |injectItemClick| 按钮触发回调 | function | 是 | [参考样例](#custom-introduction) |
 
 3. 预置属性说明
 
 
     | 配置字段 | 内容(id, type) | 能否在更多区域配置 |
     | :-: | :- | :- |
-    | 预置按钮唯一值（id） | 音频(0, multiple) <br> 视频(1, multiple) <br> 屏幕共享(2, multiple) <br> 参会者列表(3, single) <br> 画廊切换(5, multiple) <br> 邀请(20, single) <br> 聊天（21, 尚未开放)<br> 白板（22，multiple） | false <br> false <br> true <br> false <br> true <br> false <br> false <br> true|
+    | 预置按钮唯一值（id） | 音频(0, multiple) <br> 视频(1, multiple) <br> 屏幕共享(2, multiple) <br> 参会者列表(3, single) <br> 画廊切换(5, multiple) <br> 邀请(20, single) <br> 聊天（21, single)<br> 白板（22，multiple） | false <br> false <br> true <br> false <br> true <br> false <br> false <br> true|
     | 按钮可见性（visibility）| 0总是可见(默认) <br> 1主持人可见 <br> 2非主持人可见 <br> | -- |
-    
+
     预置按钮无法设置状态，只能根据预先设置的状态调整文案与icon
-    
+
     | 多状态按钮id | 默认状态顺序（数组第一位与第二位） |
     | :- | :- |
     | 0 音频 | 开启，关闭 |
