@@ -53,17 +53,25 @@
           ```
         - AppKey的申请和声明后，运行示例项目可体验“加入会议”功能，但无法使用“登录”、“创建会议”功能。
 
-  3. 集成SDK说明
+  3. 集成SDK说明并配置
 	在app/build.gradle文件中已经添加了网易会议SDK和NIM-SDK依赖
-	  ```
-	  //NEMeeting-SDK
-	  implementation 'com.netease.yunxin:meetinglib:2.0.0'
-	  //NIM-SDK, 如果单独接入了云信NIM，或者需要依赖指定的NIM版本，则可根据需要进行依赖声明。
-	  //正常情况下不用声明
-	  implementation 'com.netease.nimlib:basesdk:8.4.6'
+	  
+    ```groovy
+    android {
+      // 添加 packagingOptions，否则可能会造成资源文件冲突
+      packagingOptions {
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+      }
+    }
+
+    dependencies {
+	    //NEMeeting-SDK
+	    implementation 'com.netease.yunxin:meetinglib:2.0.0'
+    }
 	  ```
 
-  4. 编译并运行示例项目
+  1. 编译并运行示例项目
 
        连接上 Android 设备后，用 Android Studio 打开 `NEMeeting/SampleCode/Android`  示例项目，然后编译并运行示例项目。运行效果如下图所示
 

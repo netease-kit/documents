@@ -1,5 +1,36 @@
 ## CHANGELOG
 
+### 2021-12-29 @ v2.3.0
+#### 新增特性
+* 会中支持主持人视频会控功能
+* 支持入会时设置使用通话、音乐等音频模式：创建对应`NEAudioProfile`对象并赋值给`NEMeetingOptions.audioProfile`字段
+* 支持通过设置 `NEMeetingOptions.showMemberTag` 字段控制成员标签(`NEMeetingParams.tag`)是否显示在参会者列表中
+* 创建/预约会议增加透传的扩展字段：
+  * 通过`NEStartMeetingParams.extraData`与`NEMeetingItem.setExtraData`设置扩展字段
+  * 通过获取会议信息后读取`NEMeetingInfo#extraData`可获取设置的扩展字段
+* 创建/预约会议增加音视频控制字段，可设置成员入会时音视频的开关状态：
+  * 创建即刻会议时设置：`NEStartMeetingParams.controls`
+  * 预约会议时设置：`NEMeetingItemSetting.controls`
+
+#### 接口废弃
+* 废弃 `NEMeetingOptions.audioAINSEnabled`，请使用 `NEMeetingOptions.audioProfile` 来开启/关闭智能降噪
+* 废弃 `NEMeetingItemSetting.isAttendeeAudioOff`，请使用 `NEMeetingItemSetting.controls` 来控制成员入会时的音频状态
+
+
+### 2021-12-09 @ v2.2.0
+#### 新增特性
+* 支持音视频私有化部署
+
+#### 问题修复
+* 修复画廊模式小圆点显示被底部工具栏覆盖的问题
+* 修复其他已知问题
+
+### 2021-9-28 @ v2.0.6
+#### 新增特性
+* 新增会议语音智能降噪，入会前可打开/关闭，默认打开：`NEMeetingOptions.audioAINSEnabled`
+* 新增静音时说话检测
+* 优化音量大小UI展示
+
 ### v2.0.0 (2021-8-16)
 
 ####  新增特性
