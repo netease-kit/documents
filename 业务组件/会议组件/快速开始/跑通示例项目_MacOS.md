@@ -1,4 +1,4 @@
-# 跑通Windows示例项目
+# 跑通MacOS示例项目
 
 
 网易智慧企业 在 GitHub 上提供一个开源的网易会议组件示例项目 [NEMeeting](https://github.com/netease-kit/NEMeeting/tree/main/SampleCode/Windows_macOS)。本文介绍如何快速跑通该示例项目，体验 在线会议功能。示例代码中包含了详细的API调用场景、参数封装以及回调处理。 你也可以直接体验我们的线上[网易会议](https://meeting.163.com/)产品。
