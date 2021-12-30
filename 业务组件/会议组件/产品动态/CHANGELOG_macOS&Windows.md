@@ -1,5 +1,80 @@
 ## CHANGELOG
 
+# v2.3.0 (2021-12-28)
+
+## 新增特性
+
+- 增加主持人视频会控功能
+- 设置界面支持是否自动调节麦克风音量
+- 设置界面支持设置通话音质
+- 设置界面支持设置分辨率
+- 增加主持人视频会控功能
+- 创建会议/加入会议增加是否显示tag字段：`NEMeetingOptions#showMemberTag`
+- 创建会议增加拓展字段：`NEStartMeetingParams#extraData`
+- 预约会议/编辑会议增加拓展字段：`NEMeetingItem#extraData`
+- 获取当前会议信息增加拓展字段：`NEMeetingInfo#extraData`
+- 创建会议增加会议控制配置字段：`NEStartMeetingParams#controls`
+- 预约/编辑会议增加会议控制配置字段：`NEMeetingItem#NEMeetingItemSetting#controls`
+- 设置服务增加设置自动调节的开关接口：`NEAudioController::setMyAudioVolumeAutoAdjust`
+- 设置服务增加获取自动调节的开关接口：`NEAudioController::isMyAudioVolumeAutoAdjust`
+- 设置服务增加自动调节状态变更通知接口：`NESettingsChangeNotifyHandler::OnAudioVolumeAutoAdjustSettingsChange`
+- 增加设置通话音质的接口：`NEAudioController::setMyAudioQuality`
+- 增加获取通话音质接口：`NEAudioController::getMyAudioQuality`
+- 增加通话音质变更通知接口：`NESettingsChangeNotifyHandler::OnAudioQualitySettingsChange`
+- 增加设置回声消除的开关接口：`NEAudioController::setMyAudioEchoCancellation`
+- 增加获取回声消除的开关接口：`NEAudioController::isMyAudioEchoCancellation`
+- 增加回声消除状态变更通知接口：`NESettingsChangeNotifyHandler::OnAudioEchoCancellationSettingsChange`
+- 增加设置启用立体音的开关接口：`NEAudioController::setMyAudioEnableStereo`
+- 增加获取启用立体音的开关接口：`NEAudioController::isMyAudioEnableStereo`
+- 增加启用立体音状态变更通知接口：`NESettingsChangeNotifyHandler::OnAudioEnableStereoSettingsChange`
+- 增加设置远端分辨率的接口：`NEVideoController::setRemoteVideoResolution`
+- 增加获取远端分辨率的接口：`NEVideoController::getRemoteVideoResolution`
+- 增加远端分辨率变更通知接口：`NESettingsChangeNotifyHandler::OnRemoteVideoResolutionSettingsChange`
+- 增加设置本地分辨率的接口：`NEVideoController::setMyVideoResolution`
+- 增加获取本地分辨率的接口：`NEVideoController::getMyVideoResolution`
+- 增加本地分辨率变更通知接口：`NESettingsChangeNotifyHandler::OnMyVideoResolutionSettingsChange`
+
+## 功能更新
+
+## 问题修复
+
+- 修复主持人断网，参会者加入会议，主持人联网，主持人看到参会者不在会议中问题
+- 修复参会者举手，主持人断网重新入会，管理参会者上方无举手图标问题
+- 修复windows下PowerPoint共享ppt时，出现画面闪烁问题
+
+# v2.2.0 (2021-12-09)
+
+## 新增特性
+
+- 会议组件增加G2私有化支持
+- 会议组件增加SIP开关`NEMeetingOptions::bNoSip`
+- 会议组件增加AI降噪开关`NEMeetingOptions::bAudioAINSEnabled`
+
+## 功能更新
+
+## 问题修复
+
+- 修复组件IM私有化无效问题
+- 修复windows下PPT幻灯片播放，出现共享者ppt小窗没有到底层，遮挡住ppt放映画面问题
+- 修复加入会议时未开启白板，但会议中有共享白板功能的问题
+
+# v2.0.6 (2021-09-28)
+
+## 新增特性
+
+- 增加会中音量检测
+
+## 功能更新
+
+- G2 SDK升级至4.4.2
+
+## 问题修复
+
+- 修复mac下首次安装，音视频无法打开问题
+- 修复离开会议，设置美颜不生效问题
+- 修复离开会议偶先程序卡死问题
+- 修复设置页面打开时，同时入会程序异常崩溃问题
+
 ### v2.0.4 (2021-09-09)
 
 #### 新增特性
