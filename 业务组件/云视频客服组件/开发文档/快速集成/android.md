@@ -31,7 +31,7 @@
     ```groovy
     dependencies {
       //声明SDK依赖，版本可根据实际需要修改
-      implementation 'com.netease.yunxin:vcelib:1.0.5'
+      implementation 'com.netease.yunxin:vcelib:1.0.6'
     }
     ```
     之后通过顶部菜单'Build -> Make Project'构建工程，触发依赖下载，完成后即可在代码中引入SDK中的类和方法。
