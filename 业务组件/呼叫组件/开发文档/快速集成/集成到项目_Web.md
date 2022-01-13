@@ -42,6 +42,9 @@ const rtc = new NERTCCalling({
 </script>
 ```
 
+## 注意事项
+如果是之前集成过云信im sdk的用户，需要用组件实例的`login`方法代替`NIM.SDK.getInstance`，参数不变，因为组件也依赖im sdk并做一些自己的处理，因此需要这样做保证组件的逻辑正常执行。
+
 ## 接口说明
 
 ```ts
@@ -113,7 +116,7 @@ setCallTimeout(t: number): void;
  */
 setupLocalView(view?: HTMLElement): void;
 /**
- * 设置远端视频播放节点，在发起呼叫或接受呼叫前调用
+ * 设置远端视频播放节点，在onUserAccept或onUserEnter回调中调用
  * @param userId IM的account账号
  * @param view 位于的DOM节点
  */
@@ -321,7 +324,7 @@ rtc.addDelegate(
 );
 
 /**
- * onUserEnter 远端用户进入事件
+ * onUserEnter 远端用户进入事件，可以在此调用setupRemoteView设置远端视频画布
  * @param userId 该用户的 IM account 账号
  */
 rtc.addDelegate('onUserEnter', (userId: string) => {
@@ -526,3 +529,6 @@ rtc.addDelegate('onError', (error: ErrorMessage, ...args: any) => {
 
 - 在发送端，可以通过 onMessageSent 监听到发送话单的通知，从而通过 IM sdk 重新拉取消息来更新 UI
 - 在接收端，可以通过 IM 的 onmsgs 回调获取到 type 为 'g2' 的消息，从而更新 UI
+
+## 了解更多
+可以查看[进阶功能web篇](../进阶功能/Web)
