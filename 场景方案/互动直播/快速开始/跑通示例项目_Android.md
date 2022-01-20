@@ -35,7 +35,7 @@
 | lib-live-pk-service | Pk相关功能服务 |
 
 ## 运行示例源码
-1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
+1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/master/OnlinePK-Android)
 
 2. 导入Android Studio
 
