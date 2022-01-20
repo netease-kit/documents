@@ -1,5 +1,28 @@
 ## CHANGELOG
 
+### v2.4.0 (2022-01-20)
+
+#### 新增特性
+
+- 创建会议/加入会议增加全体音视频开关显示配置：`NEMeetingOptions#bNoMuteAllVideo`, `NEMeetingOptions#bNoMuteAllAudio`
+- 增加设置SDK使用软件渲染开关接口：`NEMeetingSDK::setSoftwareRender`
+- 增加获取SDK使用软件渲染开关接口：`NEMeetingSDK::isSoftwareRender`
+- 增加设置音频设备自动选择策略接口：`NEAudioController::setMyAudioDeviceAutoSelectType`
+- 增加获取音频设备自动选择策略接口：`NEAudioController::isMyAudioDeviceAutoSelectType`
+
+#### 功能更新
+
+- 优化自己麦克风的显示
+- 优化音频开关功能
+- 优化macOS下共享应用的选择项
+
+#### 问题修复
+
+- 修复macOS系统权限提示的问题
+- 修复升级安装报错的问题
+- 修复Windows下在不同分辨率显示器间拖动SDK窗口，窗口闪烁的问题
+- 修复Windows下SDK窗口在第二显示器时，双击窗口放大缩小的问题
+
 ### v2.3.0 (2021-12-28)
 
 #### 新增特性
