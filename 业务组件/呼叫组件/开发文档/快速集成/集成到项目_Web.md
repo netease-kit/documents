@@ -54,6 +54,7 @@ const rtc = new NERTCCalling({
  */
 setupAppKey(options: {
   appKey: string; // G2的appkey
+  neRtcServerAddresses?: any // G2的私有化配置
 }): void;
 /**
  * 登录IM，所有功能先进行登录才能使用
@@ -63,6 +64,7 @@ setupAppKey(options: {
 login({ account, token, ...opt }: {
   account: string; // IM的account账号
   token?: string; // IM的token
+  privateConf?: any // IM的私有化参数
   [key: string]: any; // 其他IM的getInstance的参数
 }): void;
 /**
