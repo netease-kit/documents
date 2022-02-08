@@ -2,7 +2,7 @@
 
 ## 下载
 
-1. 通过[链接](https://yx-web-nosdn.netease.im/package/1636966471292/lib.zip?download=lib.zip)下载组件。
+1. 通过[链接](https://yx-web-nosdn.netease.im/package/1644309408/neRtcCall-v1.4.1.zip?download=neRtcCall-v1.4.1.zip)下载组件。
 2. 将下载后的组件解压，重命名后放入项目中
 3. 添加到`eslintignore`或者`prettierignore`等忽略中，如没有可忽略这一步
 
@@ -54,6 +54,7 @@ const rtc = new NERTCCalling({
  */
 setupAppKey(options: {
   appKey: string; // G2的appkey
+  neRtcServerAddresses?: any // G2的私有化配置
 }): void;
 /**
  * 登录IM，所有功能先进行登录才能使用
@@ -63,6 +64,7 @@ setupAppKey(options: {
 login({ account, token, ...opt }: {
   account: string; // IM的account账号
   token?: string; // IM的token
+  privateConf?: any // IM的私有化参数
   [key: string]: any; // 其他IM的getInstance的参数
 }): void;
 /**
