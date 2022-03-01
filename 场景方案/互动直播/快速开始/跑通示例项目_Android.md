@@ -35,18 +35,13 @@
 | lib-live-pk-service | Pk相关功能服务 |
 
 ## 运行示例源码
-1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/dev_2.0.0/OnlinePK-Android)
+1. GitHub下载源代码 [源码](https://github.com/netease-kit/OnlinePK/tree/master/OnlinePK-Android)
 
 2. 导入Android Studio
 
-3. 找到config文件夹下的test.properties文件和online.properties文件替换自己的APP_KEY，请[联系云信商务经理](https://yunxin.163.com/bizQQWPA.html)开通音视频功能
+3. 找到工程目录下的config.properties文件，里面替换成自己的APP_KEY，请[联系云信商务经理](https://yunxin.163.com/bizQQWPA.html)开通音视频功能
    
     ```
-    test.properties文件
-    APP_KEY="请输入你的app key"
-    BASE_URL=http://yiyong-qa.netease.im/
-   
-    online.properties文件
     APP_KEY="请输入你的app key"
     BASE_URL=https://yiyong.netease.im/
    
