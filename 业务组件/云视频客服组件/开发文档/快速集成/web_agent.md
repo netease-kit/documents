@@ -258,4 +258,4 @@ enum CallState {
 
 ### 进入房间后
 
-可以通过 [roomkit](https://www.npmjs.com/package/kit-room-web) 来进行相应的操作
+可以通过 [roomkit](../../../RoomKit/开发文档/API接口/Web.md) 来进行相应的操作
