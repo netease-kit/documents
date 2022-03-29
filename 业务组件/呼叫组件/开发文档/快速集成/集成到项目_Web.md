@@ -2,7 +2,7 @@
 
 ## 下载
 
-1. 通过[链接](https://yx-web-nosdn.netease.im/package/1644309408/neRtcCall-v1.4.1.zip?download=neRtcCall-v1.4.1.zip)下载组件。
+1. 通过[链接](https://yx-web-nosdn.netease.im/package/1648553071/callkit-1.4.2.zip?download=callkit-1.4.2.zip)下载组件。
 2. 将下载后的组件解压，重命名后放入项目中
 3. 添加到`eslintignore`或者`prettierignore`等忽略中，如没有可忽略这一步
 
@@ -146,18 +146,6 @@ call(params: {
     failed?: (err: any) => void; // 失败回调
 }): Promise<void>;
 /**
- * 发起多人呼叫
- * @param params
- */
-groupCall(params: {
-    userIds: string[]; // IM的account账号
-    type: CallType; // 呼叫类型 1:音频;2:视频;3:其他
-    groupId?: string; // 群组id，不需要可以不传，后续该字段会废弃并入attachment中
-    attachment?: string // 自定义扩展字段
-    success?: () => void; // 成功回调
-    failed?: (err: any) => void; // 失败回调
-}): Promise<void>;
-/**
  * 取消呼叫
  * 当发起呼叫成功后，可以调用该接口取消呼叫
  * @param params
@@ -202,18 +190,6 @@ leave(params?: {
 hangup(params?: {
   success?: () => void; // 成功回调
   failed?: (err: any) => void; // 失败回调
-}): Promise<void>;
-/**
- * 通话中邀请其他人进入通话
- * 在多人通话发起或者接通后，可以调用该方法继续邀请其他人进入通话
- * @param params
- */
-groupInvite(params: {
-    userIds: string[]; // IM的account账号
-    groupId?: string; // 群组id，不需要可以不传，后续该字段会废弃并入attachment中
-    attachment?: string // 自定义扩展字段
-    success?: () => void; // 成功回调
-    failed?: (err: any) => void; // 失败回调
 }): Promise<void>;
 /**
  * 开启/关闭摄像头

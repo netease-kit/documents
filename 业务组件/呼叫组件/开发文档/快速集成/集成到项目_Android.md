@@ -104,11 +104,6 @@ CallKitUIOptions options = new CallKitUIOptions.Builder()
 			.resumeBGInvitation(true)
 			// 请求 rtc token 服务，若非安全模式则不需设置
 			.rtcTokenService((uid, callback) -> requestRtcToken(appKey, uid, callback)) // 自己实现的 token 请求方法
-			// 群组通话通话中邀请用户时，配置获取邀请的用户的列表
-			.contactSelector((context, teamId, accounts, observer) -> {
-				doFetchInviteAccountList(teamId, accounts, observer); // 自己实现的方法
-				return null;
-			})
 			// 设置初始化 rtc sdk 相关配置，按照所需进行配置
 			.rtcSdkOption(new NERtcOption())
 			// 呼叫组件初始化 rtc 范围，true-全局初始化，false-每次通话进行初始化以及销毁
