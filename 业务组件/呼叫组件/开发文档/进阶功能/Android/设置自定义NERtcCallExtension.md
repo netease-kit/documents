@@ -60,7 +60,7 @@ public class SelfNERtcCallExtension extends NERtcCallExtension {
     }
 
     /**
-     * 发起呼叫时调用，此时未发起真正的呼叫（call/groupCall），默认根据 globalInit 参数如果为 false 会调用 initNERtc 方法
+     * 发起呼叫时调用，此时未发起真正的呼叫（call），默认根据 globalInit 参数如果为 false 会调用 initNERtc 方法
      */
     @Override
     public void onCallOut() {

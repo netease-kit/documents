@@ -153,14 +153,14 @@
 
    ```
 
-4. 呼叫接口变更 `-[NERtcCallKit call]`、`-[NERtcCallKit groupCall]`、`-[NERtcCallKit groupInvite]` 均增加 `attachment` 参数，此参数用户传递自定义参数，在被叫方收到邀请通知时可解析出。
+4. 呼叫接口变更 `-[NERtcCallKit call]` 增加 `attachment` 参数，此参数用户传递自定义参数，在被叫方收到邀请通知时可解析出。
 
    ```objc
    /// 收到邀请的回调
    /// @param invitor 邀请方
    /// @param userIDs 房间中的被邀请的所有人（不包含邀请者）
-   /// @param isFromGroup 是否是群组
-   /// @param groupID 群组ID
+   /// @param isFromGroup 是否是群组 废弃
+   /// @param groupID 群组ID 废弃
    /// @param type 通话类型
    - (void)onInvited:(NSString *)invitor
              userIDs:(NSArray<NSString *> *)userIDs

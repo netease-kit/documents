@@ -63,7 +63,7 @@
      void onJoinChannel(String accId, long uid, String channelName, long rtcChannelId);
    ```
 
-4. 呼叫接口变更  `NERtcVideoCall.call`、 `NERtcVideoCall.groupCall`、 `NERtcVideoCall.grouInvite` 均增加 `extraInfo` 参数，此参数用户传递自定义参数，在被叫方收到邀请通知时可解析出。
+4. 呼叫接口变更  `NERtcVideoCall.call` 增加 `extraInfo` 参数，此参数用户传递自定义参数，在被叫方收到邀请通知时可解析出。
 
    ```java
        private NERTCCallingDelegate callingDelegate = new NERTCCallingDelegate() {
