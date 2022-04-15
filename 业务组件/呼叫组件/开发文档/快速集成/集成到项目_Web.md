@@ -2,7 +2,7 @@
 
 ## 下载
 
-1. 通过[链接](https://yx-web-nosdn.netease.im/package/1648553071/callkit-1.4.2.zip?download=callkit-1.4.2.zip)下载组件。
+1. 通过[链接](https://yx-web-nosdn.netease.im/package/1649989937924/callkit_web_1.4.3.zip?download=callkit_web_1.4.3.zip)下载组件。
 2. 将下载后的组件解压，重命名后放入项目中
 3. 添加到`eslintignore`或者`prettierignore`等忽略中，如没有可忽略这一步
 
