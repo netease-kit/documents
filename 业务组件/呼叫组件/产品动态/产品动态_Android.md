@@ -4,8 +4,10 @@
 
 | 版本号 | 适配 IM 版本 | 适配 RTC版本 | 更新内容                                                     | 发布日期   |
 | :----- | :----------- | :----------- | :----------------------------------------------------------- | :--------- |
+| 1.5.5  | 8.5.5        | 4.2.142      | 1. 升级 nertc 至 4.2.142；<br />2. 1v1 呼叫时可添加全局服务端抄送参数；<br />3. 被叫挂断时可通过占线方式挂断； | 2022-06-07 |
+| 1.5.4  | 8.5.5        | 4.2.140      | 1. 升级 alog 至 1.0.7；<br />2. 升级 nertc 至 4.2.140；<br />3. 适配 Android 系统高版本通知缺少 FLAG_IMMUTABLE 崩溃； | 2022-05-19 |
 | 1.5.3  | 8.5.5        | 4.2.124      | 1. 调整拒接流程，在拒接后实现关闭信令房间；<br /><br />2. 升级 RTC sdk 版本至4.2.124；<br />3. 优化及bug 修复； | 2022-04-26 |
-| 1.5.0  | 8.5.5        | 4.2.120      | 1. 升级 RTC sdk 版本至 4.2.120；<br />2. 优化及bug 修复；<br /> | 2021-12-23 |
+| 1.5.0  | 8.5.5        | 4.2.120      | 1. 升级 RTC sdk 版本至 4.2.120；<br />2. 优化及bug 修复；    | 2021-12-23 |
 | 1.4.2  | 8.5.5        | 4.2.115      | 1. 升级 RTC sdk 版本至 4.2.115；<br />2. 优化及bug 修复；<br />3. `supportAutoJoinWhenCalled` 接口参数默认为 false； | 2021-11-25 |
 | 1.4.0  | 8.5.5        | 4.2.105      | 1. 支持呼叫通话前支持切换通话类型；<br />2. 添加音频转视频功能；<br />3. 增加通话中根据 accId获取 rtcUid 或根据rtcUid 获取 accId；<br />4. 修改组件展示demo，从即时通讯demo 更换为 1对1demo； | 2021-09-28 |
 | 1.3.3  | 8.5.5        | 4.0.9        | 1. 支持自定义呼叫推送配置；<br />2. 支持UI组件，用户可通过引入呼叫UI组件实现接入；<br />3. 支持设置失败话单发送开关;<br />4. 支持自定义 CallService 允许用户自己实现呼叫⻚面启动；<br />5. 支持 CallExtension 用于 rtc 相关扩展(如修改 rtc 初始化流程)；<br />6. RTC版本升级为4.0.9，IM 升级为 8.5.5。 | 2021-08-26 |
@@ -20,6 +22,30 @@
 ---
 
 ## Changelog
+
+## 1.5.5（2022-06-07）
+
+### 功能更新
+
+1. 升级 nertc 至 4.2.142；
+2. 1v1 呼叫时可添加全局服务端抄送参数；
+3. 被叫挂断时可通过占线方式挂断；
+
+### API变更
+
+#### 新增API
+
+`NERTCVideoCall#call(String userId, String selfUserId, ChannelType type, String extraInfo, String globalExtraCopy, JoinChannelCallBack joinChannelCallBack);` 增加 globalExtraCopy 参数，用于呼叫时设置全局的抄送信息（服务端使用）；
+
+`NERTCVideoCall#hangup(String channelId, int reason, RequestCallback<Void> callback);` 通过 reason 参数控制挂断原因，例如被叫用户可通过`NERTCVideoCall#hangup(null,TerminalCode#TERMINAL_CODE_BUSY，null)` 实现占线挂断；
+
+## 1.5.4（2022-05-19）
+
+### 功能更新
+
+1. 升级 alog 至 1.0.7；
+2. 升级 RTC sdk 至4.2.140；
+3. 适配 Android 系统高版本通知缺少 FLAG_IMMUTABLE 崩溃；
 
 ## 1.5.3（2022-04-26）
 
