@@ -1,5 +1,26 @@
 ## CHANGELOG
 
+### v3.2.0 (2022-06-30)
+
+#### 新增特性
+
+- 支持设置虚拟背景开关: `NEVirtualBackgroundController#enableVirtualBackground`
+- 支持查询虚拟背景开关: `NEVirtualBackgroundController#isVirtualBackgroundEnabled`
+- 支持设置内置虚拟背景列表: `NEVirtualBackgroundController#setBuiltinVirtualBackgrounds`
+- 支持查询内置虚拟背景列表: `NEVirtualBackgroundController#getBuiltinVirtualBackgrounds`
+- 支持创建会议,指定成员角色 `NEStartMeetingParams#roleBinds`
+- 支持预约会议/编辑预约会议,指定成员角色 `NEMeetingItem#roleBinds`
+- 支持联席主持人
+
+#### 功能更新
+
+- G2升级至4.6.13
+- 优化成员列表展示顺序
+
+#### 问题修复
+
+- 修复分享窗口时的一些缺陷
+
 ### v2.3.0 (2021-12-28)
 
 #### 新增特性
