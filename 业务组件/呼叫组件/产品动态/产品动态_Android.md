@@ -34,7 +34,35 @@
 
 ### API 变更
 
-1. TokenService#getToken 接口增加 channelName 字段；
+1. 初始化配置添加如下接口：
+
+   ```java
+   // 初始化时传入自定义 uid 参数
+   CallKitUIOptions options = new CallKitUIOptions.Builder()
+     .video2AudioConfirm(true) // true，视频转音频需要确认；false 视频转音频不需要确认；
+     .audio2VideoConfirm(true) // true，音频转视频需要确认；false 音频转视频不需要确认；
+     ......
+     .build();
+   // 初始化
+   CallKitUI.init(getApplicationContext(), options);
+   ```
+
+2. NERtcVideoCall#switchCallType 接口增加 state 参数
+
+   ```java
+   /**
+   	* 视频通话中转为音频通话。(目前仅支持视频通话转音频通话)
+   	* <p>
+   	* 被操作方会收到 {@link NERTCCallingDelegate#onCallTypeChange(ChannelType,int)} 的回调。
+   	*
+   	* @param type     通话类型。可设置为 {@link ChannelType#AUDIO} 表示语音通话。
+   	* @param state    切换确认状态{@link SwitchCallState}
+   	* @param callback callback 回调。
+   	*/
+       public abstract void switchCallType(ChannelType type, int state, RequestCallback<Void> callback);
+   ```
+
+3. TokenService#getToken 接口增加 channelName 字段；
 
    ```java
    /**
