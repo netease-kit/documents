@@ -4,6 +4,8 @@
 
 | 版本号 | 适配 IM 版本 | 适配 RTC版本 | 更新内容                                                     | 发布日期   |
 | :----- | :----------- | :----------- | :----------------------------------------------------------- | :--------- |
+| 1.6.1  | 9.2.5        | 4.6.12       | 1. 支持通话类型切换确认；<br />2. TokenService#getToken 接口增加 channelName 字段； | 2022-08-22 |
+| 1.5.7  | 9.2.5        | 4.6.12       | 1. 升级 IM sdk 至9.2.5；<br />2. 升级 Rtc sdk 至 4.6.12；<br />3. 支持自定义 rtcUid，channelName；<br />4. 支持呼叫或接听时直接设置 rtcToken；<br />5. 去除三方库 blankj 依赖； | 2022-07-19 |
 | 1.5.5  | 8.5.5        | 4.2.142      | 1. 升级 nertc 至 4.2.142；<br />2. 1v1 呼叫时可添加全局服务端抄送参数；<br />3. 被叫挂断时可通过占线方式挂断； | 2022-06-07 |
 | 1.5.4  | 8.5.5        | 4.2.140      | 1. 升级 alog 至 1.0.7；<br />2. 升级 nertc 至 4.2.140；<br />3. 适配 Android 系统高版本通知缺少 FLAG_IMMUTABLE 崩溃； | 2022-05-19 |
 | 1.5.3  | 8.5.5        | 4.2.124      | 1. 调整拒接流程，在拒接后实现关闭信令房间；<br /><br />2. 升级 RTC sdk 版本至4.2.124；<br />3. 优化及bug 修复； | 2022-04-26 |
@@ -22,6 +24,95 @@
 ---
 
 ## Changelog
+
+## 1.6.1（2022-08-22）
+
+### 功能更新
+
+1. 支持通话类型切换确认；
+2. TokenService#getToken 接口增加 channelName 字段；
+
+### API 变更
+
+1. TokenService#getToken 接口增加 channelName 字段；
+
+   ```java
+   /**
+     * 获取 Token 的服务。
+     *
+     * @param uid         用户 rtcID（用于加入 rtc 房间）。
+     * @param channelName 加入 rtc 房间的名称
+     * @param callback    callback 回调。
+     */
+   void getToken(long uid, String channelName, RequestCallback<String> callback);
+   ```
+
+   
+
+## 1.5.7（2022-07-19）
+
+### 功能更新
+
+**注意，若自定义 rtcUid 或 channelName则不再支持通话时长话单发送，需要参考自定义话单实现。**
+
+1. 升级 IM sdk 至 9.2.5；
+
+2. 升级 NERtc sdk 至 4.6.12；
+
+3.  支持自定义 rtcUid，channelName；
+
+4.  支持呼叫或接听时直接设置 rtcToken；
+
+5. 去除三方 blankj 依赖库；
+
+### API变更
+
+1. 支持自定义加入音视频房间的 uid；
+
+   ```java
+   // 初始化时传入自定义 uid 参数
+   CallKitUIOptions options = new CallKitUIOptions.Builder()
+   	.currentUserRtcUId(123L) // 自定义rtc uid 参数
+     .currentUserAccId("accId") // 用户云信 IM sdk 登录的 accId
+     ......
+     .build();
+   // 初始化
+   CallKitUI.init(getApplicationContext(), options);
+   ```
+
+2. 支持呼叫时自定义音视频房间名称；
+
+   ```java
+   CallParam param = new CallParam.Builder()
+     .rtcChannelName("channelName")// 自定义呼叫的音视频房间名称
+   	......
+     .build();
+   CallKitUI.startSingleCall(context, param);// 发起呼叫
+   ```
+
+   ```java
+   // 自定义 ui 用户
+   SingleCallParam param = new SingleCallParam(
+      p2pCalledAccId, // 被叫用户 accId
+      ChannelType.retrieveType(channelType), // 呼叫类型
+      extJsonStr, // 主叫透传给被叫的透传参数，可无
+      globalExtraCopy,// 全局抄送只用于服务端解析，可无
+      rtcChannelName,// 自定义的音视频房间名称
+      rtcToken //呼叫时用户加入音视频房间的token
+    )；
+   NERTCVideoCall.sharedInstance().call(param,callback )// 发起呼叫
+   ```
+
+3. 支持提前设置用户加入音视频房间 token；
+
+   ```java
+   // 对于主叫参考上述 2.支持呼叫时自定义音视频房间名称
+   // 对于被叫用户：accept 接口增加 token 字段
+   NERTCVideoCall.sharedInstance().accept(param,  // 呼叫参数
+                                          token,  // 自定义 token 可无
+                                          callback) // 结果回调
+   ```
+
 
 ## 1.5.5（2022-06-07）
 
