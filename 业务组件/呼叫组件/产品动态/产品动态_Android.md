@@ -4,6 +4,7 @@
 
 | 版本号 | 适配 IM 版本 | 适配 RTC版本 | 更新内容                                                     | 发布日期   |
 | :----- | :----------- | :----------- | :----------------------------------------------------------- | :--------- |
+| 1.6.4  | 9.2.5        | 4.6.12       | 1. ui 层支持音频通话中音频转视频按钮显示/隐藏开关；<br />2. 去除组件对自定义消息的影响； | 2022-08-30 |
 | 1.6.1  | 9.2.5        | 4.6.12       | 1. 支持通话类型切换确认；<br />2. TokenService#getToken 接口增加 channelName 字段； | 2022-08-22 |
 | 1.5.7  | 9.2.5        | 4.6.12       | 1. 升级 IM sdk 至9.2.5；<br />2. 升级 Rtc sdk 至 4.6.12；<br />3. 支持自定义 rtcUid，channelName；<br />4. 支持呼叫或接听时直接设置 rtcToken；<br />5. 去除三方库 blankj 依赖； | 2022-07-19 |
 | 1.5.5  | 8.5.5        | 4.2.142      | 1. 升级 nertc 至 4.2.142；<br />2. 1v1 呼叫时可添加全局服务端抄送参数；<br />3. 被叫挂断时可通过占线方式挂断； | 2022-06-07 |
@@ -24,6 +25,42 @@
 ---
 
 ## Changelog
+
+## 1.6.4（2022-08-30）
+
+### 功能更新
+
+1. 去除组件对自定义消息的影响；
+2. ui 层支持音频通话中音频转视频按钮显示/隐藏开关；
+
+### API 变更
+
+1. ui 层支持音频通话中音频转视频按钮显示/隐藏开关：
+
+   1.  自定义 activity（如TestActivity） 继承 `P2PCallActivity`，重写方法如下：
+
+      ```java
+      public class TestActivity extends P2PCallActivity {
+        @NonNull
+        @Override
+        protected P2pUIConfig provideUIConfig() {
+          // true 显示，false 隐藏；
+          return new P2pUIConfig(value);
+        }
+      }
+      ```
+
+   2. 在组件初始化处注册此 Activity：
+
+      ```java
+      CallKitUIOptions options = new CallKitUIOptions.Builder()
+        .p2pAudioActivity(TestActivity.class) // 音频；
+        .p2pVideoActivity(TestActivity.class) // 视频， 若音频/视频通话页面共用同一个页面则视频也需要注册；
+        ......
+        .build();
+      // 初始化
+      CallKitUI.init(getApplicationContext(), options);
+      ```
 
 ## 1.6.1（2022-08-22）
 
