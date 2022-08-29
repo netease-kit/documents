@@ -1,3 +1,106 @@
+### 1.5.7 => 1.6.1
+
+不可直接升级，如果用到以下变更接口需要做出适当调整
+
+1. 新增切换音视频需要切换配置接口，默认不开启确认
+    ```objc
+    /// 音视频切换是否需要确认配置
+    /// @param video 切换到视频是否需要确认
+    /// @param audio 切换到音频是否需要确认
+    - (void)enableSwitchCallTypeConfirmVideo:(BOOL)video audio:(BOOL)audio;
+    ```
+2. 修改音视频切换接口参数，如果未开启音视频切换确认可以忽略第二个参数
+    ```objc
+    /// 在通话过程中切换通话类型。非通话过程中调用无效。仅支持1对1通话。
+    /// @param type 通话类型: 音频/视频
+    /// @param state 切换应答类型:  邀请/同意/拒绝
+    /// @param completion 回调
+    /// @discussion
+    /// 切换完成后，组件内部会将己端和对端调用-enableLocalVideo:，此时外部不建议再调用-enableLocalVideo:，防止状态错乱.
+    - (void)switchCallType:(NERtcCallType)type
+                 withState:(NERtcSwitchState)state
+                completion:(nullable void (^)(NSError *_Nullable error))completion;
+    ```
+3. 新增音视频切换回调，新增回调中有音视频切换指令类型，如果未开启音视频切换确认配置，可忽略第二个字段
+    ```objc
+    /// 通话类型切换的回调（仅1对1呼叫有效）
+    /// @param callType 切换后的类型
+    /// @param state 切换应答类型:  邀请/同意/拒绝
+    - (void)onCallTypeChange:(NERtcCallType)callType withState:(NERtcSwitchState)state;
+    ```
+4. 获取token NERtcCallKitTokenHandler 回调增加channelName参数
+    ```objc
+    // 定义示例
+    typedef void (^NERtcCallKitTokenHandler)(uint64_t uid, NSString *channelName,
+                                         void (^complete)(NSString *token, NSError *error));
+    // 使用示例
+    callkit.tokenHandler = ^(uint64_t uid, NSString *channelName, void (^complete)(NSString *token, NSError *error)){
+    };                                    
+    ```
+### 1.5.5 => 1.5.7
+
+可直接升级
+
+1. 支持自定义 rtcUid
+    ```objc
+    /// 初始化，所有功能需要先初始化
+    /// @param appKey 云信后台注册的appKey
+    /// @param rtcUid  用户自定义rtc uid，如果不需要自定义传入 <= 0 任意整数(或者使用-
+    /// (void)setupAppKey:(NSString *)appKey options:(nullable NERtcCallOptions *)options
+    /// 初始化接口)，内部自动生成，如果初始化传入会优先使用外部传入
+    - (void)setupAppKey:(NSString *)appKey
+             withRtcUid:(uint64_t)rtcUid
+                options:(nullable NERtcCallOptions *)options;
+    ```
+
+2. 支持自定义 channelName 以及呼叫时传入rtc token
+    ```objc
+    /// 开始呼叫
+    /// @param userID 呼叫的用户ID
+    /// @param type 通话类型
+    /// @param attachment 附件信息，透传到onInvited
+    /// @param extra 全局抄送
+    /// @param token  安全模式token，如果用户直接传入，不需要实现  tokenHandler  block回调
+    /// @param channelName  自定义channelName，不传会默认生成
+    /// @param completion 回调
+    - (void)call:(NSString *)userID
+            type:(NERtcCallType)type
+      attachment:(nullable NSString *)attachment
+     globalExtra:(nullable NSString *)extra
+       withToken:(nullable NSString *)token
+     channelName:(nullable NSString *)channelName
+      completion:(nullable void (^)(NSError *_Nullable error))completion;            
+    ```
+
+### 1.5.0 => 1.5.5
+
+可直接升级
+
+1. 1 对 1 呼叫时，支持全局服务端抄送参数
+    ```objc
+    /// 开始呼叫
+    /// @param userID 呼叫的用户ID
+    /// @param type 通话类型
+    /// @param attachment 附件信息，透传到onInvited
+    /// @param extra 全局抄送
+    /// @param token 安全模式token，如果用户直接传入，不需要实现  tokenHandler  block回调
+    /// @param completion 回调
+    - (void)call:(NSString *)userID
+           type:(NERtcCallType)type
+     attachment:(nullable NSString *)attachment
+    globalExtra:(nullable NSString *)extra
+     completion:(nullable void (^)(NSError *_Nullable error))completion;
+    ```
+2. 支持占线挂断
+    ```objc
+    /// 拒绝呼叫
+    /// @param completion 回调
+    /// @param reason  挂断原因
+    - (void)rejectWithReason:(NSInteger)reason
+       withCompletion:(nullable void (^)(NSError *_Nullable error))completion;
+    ```
+3. 升级 nertc 至 4.2.142
+
 ### 1.5.0 => 1.5.1
 
 可直接升级
