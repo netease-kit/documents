@@ -7,7 +7,7 @@
 #呼叫组件
 pod 'NERtcCallKit','1.7.0'
 #NERtcSDK
-pod 'NERtcSDK', '4.6.21', :subspecs => ['RtcBasic']
+pod 'NERtcSDK', '4.6.22', :subspecs => ['RtcBasic']
 ```
 2. 用户不需要实现 NERtcCallKitTokenHandler 回调获取Rtc Token，已经在组件内部处理相关获取流程
 
