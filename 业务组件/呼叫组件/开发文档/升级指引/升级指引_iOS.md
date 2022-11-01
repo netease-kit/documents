@@ -5,7 +5,7 @@
 1. 组件内部不再应用Rtc，需要用户外部依赖，需要用户在应用呼叫组件的同时自己引用Rtc，或者使用引用过Rtc的其他组件
 ```objc
 #呼叫组件
-pod 'NERtcCallKit','1.7.0'
+pod 'NERtcCallKit','1.8.0'
 #NERtcSDK
 pod 'NERtcSDK', '4.6.22', :subspecs => ['RtcBasic']
 ```
