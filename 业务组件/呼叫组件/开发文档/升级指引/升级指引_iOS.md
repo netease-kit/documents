@@ -21,7 +21,7 @@ pod 'NERtcSDK', '4.6.22', :subspecs => ['RtcBasic']
 
 5. 新增 NERtcCallOptions joinRtcWhenCall 配置属性
 ```objc
-/// 主叫是否在呼叫时加入rtc，默认不提前加入，在被叫接听时加入，如设置提前加入房间会带来通话费用的增加，同时提升首帧开画时间
+/// 主叫是否在呼叫时加入rtc，默认为NO，不提前加入，在被叫接听时加入，如设置提前加入房间会带来通话费用的增加，同时提升首帧开画时间
 @property(nonatomic, assign) BOOL joinRtcWhenCall;
 ```
 
