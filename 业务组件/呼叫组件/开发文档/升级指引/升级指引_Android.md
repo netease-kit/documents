@@ -1,3 +1,26 @@
+### 1.6.4 => 1.8.0
+
+1. 去除 `CallKitUIOptions#rtcTokenService`接口调用；
+1. 去除 `NERTCVideoCall#setTokenService`接口调用；
+1. `NERTCVideoCall#accept`接口去除 `InviteParamBuilder` 参数；
+1. `NERTCVideoCall#reject` 接口去除`InviteParamBuilder` 参数；
+1. 编译 Android api 版本需要升级为 31；
+1. 新增 `CallKitUIOptions#joinRtcWhenCall` 属性；
+
+   ```java
+   /** 主叫是否在呼叫时加入rtc，默认不提前加入，在被叫接听时加入，如设置提前加入房间会带来通话费用的增加，同时提升首帧开画时间 */
+   private boolean joinRtcWhenCall = false;
+   ```
+   
+1. 新增 `CallKitUI#preVideoCallConfig` 接口 用于初始化预处理，为避免离线后在打开应用后不能立即收到离线呼叫邀请；
+
+### 1.5.7 => 1.6.4
+
+可直接升级
+
+### 1.5.5 => 1.5.7
+可直接升级；
+
 ### 1.5.4 => 1.5.5
 
 可直接升级；
