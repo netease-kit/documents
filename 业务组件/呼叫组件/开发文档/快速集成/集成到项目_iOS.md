@@ -70,7 +70,7 @@ pod 'NERtcCallKit'
     NERtcCallKit *callkit = [NERtcCallKit sharedInstance];
     [callkit setupAppKey:@"app key" options:option];
 
-    // 请求 rtc token 服务，若非安全模式则不需设置
+    // 请求 rtc token 服务，若非安全模式则不需设置(大于1.8.0的版本单呼不需要实现此方法，token已在内部获取)
     callkit.tokenHandler = ^(uint64_t uid, void (^complete)(NSString *token, NSError *error)) {
         // 获取token以及回传给SDK(通常从业务服务器获取)
         NSString *token = @"get your token";
