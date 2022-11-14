@@ -1,3 +1,36 @@
+
+### 1.6.5 => 1.8.0
+
+不可直接升级
+1. 组件内部不再应用Rtc，需要用户外部依赖，需要用户在应用呼叫组件的同时自己引用Rtc，或者使用引用过Rtc的其他组件
+```objc
+#呼叫组件
+pod 'NERtcCallKit','1.8.0'
+#NERtcSDK
+pod 'NERtcSDK', '4.6.22', :subspecs => ['RtcBasic']
+```
+2. 用户不需要实现 NERtcCallKitTokenHandler 回调获取Rtc Token，已经在组件内部处理相关获取流程
+
+3. 移除 NERtcCallOptions 中配置属性 shouldInitializeRtc
+
+4. 新增 NERtcCallOptions 中 globalInit 配置属性
+```objc
+/// 是否在初始化的时候初始化Rtc，默认为YES，设置为NO，主叫在呼叫时初始化，被叫在有呼叫到达的时候初始化
+@property(nonatomic, assign) BOOL globalInit;
+```
+
+5. 新增 NERtcCallOptions joinRtcWhenCall 配置属性
+```objc
+/// 主叫是否在呼叫时加入rtc，默认为NO，不提前加入，在被叫接听时加入，如设置提前加入房间会带来通话费用的增加，同时提升首帧开画时间
+@property(nonatomic, assign) BOOL joinRtcWhenCall;
+```
+
+### 1.6.1 => 1.6.5
+
+可直接升级
+
+1. 修复弱网下音视频切换控制失败未回调问题
+
 ### 1.5.7 => 1.6.1
 
 不可直接升级，如果用到以下变更接口需要做出适当调整

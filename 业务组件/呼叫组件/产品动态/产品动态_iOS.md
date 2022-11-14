@@ -4,6 +4,8 @@
 
 | 版本号 | 适配 IM 版本 | 适配 RTC 版本 | 更新内容                                             |
 | :----- | :----------- | :------------ | :----------------------------------------------------------- |
+| 1.8.0  | 9.6.4        | 4.6.22       | 1. 移除内部Rtc版本依赖 <br /> 2. 呼叫组件内部获取Rtc Token <br /> 3.  移除 NERtcCallOptions 中配置属性 shouldInitializeRtc<br /> 4. 新增 NERtcCallOptions 中 globalInit 配置属性<br /> 5. 新增 NERtcCallOptions joinRtcWhenCall 配置属性|
+| 1.6.5  | 9.2.5        | 4.2.142       | 1. 修复弱网下音视频切换控制失败未回调问题 <br />|
 | 1.6.1  | 9.2.5        | 4.2.142       | 1. 支持通话类型切换确认 <br />2. NERtcCallKitTokenHandler 回调新增 channelName 参数|
 | 1.5.7  | 9.2.5        | 4.2.142       | 1. 升级 IM Sdk 至9.2.5 <br />2. 支持自定义 rtcUid，channelName  <br />3.支持呼叫或接听时直接设置 rtcToken<br />|
 | 1.5.5  | 8.5.5        | 4.2.142       | 1. 1 对 1 呼叫时，支持全局服务端抄送参数 <br />2. 支持占线挂断 <br />3. 升级 nertc 至 4.2.142 |
