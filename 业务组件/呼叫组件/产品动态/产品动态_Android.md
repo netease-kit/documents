@@ -4,6 +4,7 @@
 
 | 版本号 | 适配 IM 版本 | 适配 RTC版本 | 更新内容                                                     | 发布日期   |
 | :----- | :----------- | :----------- | :----------------------------------------------------------- | :--------- |
+| 1.8.1  | 9.6.4        | 4.6.29       | 1. 升级 Rtc sdk 至 4.6.29；<br />2. 优化呼叫方视频预览；     | 2022-11-29 |
 | 1.8.0  | 9.6.4        | 4.6.22       | 1. 升级 IM sdk 至9.6.3；<br />2. 升级 Rtc sdk 至 4.6.22；<br />3. 支持控制主叫加入 rtc 的时机； | 2022-11-01 |
 | 1.6.4  | 9.2.5        | 4.6.12       | 1. ui 层支持音频通话中音频转视频按钮显示/隐藏开关；<br />2. 去除组件对自定义消息的影响； | 2022-08-30 |
 | 1.6.1  | 9.2.5        | 4.6.12       | 1. 支持通话类型切换确认；<br />2. TokenService#getToken 接口增加 channelName 字段； | 2022-08-22 |
@@ -26,6 +27,62 @@
 ---
 
 ## Changelog
+
+## 1.8.1（2022-11-29）
+
+### 功能更新
+
+**注意，Android 编译 API 版本（compileSdkVersion）需要修改为 31。**
+
+1. 升级 Rtc sdk 至 4.6.29；
+
+2. 优化呼叫方视频预览；
+
+
+
+
+## 1.8.0（2022-11-01）
+
+### 功能更新
+
+**注意，避免出现未知错误，此版本暂时不支持 IM sdk 和 Rtc sdk 版本变更，需和组件所需版本一致。**
+
+**注意，Android 编译 API 版本（compileSdkVersion）需要修改为 31。**
+
+1. 不需要用户额外设置TokenService，用于请求 rtc 的token；
+
+2. 首帧时长优化；
+
+3. 升级 IM sdk 至 9.6.4；
+
+4. 升级 Rtc sdk 至 4.6.22；
+
+5. 组件库引入maven坐标更换为：
+
+   ```groovy
+   implementation "com.netease.yunxin.kit.call:call:1.8.0"			// 基础组件包
+   implementation "com.netease.yunxin.kit.call:call-ui:1.8.0"	// UI 包
+   ```
+
+### API 变更
+
+1. `NERTCVideoCall#setTokenService`接口去除；
+
+2. `CallKitUIOptions#rtcTokenService`接口去除；
+
+3. `NERTCVideoCall#accept`合并成一个，且参数签名修改为如下：
+
+   ```java
+   void accept(JoinChannelCallBack joinChannelCallBack);
+   ```
+
+4. `NERTCVideoCall#reject`接口签名去除多余参数，修改为如下：
+
+   ```java
+   void reject(RequestCallback<Void> callback);
+   ```
+
+
 
 ## 1.6.4（2022-08-30）
 
