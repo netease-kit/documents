@@ -1,3 +1,7 @@
+### 1.8.0 => 1.8.1
+
+可直接升级
+
 ### 1.6.4 => 1.8.0
 
 1. 去除 `CallKitUIOptions#rtcTokenService`接口调用；
